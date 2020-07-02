@@ -7,14 +7,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import idao.iProfesionalDao;
-import modelo.Profesional;
+import idao.iCapacitacionDao;
+
+import modelo.Capacitacion;
+
 import conectar.ConexionSingleton;
 
-public class ProfesionalDao implements iProfesionalDao {
+public class CapacitacionDao implements iCapacitacionDao {
 
 	@Override
-	public boolean crearProfesional(Profesional prf) {
+	public boolean crearCapacitacion(Capacitacion cap) {
 		// TODO Auto-generated method stub
 
 		boolean registrar = false;
@@ -22,7 +24,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO usuarios VALUES (null,'" + prf.getNombre() + "','"+ prf.getApellido()+"','"+prf.getCorreo()+"','"+prf.getTelefono()+"')";
+		String sql = "INSERT INTO usuarios VALUES (null,'" + cap.getFecha() + "','"+ cap.getHora()+"','"+cap.getTema()+"','"+cap.getContenido()+"')";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -32,7 +34,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método crearProfesional");
+			System.out.println("Error: Clase UsuarioDao, método crearUsuario");
 			e.printStackTrace();
 		}
 		
@@ -41,7 +43,7 @@ public class ProfesionalDao implements iProfesionalDao {
 	}
 
 	@Override
-	public List<Profesional> leerProfesional() {
+	public List<Capacitacion> leerCapacitacion() {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
@@ -50,35 +52,34 @@ public class ProfesionalDao implements iProfesionalDao {
 		
 		String sql = "select * from usuarios ORDER BY ID";
 		
-		List<Profesional> listaProfesionales = new ArrayList<Profesional>();
+		List<Capacitacion> listaCapacitaciones = new ArrayList<Capacitacion>();
 		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
-				Profesional c = new Profesional();
-				c.setId_profesional(rs.getInt(1));
-				c.setNombre(rs.getString(2));
-				c.setApellido(rs.getString(3));
-				c.setCorreo(rs.getString(4));
-				c.setTelefono(rs.getString(5));
-				c.setCargo(rs.getString(6));
-				listaProfesionales.add(c);
+				Capacitacion c = new Capacitacion();
+				c.setId_capacitacion(rs.getInt(1));
+				c.setFecha(rs.getString(2));
+				c.setHora(rs.getString(3));
+				c.setTema(rs.getString(4));
+				c.setContenido(rs.getString(5));
+				listaCapacitaciones.add(c);
 			}
 			stm.close();
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método leerProfesional ");
+			System.out.println("Error: Clase UsuarioDao, método leerUsuarios ");
 			e.printStackTrace();
 		}
 		
-		return listaProfesionales;
+		return listaCapacitaciones;
 	}
 
 	@Override
-	public boolean actualizarProfesional(Profesional prf) {
+	public boolean actualizarCapacitacion(Capacitacion cap) {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
@@ -86,7 +87,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE usuarios SET nombre = '" + prf.getNombre() + "', apellido = '" + prf.getApellido() + "', correo = '" + prf.getCorreo() + "', telefono = '"+prf.getTelefono()+"', cargo = '"+ prf.getCargo()+"' WHERE id = '" + prf.getId_profesional() + "'";
+		String sql = "UPDATE usuarios SET fecha = '" + cap.getFecha() + "', hora = '" + cap.getHora() + "', tema = '" + cap.getTema() + "', contenido = '"+ cap.getContenido()+"' WHERE id = '" + cap.getId_capacitacion() + "'";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -96,7 +97,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método actualizar");
+			System.out.println("Error: Clase CapacitacionDao, método actualizar");
 			e.printStackTrace();
 		}
 		
@@ -105,14 +106,14 @@ public class ProfesionalDao implements iProfesionalDao {
 	}
 
 	@Override
-	public boolean eliminarProfesional(Profesional prf) {
+	public boolean eliminarCapacitacion(Capacitacion cap) {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		Statement stm = null;
 		
 		boolean eliminar = false;
 		
-		String sql = "DELETE FROM usuarios WHERE id = " + prf.getId_profesional();
+		String sql = "DELETE FROM usuarios WHERE id = " + cap.getId_capacitacion();
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -122,7 +123,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método eliminarProfesional");
+			System.out.println("Error: Clase CapacitacionDao, método eliminarCapacitacion");
 			e.printStackTrace();
 		}
 		
@@ -130,31 +131,30 @@ public class ProfesionalDao implements iProfesionalDao {
 	}
 
 	@Override
-	public Profesional obtenerProfesional(int id_profesional) {
+	public Capacitacion obtenerCapacitacion(int id_capacitacion) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from usuarios where ID = " + id_profesional;
+		String sql = "select * from usuarios where ID = " + id_capacitacion;
 		
-		Profesional u = new Profesional();
+		Capacitacion u = new Capacitacion();
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
-				u.setId_profesional(rs.getInt(1));
-				u.setNombre(rs.getString(2));
-				u.setApellido(rs.getString(3));
-				u.setCorreo(rs.getString(4));
-				u.setTelefono(rs.getString(5));
-				u.setCargo(rs.getString(6));
+				u.setId_capacitacion(rs.getInt(1));
+				u.setFecha(rs.getString(2));
+				u.setHora(rs.getString(3));
+				u.setTema(rs.getString(4));
+				u.setContenido(rs.getString(5));
 			}
 			stm.close();
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método obtenerProfesional ");
+			System.out.println("Error: Clase CapacitacionDao, método obtenerCapacitacion ");
 			e.printStackTrace();
 		}
 		

@@ -3,6 +3,7 @@ package modelo;
 public class Profesional {
 	
 	//Variables//
+	
 	private int id_profesional;
 	private String nombre;
 	private String apellido;
@@ -12,6 +13,7 @@ public class Profesional {
 
 	
 	//Constructores//
+	
 	public Profesional() {
 		super();
 	}
@@ -32,6 +34,7 @@ public class Profesional {
 	}
 
 	//Getters & Setters//
+	
 	public int getId_profesional() {
 		return id_profesional;
 	}
@@ -80,10 +83,9 @@ public class Profesional {
 		this.cargo = cargo;
 	}
 
-
-
 	
 	//To String//
+	
 	@Override
 	public String toString() {
 		return "Profesional [id_profesional=" + id_profesional + ", nombre=" + nombre + ", apellido=" + apellido
