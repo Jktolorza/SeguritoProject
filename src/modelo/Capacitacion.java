@@ -8,6 +8,7 @@ public class Capacitacion {
 	private String hora;
 	private String tema;
 	private String contenido;
+	private int id_cliente;
 	
 	
 	

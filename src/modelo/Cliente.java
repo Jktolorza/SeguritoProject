@@ -2,7 +2,7 @@ package modelo;
 
 public class Cliente {
     
-    private int id;
+    private int id_cliente;
     private String nombreEmpresa;
     private String rut;
     private String fechaRegistro;
@@ -22,20 +22,25 @@ public class Cliente {
     }
 
 
+    public Cliente(int id_cliente) {
+		super();
+		this.id_cliente = id_cliente;
+	}
 
-    public int getId() {
-        return id;
-    }
-
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
+	public int getId_cliente() {
+		return id_cliente;
+	}
 
 
-    public String getNombreEmpresa() {
+
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
+	}
+
+
+
+	public String getNombreEmpresa() {
         return nombreEmpresa;
     }
 
@@ -73,7 +78,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente [id=" + id + ", nombreEmpresa=" + nombreEmpresa + ", rut=" + rut + ", fechaRegistro="
+        return "Cliente [id=" + id_cliente + ", nombreEmpresa=" + nombreEmpresa + ", rut=" + rut + ", fechaRegistro="
                 + fechaRegistro + "]";
     }
     

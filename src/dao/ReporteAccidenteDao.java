@@ -21,7 +21,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         Statement stm = null;
         Connection con = null;
         
-        String sql = "INSERT INTO reporteaccidente VALUES (null,'" +reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"')";       
+        String sql = "INSERT INTO reporteaccidente VALUES (null,'" +reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"', '"+reporte.getId_cliente()+"')";       
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -59,6 +59,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                         c.setDireccion(rs.getString(3));
                         c.setLabor(rs.getString(4));
                         c.setDescripcion(rs.getString(5));
+                        c.setId_cliente(rs.getInt(6));
                         listaReporteAccidentes.add(c);
                 }
                 stm.close();
@@ -80,7 +81,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         
         boolean actualizar = false;
         
-        String sql = "UPDATE reporteaccidente SET fecha = '" + reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"')";
+        String sql = "UPDATE reporteaccidente SET fecha = '" + reporte.getFecha()+ "', direccion = '"+ reporte.getDireccion()+"', labor = '"+reporte.getLabor()+"', descripcion = '"+reporte.getDescripcion()+"', id_cliente = '"+reporte.getId_cliente()+"')";
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -142,7 +143,8 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                         u.setFecha(rs.getString(2));
                         u.setDireccion(rs.getString(3));
                         u.setLabor(rs.getString(4));
-                        u.setDescripcion(rs.getString(4));
+                        u.setDescripcion(rs.getString(5));
+                        u.setId_cliente(rs.getInt(6));
                 }
                 stm.close();
                 rs.close();

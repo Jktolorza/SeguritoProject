@@ -55,7 +55,7 @@ public class ClienteDao implements iClienteDao{
                 rs = stm.executeQuery(sql);
                 while (rs.next()) {
                         Cliente c = new Cliente();
-                        c.setId(rs.getInt(1));
+                        c.setId_cliente(rs.getInt(1));
                         c.setNombreEmpresa(rs.getString(2));
                         c.setRut(rs.getString(3));
                         c.setFechaRegistro(rs.getString(4));
@@ -106,7 +106,7 @@ public class ClienteDao implements iClienteDao{
         
         boolean eliminar = false;
         
-        String sql = "DELETE FROM cliente WHERE id = " + cl.getId();
+        String sql = "DELETE FROM cliente WHERE id = " + cl.getId_cliente();
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -138,7 +138,7 @@ public class ClienteDao implements iClienteDao{
                 stm = con.createStatement();
                 rs = stm.executeQuery(sql);
                 while (rs.next()) {
-                        u.setId(rs.getInt(1));
+                        u.setId_cliente(rs.getInt(1));
                         u.setNombreEmpresa(rs.getString(2));
                         u.setRut(rs.getString(3));
                         u.setFechaRegistro(rs.getString(4));

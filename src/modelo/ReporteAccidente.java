@@ -7,22 +7,30 @@ public class ReporteAccidente {
     private String direccion;
     private String labor;
     private String descripcion;
+    private int id_cliente;
     
     
-    public ReporteAccidente(String fecha, String direccion, String labor, String descripcion) {
+    public ReporteAccidente() {
+        super();
+    }
+       
+    public ReporteAccidente(String fecha, String direccion, String labor, String descripcion, int id_cliente) {
         this.fecha = fecha;
         this.direccion = direccion;
         this.labor = labor;
         this.descripcion = descripcion;
+        this.id_cliente = id_cliente;
     }
 
 
-    public ReporteAccidente() {
-        super();
-    }
+    public ReporteAccidente(int idReporteAccidente) {
+		super();
+		this.idReporteAccidente = idReporteAccidente;
+	}
+    
+    
 
-
-    public int getIdReporteAccidente() {
+	public int getIdReporteAccidente() {
         return idReporteAccidente;
     }
 
@@ -70,9 +78,17 @@ public class ReporteAccidente {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    
 
+    public int getId_cliente() {
+		return id_cliente;
+	}
 
-    @Override
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
+	}
+
+	@Override
     public String toString() {
         return "ReporteAccidente [idReporteAccidente=" + idReporteAccidente + ", fecha=" + fecha + ", direccion="
                 + direccion + ", labor=" + labor + ", descripcion=" + descripcion + "]";

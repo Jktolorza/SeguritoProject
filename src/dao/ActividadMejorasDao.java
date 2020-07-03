@@ -13,14 +13,7 @@ import conectar.ConexionSingleton;
 
 public class ActividadMejorasDao implements iActividadesMejorasDao {
 
-	
-//	private int idActMejora;
-//	private String Nombre;
-//	private String fechaInicio;
-//	private String fechaTermino;
-//	private String estado;
-//	private String detalle;
-	
+
 	
 	@Override
 	public boolean crearActividad(ActividadesMejoras act) {
@@ -31,7 +24,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO actividadesmejora VALUES (null,'" + act.getNombre() + "','"+ act.getFechaInicio() +"','"+act.getFechaTermino()+"','"+act.getEstado()+"','"+ act.getDetalle()+"')";
+		String sql = "INSERT INTO actividadesmejora VALUES (null,'" + act.getNombre() + "','"+ act.getFechaInicio() +"','"+act.getFechaTermino()+"','"+act.getEstado()+"','"+ act.getDetalle()+"','"+act.getId_profesional()+"','"+act.getId_cliente()+"')";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -73,6 +66,8 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 				c.setFechaTermino(rs.getString(4));
 				c.setEstado(rs.getString(5));
 				c.setDetalle(rs.getString(6));
+				c.setId_profesional(rs.getInt(7));
+				c.setId_cliente(rs.getInt(8));
 				listaActividades.add(c);
 			}
 			stm.close();
@@ -95,7 +90,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE actividadesmejora SET nombre = '" + act.getNombre() + "', fechainicio = '" + act.getFechaInicio() + "', fechatermino = '" + act.getFechaTermino() + "', estado = '"+act.getEstado()+"', detalle = '"+ act.getDetalle()+"' WHERE id = '" + act.getIdActMejora() + "'";
+		String sql = "UPDATE actividadesmejora SET nombre = '" + act.getNombre() + "', fechainicio = '" + act.getFechaInicio() + "', fechatermino = '" + act.getFechaTermino() + "', estado = '"+act.getEstado()+"', detalle = '"+ act.getDetalle()+"', id_profesional = '"+ act.getId_profesional()+"', id_cliente = '"+act.getId_cliente()+"' WHERE id = '" + act.getIdActMejora() + "'";
 		
 		try {
 			con = ConexionSingleton.getConnection();
