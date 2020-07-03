@@ -18,12 +18,13 @@ public class Capacitacion {
 		super();
 	}
 
-	public Capacitacion(String fecha, String hora, String tema, String contenido) {
+	public Capacitacion(String fecha, String hora, String tema, String contenido, int id_cliente) {
 		super();
 		this.fecha = fecha;
 		this.hora = hora;
 		this.tema = tema;
 		this.contenido = contenido;
+		this.id_cliente = id_cliente;
 	}
 
 	public Capacitacion(int id_capacitacion) {
@@ -74,16 +75,23 @@ public class Capacitacion {
 		this.contenido = contenido;
 	}
 
-	
+	public int getId_cliente() {
+		return id_cliente;
+	}
+
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
+	}
 	//To String//
-	
+
 	@Override
 	public String toString() {
 		return "Capacitacion [id_capacitacion=" + id_capacitacion + ", fecha=" + fecha + ", hora=" + hora + ", tema="
-				+ tema + ", contenido=" + contenido + "]";
+				+ tema + ", contenido=" + contenido + ", id_cliente=" + id_cliente + "]";
 	}
-
 	
+	
+
 	
 	
 	
