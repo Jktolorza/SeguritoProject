@@ -24,7 +24,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO usuarios VALUES (null,'" + cap.getFecha() + "','"+ cap.getHora()+"','"+cap.getTema()+"','"+cap.getContenido()+"')";
+		String sql = "INSERT INTO capacitaciones VALUES (null,'" + cap.getFecha() + "','"+ cap.getHora()+"','"+cap.getTema()+"','"+cap.getContenido()+"')";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -50,7 +50,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from usuarios ORDER BY ID";
+		String sql = "select * from capacitaciones ORDER BY ID";
 		
 		List<Capacitacion> listaCapacitaciones = new ArrayList<Capacitacion>();
 		
@@ -87,7 +87,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE usuarios SET fecha = '" + cap.getFecha() + "', hora = '" + cap.getHora() + "', tema = '" + cap.getTema() + "', contenido = '"+ cap.getContenido()+"' WHERE id = '" + cap.getId_capacitacion() + "'";
+		String sql = "UPDATE capacitaciones SET fecha = '" + cap.getFecha() + "', hora = '" + cap.getHora() + "', tema = '" + cap.getTema() + "', contenido = '"+ cap.getContenido()+"' WHERE id = '" + cap.getId_capacitacion() + "'";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -113,7 +113,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		
 		boolean eliminar = false;
 		
-		String sql = "DELETE FROM usuarios WHERE id = " + cap.getId_capacitacion();
+		String sql = "DELETE FROM capacitaciones WHERE id = " + cap.getId_capacitacion();
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -136,7 +136,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from usuarios where ID = " + id_capacitacion;
+		String sql = "select * from capacitaciones where ID = " + id_capacitacion;
 		
 		Capacitacion u = new Capacitacion();
 		try {

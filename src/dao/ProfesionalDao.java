@@ -22,7 +22,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO usuarios VALUES (null,'" + prf.getNombre() + "','"+ prf.getApellido()+"','"+prf.getCorreo()+"','"+prf.getTelefono()+"')";
+		String sql = "INSERT INTO profesional VALUES (null,'" + prf.getNombre() + "','"+ prf.getApellido()+"','"+prf.getCorreo()+"','"+prf.getTelefono()+"')";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -48,7 +48,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from usuarios ORDER BY ID";
+		String sql = "select * from profesional ORDER BY ID";
 		
 		List<Profesional> listaProfesionales = new ArrayList<Profesional>();
 		
@@ -86,7 +86,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE usuarios SET nombre = '" + prf.getNombre() + "', apellido = '" + prf.getApellido() + "', correo = '" + prf.getCorreo() + "', telefono = '"+prf.getTelefono()+"', cargo = '"+ prf.getCargo()+"' WHERE id = '" + prf.getId_profesional() + "'";
+		String sql = "UPDATE profesional SET nombre = '" + prf.getNombre() + "', apellido = '" + prf.getApellido() + "', correo = '" + prf.getCorreo() + "', telefono = '"+prf.getTelefono()+"', cargo = '"+ prf.getCargo()+"' WHERE id = '" + prf.getId_profesional() + "'";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -112,7 +112,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		
 		boolean eliminar = false;
 		
-		String sql = "DELETE FROM usuarios WHERE id = " + prf.getId_profesional();
+		String sql = "DELETE FROM profesional WHERE id = " + prf.getId_profesional();
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -135,7 +135,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from usuarios where ID = " + id_profesional;
+		String sql = "select * from profesional where ID = " + id_profesional;
 		
 		Profesional u = new Profesional();
 		try {
