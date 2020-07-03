@@ -71,7 +71,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase UsuarioDao, método leerUsuarios ");
+			System.out.println("Error: Clase CapacitacionDao, método leerCapacitacion ");
 			e.printStackTrace();
 		}
 		

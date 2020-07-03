@@ -153,6 +153,8 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 				u.setFechaTermino(rs.getString(4));
 				u.setEstado(rs.getString(5));
 				u.setDetalle(rs.getString(6));
+				u.setId_profesional(rs.getInt(7));
+				u.setId_cliente(rs.getInt(8));
 			}
 			stm.close();
 			rs.close();

@@ -3,35 +3,40 @@ package modelo;
 public class Factura {
 
 	private int id_factura;
-	private int id_cliente; //FK
 	private String fechadecobro;
 	private String fechaVencimiento;
 	private int extras;
 	private int impuestos;
 	private int subtotal;
 	private int total;
-	
+		private int id_cliente; //FK
+		
+	//Constructores//
 	public Factura() {
 		super();
 	}
 
-	public Factura(int id_cliente, String fechadecobro, String fechaVencimiento, int extras, int impuestos,
-			int subtotal, int total) {
+	public Factura(String fechadecobro, String fechaVencimiento, int extras, int impuestos, int subtotal, int total,
+			int id_cliente) {
 		super();
-		this.id_cliente = id_cliente;
 		this.fechadecobro = fechadecobro;
 		this.fechaVencimiento = fechaVencimiento;
 		this.extras = extras;
 		this.impuestos = impuestos;
 		this.subtotal = subtotal;
 		this.total = total;
+		this.id_cliente = id_cliente;
 	}
+
 
 	public Factura(int id_factura) {
 		super();
 		this.id_factura = id_factura;
 	}
 
+	
+	//Getters & Setters//
+	
 	public int getId_factura() {
 		return id_factura;
 	}
@@ -96,14 +101,14 @@ public class Factura {
 		this.total = total;
 	}
 
+	
+	
 	@Override
 	public String toString() {
-		return "Factura [id_factura=" + id_factura + ", id_cliente=" + id_cliente + ", fechadecobro=" + fechadecobro
-				+ ", fechaVencimiento=" + fechaVencimiento + ", extras=" + extras + ", impuestos=" + impuestos
-				+ ", subtotal=" + subtotal + ", total=" + total + "]";
+		return "Factura [id_factura=" + id_factura + ", fechadecobro=" + fechadecobro + ", fechaVencimiento="
+				+ fechaVencimiento + ", extras=" + extras + ", impuestos=" + impuestos + ", subtotal=" + subtotal
+				+ ", total=" + total + ", id_cliente=" + id_cliente + "]";
 	}
-	
-	
 	
 	
 }
