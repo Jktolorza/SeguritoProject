@@ -28,6 +28,10 @@ public class ConexionSingleton {
 	public static Connection getConnection() {
 		if (conn == null) {
 			new ConexionSingleton();
+			
+		
+			
+			
 		}
 		return conn;
 	}
