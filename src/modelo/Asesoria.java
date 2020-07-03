@@ -13,6 +13,8 @@ private String motivo;
 private String detalle;
 private int id_profesional;
 private int id_cliente;
+private String profesional;
+private String cliente;
 
 
 //Constructores
@@ -85,6 +87,22 @@ public int getId_cliente() {
 }
 public void setId_cliente(int id_cliente) {
 	this.id_cliente = id_cliente;
+}
+
+public String getProfesional() {
+	return profesional;
+}
+
+public void setProfesional(String profesional) {
+	this.profesional = profesional;
+}
+
+public String getCliente() {
+	return cliente;
+}
+
+public void setCliente(String cliente) {
+	this.cliente = cliente;
 }
 
 

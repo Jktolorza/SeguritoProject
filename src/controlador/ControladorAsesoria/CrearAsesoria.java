@@ -1,9 +1,9 @@
 package controlador.ControladorAsesoria;
 
 import java.io.IOException;
-import java.util.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.AsesoriaDao;
+import dao.ClienteDao;
+import dao.ProfesionalDao;
 import modelo.Asesoria;
+import modelo.Cliente;
+import modelo.Profesional;
 
 /**
  * Servlet implementation class CrearAsesoria
@@ -33,6 +37,20 @@ public class CrearAsesoria extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		ProfesionalDao profesionaldao = new ProfesionalDao();
+		List<Profesional> lprofesionales = new ArrayList<Profesional>();
+		
+		lprofesionales = profesionaldao.leerProfesional();
+		
+		request.setAttribute("listadoprofesionales",lprofesionales);
+		
+		ClienteDao clientedao = new ClienteDao();
+		List<Cliente> lclientes = new ArrayList<Cliente>();
+		
+		lclientes = clientedao.leerCliente();
+		
+		request.setAttribute("listadoclientes",lclientes);
+		
 		request.getRequestDispatcher("FormularioAsesoria.jsp").forward(request, response);
 	}
 
@@ -53,6 +71,8 @@ public class CrearAsesoria extends HttpServlet {
 //		} catch (ParseException e) {
 //			e.printStackTrace();
 //		} 
+
+		
 		String fecha = request.getParameter("txtfecha");
 		String hora = request.getParameter("txthora");
 		String motivo = request.getParameter("txtmotivo");

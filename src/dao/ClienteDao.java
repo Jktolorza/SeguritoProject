@@ -45,7 +45,7 @@ public class ClienteDao implements iClienteDao{
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from cliente ORDER BY ID";
+        String sql = "select * from cliente ORDER BY id_cliente";
         
         List<Cliente> listaClientes = new ArrayList<Cliente>();
         

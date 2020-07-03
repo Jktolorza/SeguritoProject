@@ -46,8 +46,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from asesorias ORDER BY ID";
-		
+		String sql = "SELECT id_asesoria, fecha, hora, motivo, detalle, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente";
+		System.out.println(sql);
 		List<Asesoria> listaAsesorias = new ArrayList<Asesoria>();
 		
 		try {
@@ -61,8 +61,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 				c.setHora(rs.getString("hora"));
 				c.setMotivo(rs.getString("motivo"));
 				c.setDetalle(rs.getString("detalle"));
-				c.setId_profesional(rs.getInt("profesional_id_profesional"));
-				c.setId_cliente(rs.getInt("cliente_id_cliente"));
+				c.setProfesional(rs.getString("profesional"));
+				c.setCliente(rs.getString("cliente"));
 				listaAsesorias.add(c);
 			}
 			stm.close();

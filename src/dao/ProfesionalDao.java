@@ -22,8 +22,8 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO profesional VALUES (null,'" + prf.getNombre() + "','"+ prf.getApellido()+"','"+prf.getCorreo()+"','"+prf.getTelefono()+"')";
-		
+		String sql = "INSERT INTO profesional(nombre, apellido, correo, telefono, cargo) VALUES ('" + prf.getNombre() + "','"+ prf.getApellido()+"','"+prf.getCorreo()+"','"+prf.getTelefono()+"')";
+//		System.out.println(sql);
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -32,7 +32,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método crearProfesional");
+			System.out.println("Error: Clase ProfesionalDao, mï¿½todo crearProfesional");
 			e.printStackTrace();
 		}
 		
@@ -48,7 +48,7 @@ public class ProfesionalDao implements iProfesionalDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from profesional ORDER BY ID";
+		String sql = "select * from profesional ORDER BY ID_profesional";
 		
 		List<Profesional> listaProfesionales = new ArrayList<Profesional>();
 		
@@ -70,7 +70,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método leerProfesional ");
+			System.out.println("Error: Clase ProfesionalDao, mï¿½todo leerProfesional ");
 			e.printStackTrace();
 		}
 		
@@ -96,7 +96,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método actualizar");
+			System.out.println("Error: Clase ProfesionalDao, mï¿½todo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -122,7 +122,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método eliminarProfesional");
+			System.out.println("Error: Clase ProfesionalDao, mï¿½todo eliminarProfesional");
 			e.printStackTrace();
 		}
 		
@@ -154,7 +154,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ProfesionalDao, método obtenerProfesional ");
+			System.out.println("Error: Clase ProfesionalDao, mï¿½todo obtenerProfesional ");
 			e.printStackTrace();
 		}
 		
