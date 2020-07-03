@@ -51,7 +51,7 @@ public class CrearAsesoria extends HttpServlet {
 		
 		request.setAttribute("listadoclientes",lclientes);
 		
-		request.getRequestDispatcher("FormularioAsesoria.jsp").forward(request, response);
+		request.getRequestDispatcher("asesoriaProfesional.jsp").forward(request, response);
 	}
 
 	/**
@@ -91,10 +91,18 @@ public class CrearAsesoria extends HttpServlet {
 			mensaje = "La asesoria se ha creado exitosamente";
 		else
 			mensaje = "Ocurrio un error al crear la asesoria";
-		
+			
 		request.setAttribute("cumensaje", mensaje);
 		
-		request.getRequestDispatcher("FormularioAsesoria.jsp").forward(request, response);
+		//mostrarlista
+		List<Asesoria> lasesorias = new ArrayList<Asesoria>();
+		
+		lasesorias = asesoriadao.leerAsesoria();
+			
+		request.setAttribute("listadoasesorias",lasesorias);
+		
+		
+		request.getRequestDispatcher("asesoriaProfesional.jsp").forward(request, response);
 		
 	}
 

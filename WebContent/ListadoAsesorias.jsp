@@ -30,8 +30,8 @@
 				<td>${asesoria.getHora()}</td>
 				<td>${asesoria.getMotivo()}</td>
 				<td>${asesoria.getDetalle()}</td>
-				<td>${asesoria.getId_profesional()}</td>
-				<td>${asesoria.getId_cliente()}</td>
+				<td>${asesoria.getProfesional()}</td>
+				<td>${asesoria.getCliente()}</td>
 						<td>
 			<a href="${pageContext.request.contextPath}/EliminarAsesoria?id=${asesoria.getId_asesoria()}">Eliminar</a>
 			&nbsp;

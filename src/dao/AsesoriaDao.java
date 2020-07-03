@@ -21,8 +21,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO asesorias(fecha, hora, motivo, detalle, profesional_id_profesional, cliente_id_cliente) VALUES (TO_DATE('" + asesoria.getFecha() + "','dd/mm/yyyy'), TO_DATE('" + asesoria.getHora() + "','dd/mm/yyyy hh:mi:ss'),'" + asesoria.getMotivo() + "','" + asesoria.getDetalle() + "','" + asesoria.getId_profesional() + "','" + asesoria.getId_cliente() + "')";
-		System.out.println(sql);
+		String sql = "INSERT INTO asesorias(fecha, hora, motivo, detalle, profesional_id_profesional, cliente_id_cliente) VALUES (TO_DATE('" + asesoria.getFecha() + "','dd/mm/yyyy'), TO_DATE('" + asesoria.getHora() + "','dd/mm/yyyy hh24:mi:ss'),'" + asesoria.getMotivo() + "','" + asesoria.getDetalle() + "','" + asesoria.getId_profesional() + "','" + asesoria.getId_cliente() + "')";
+//		System.out.println(sql);
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -46,8 +46,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT id_asesoria, fecha, hora, motivo, detalle, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente";
-		System.out.println(sql);
+		String sql = "SELECT id_asesoria, fecha, hora, motivo, detalle, profesional_id_profesional, cliente_id_cliente, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente";
+//		System.out.println(sql);
 		List<Asesoria> listaAsesorias = new ArrayList<Asesoria>();
 		
 		try {
@@ -61,6 +61,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 				c.setHora(rs.getString("hora"));
 				c.setMotivo(rs.getString("motivo"));
 				c.setDetalle(rs.getString("detalle"));
+				c.setId_profesional(rs.getInt("profesional_id_profesional"));
+				c.setId_cliente(rs.getInt("cliente_id_cliente"));
 				c.setProfesional(rs.getString("profesional"));
 				c.setCliente(rs.getString("cliente"));
 				listaAsesorias.add(c);

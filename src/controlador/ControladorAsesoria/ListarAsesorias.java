@@ -39,7 +39,7 @@ public class ListarAsesorias extends HttpServlet {
 		lasesorias = asesoriadao.leerAsesoria();
 			
 		request.setAttribute("listadoasesorias",lasesorias);
-		request.getRequestDispatcher("ListadoAsesorias.jsp").forward(request,response);
+		request.getRequestDispatcher("asesoriaCliente.jsp").forward(request,response);
 	}
 
 	/**
