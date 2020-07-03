@@ -1,6 +1,5 @@
 package dao;
 
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,20 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import conectar.ConexionSingleton;
-import modelo.Cliente;
-import idao.iClienteDao;
+import idao.iReporteAccidenteDao;
+import modelo.ReporteAccidente;
 
-public class ClienteDao implements iClienteDao{
+public class ReporteAccidenteDao implements iReporteAccidenteDao {
 
     @Override
-    public boolean crearCliente(Cliente cl) {
+    public boolean crearReporteAccidente(ReporteAccidente reporte) {
         // TODO Auto-generated method stub
-    boolean registrar = false;
+        boolean registrar = false;
         
         Statement stm = null;
         Connection con = null;
         
-        String sql = "INSERT INTO cliente VALUES (null,'" +cl.getNombreEmpresa()+ "','"+ cl.getRut()+"','"+cl.getFechaRegistro()+"')";       
+        String sql = "INSERT INTO reporteaccidente VALUES (null,'" +reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"')";       
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -31,7 +30,7 @@ public class ClienteDao implements iClienteDao{
                 stm.close();
                 //con.close();
         }catch(SQLException e) {
-                System.out.println("Error: Clase ClienteDao, metodo crearCliente");
+                System.out.println("Error: Clase ReporteAccidenteDao, metodo crearReporteAccidente");
                 e.printStackTrace();
         }
         
@@ -39,48 +38,49 @@ public class ClienteDao implements iClienteDao{
     }
 
     @Override
-    public List<Cliente> leerCliente() {
+    public List<ReporteAccidente> leerReporteAccidente() {
         // TODO Auto-generated method stub
         Connection con = null;
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from cliente ORDER BY ID";
+        String sql = "select * from reporteaccidente ORDER BY ID";
         
-        List<Cliente> listaClientes = new ArrayList<Cliente>();
+        List<ReporteAccidente> listaReporteAccidentes = new ArrayList<ReporteAccidente>();
         
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
                 rs = stm.executeQuery(sql);
                 while (rs.next()) {
-                        Cliente c = new Cliente();
-                        c.setId(rs.getInt(1));
-                        c.setNombreEmpresa(rs.getString(2));
-                        c.setRut(rs.getString(3));
-                        c.setFechaRegistro(rs.getString(4));
-                        listaClientes.add(c);
+                        ReporteAccidente c = new ReporteAccidente();
+                        c.setIdReporteAccidente(rs.getInt(1));
+                        c.setFecha(rs.getString(2));
+                        c.setDireccion(rs.getString(3));
+                        c.setLabor(rs.getString(4));
+                        c.setDescripcion(rs.getString(5));
+                        listaReporteAccidentes.add(c);
                 }
                 stm.close();
                 rs.close();
                 //con.close();
         } catch(SQLException e) {
-                System.out.println("Error: Clase ClienteDao, metodo leerCliente ");
+                System.out.println("Error: Clase ReporteAccidenteDao, metodo leerReporteAccidente ");
                 e.printStackTrace();
         }
         
-        return listaClientes;
+        return listaReporteAccidentes;
     }
 
     @Override
-    public boolean actualizarCliente(Cliente cl) {
+    public boolean actualizarReporteAccidente(ReporteAccidente reporte) {
         // TODO Auto-generated method stub
         Connection con = null;
         Statement stm = null;
         
         boolean actualizar = false;
         
-        String sql = "UPDATE cliente SET nombre = '" + cl.getNombreEmpresa()+ "','"+ cl.getRut()+"','"+cl.getFechaRegistro()+"')";
+        String sql = "UPDATE reporteaccidente SET fecha = '" + reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"')";
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -90,7 +90,7 @@ public class ClienteDao implements iClienteDao{
                 stm.close();
                 //con.close();
         }catch(SQLException e) {
-                System.out.println("Error: Clase ClienteDao, metodo actualizarUsuario");
+                System.out.println("Error: Clase ReporteAccidenteDao, metodo actualizarReporteAccidente");
                 e.printStackTrace();
         }
         
@@ -99,14 +99,14 @@ public class ClienteDao implements iClienteDao{
     }
 
     @Override
-    public boolean eliminarCliente(Cliente cl) {
+    public boolean eliminarReporteAccidente(ReporteAccidente reporte) {
         // TODO Auto-generated method stub
         Connection con = null;
         Statement stm = null;
         
         boolean eliminar = false;
         
-        String sql = "DELETE FROM cliente WHERE id = " + cl.getId();
+        String sql = "DELETE FROM reporteaccidente WHERE id = " + reporte.getIdReporteAccidente();
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -116,7 +116,7 @@ public class ClienteDao implements iClienteDao{
                 stm.close();
                 //con.close();
         }catch(SQLException e) {
-                System.out.println("Error: Clase ClienteDao, metodo eliminarCliente");
+                System.out.println("Error: Clase ReporteAccidenteDao, metodo eliminarReporteAccidente");
                 e.printStackTrace();
         }
         
@@ -124,34 +124,37 @@ public class ClienteDao implements iClienteDao{
     }
 
     @Override
-    public Cliente obtenerCliente(int id_cliente) {
+    public ReporteAccidente obtenerReporteAccidente(int id_ReporteAccidente) {
         // TODO Auto-generated method stub
         Connection con = null;
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from cliente where ID = " + id_cliente;
+        String sql = "select * from cliente where ID = " + id_ReporteAccidente;
         
-        Cliente u = new Cliente();
+        ReporteAccidente u = new ReporteAccidente();
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
                 rs = stm.executeQuery(sql);
                 while (rs.next()) {
-                        u.setId(rs.getInt(1));
-                        u.setNombreEmpresa(rs.getString(2));
-                        u.setRut(rs.getString(3));
-                        u.setFechaRegistro(rs.getString(4));
+                        u.setIdReporteAccidente(rs.getInt(1));
+                        u.setFecha(rs.getString(2));
+                        u.setDireccion(rs.getString(3));
+                        u.setLabor(rs.getString(4));
+                        u.setDescripcion(rs.getString(4));
                 }
                 stm.close();
                 rs.close();
                 //con.close();
         } catch(SQLException e) {
-                System.out.println("Error: Clase ClienteDao, metodo obtenerCliente ");
+                System.out.println("Error: Clase ReporteAccidenteDao, metodo obtenerReporteAccidente ");
                 e.printStackTrace();
         }
         
         return u;
     }
+
+    
 
 }
