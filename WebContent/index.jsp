@@ -37,7 +37,7 @@
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="profesional.jsp"  target="myFrame">Control Profesional</a>
-	          <a class="dropdown-item" href="#">Ingresar plan de mejora mejora</a>
+	          <a class="dropdown-item" href="${pageContext.request.contextPath}/LoginUsuario">Ingresar plan de mejora mejora</a>
 	          <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a> 
 	          <a class="dropdown-item" href="#">Agendar Capacitacion</a>        
 	        
