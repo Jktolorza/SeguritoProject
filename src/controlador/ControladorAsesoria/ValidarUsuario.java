@@ -91,9 +91,8 @@ public class ValidarUsuario extends HttpServlet {
 		} else {
 			// creacion de sesion
 			HttpSession misession = (HttpSession) request.getSession();
-			misession.setAttribute("sesionuser", user);
-
-			response.sendRedirect(request.getContextPath() + "/index.jsp");
+			misession.setAttribute("sesionuser", user); 
+			response.sendRedirect(request.getContextPath() + "/AsignarRol");
 		}
 		
 	}
