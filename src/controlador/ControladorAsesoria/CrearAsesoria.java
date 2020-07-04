@@ -101,8 +101,8 @@ public class CrearAsesoria extends HttpServlet {
 			
 		request.setAttribute("listadoasesorias",lasesorias);
 		
-		
-		request.getRequestDispatcher("asesoriaProfesional.jsp").forward(request, response);
+		doGet(request,response);
+//		request.getRequestDispatcher("CrearAsesoria").forward(request, response);
 		
 	}
 

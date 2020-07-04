@@ -86,8 +86,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE asesorias SET fecha = '" + asesoria.getFecha() + "', hora = '" + asesoria.getHora() + "', motivo = '" + asesoria.getMotivo() + "', detalle = '"+asesoria.getDetalle()+"', profesional_id_profesional = '"+ asesoria.getId_profesional()+"', cliente_id_cliente = '"+ asesoria.getId_cliente()+"' WHERE id_asesoria = '" + asesoria.getId_asesoria() + "'";
-		
+		String sql = "UPDATE asesorias SET fecha = TO_DATE('" + asesoria.getFecha() +"','dd/mm/yyyy'), hora = TO_DATE('" + asesoria.getHora() + "','dd/mm/yyyy hh24:mi:ss'), motivo = '" + asesoria.getMotivo() + "', detalle = '"+asesoria.getDetalle()+"', profesional_id_profesional = '"+ asesoria.getId_profesional()+"', cliente_id_cliente = '"+ asesoria.getId_cliente()+"' WHERE id_asesoria = '" + asesoria.getId_asesoria() + "'";
+		System.out.println(sql);
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
