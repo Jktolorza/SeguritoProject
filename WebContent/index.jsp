@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +21,21 @@
     <ul class="navbar-nav ">
 
      <!-- Datos Administrador -->
-            <li class="nav-item dropdown">
+            
+<li class="nav-item dropdown">
+      <c:choose> 
+         <c:when test = "${rol == 'administrador'}">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Datos Administrador
 	        </a>
+         </c:when>
+         <c:otherwise>
+      	        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Datos Administrador
+	        </a>
+         </c:otherwise>
+      </c:choose>
+            
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="profesional.jsp"  target="myFrame">Control Profesional</a>
    			  <a class="dropdown-item" href="cliente.jsp"  target="myFrame">Control Cliente</a>
@@ -33,9 +45,19 @@
  
              <!-- Detalle Profesional -->
        <li class="nav-item dropdown">
+             <c:choose> 
+         <c:when test = "${rol == 'profesional'}">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Datos Profesional
 	        </a>
+         </c:when>
+         <c:otherwise>
+      	        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Datos Profesional
+	        </a>
+         </c:otherwise>
+      </c:choose>
+    
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="profesional.jsp"  target="myFrame">Control Profesional</a>
 	          <a class="dropdown-item" href="${pageContext.request.contextPath}/LoginUsuario">Ingresar plan de mejora mejora</a>
@@ -46,9 +68,19 @@
       </li>
        <!-- Detalle Cliente -->
        <li class="nav-item dropdown">
+                    <c:choose> 
+         <c:when test = "${rol == 'cliente'}">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Datos Cliente
 	        </a>
+         </c:when>
+         <c:otherwise>
+      	        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Datos Cliente
+	        </a>
+         </c:otherwise>
+      </c:choose>
+       
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="cliente.jsp" target="myFrame">Control Cliente</a>
 	          <a class="dropdown-item" href="#">Actividades de mejora</a>   
