@@ -28,7 +28,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                 stm.execute(sql);
                 registrar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ReporteAccidenteDao, metodo crearReporteAccidente");
                 e.printStackTrace();
@@ -64,7 +64,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                 }
                 stm.close();
                 rs.close();
-                //con.close();
+                con.close();
         } catch(SQLException e) {
                 System.out.println("Error: Clase ReporteAccidenteDao, metodo leerReporteAccidente ");
                 e.printStackTrace();
@@ -89,7 +89,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                 stm.execute(sql);
                 actualizar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ReporteAccidenteDao, metodo actualizarReporteAccidente");
                 e.printStackTrace();
@@ -115,7 +115,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                 stm.execute(sql);
                 eliminar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ReporteAccidenteDao, metodo eliminarReporteAccidente");
                 e.printStackTrace();
@@ -148,7 +148,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                 }
                 stm.close();
                 rs.close();
-                //con.close();
+                con.close();
         } catch(SQLException e) {
                 System.out.println("Error: Clase ReporteAccidenteDao, metodo obtenerReporteAccidente ");
                 e.printStackTrace();

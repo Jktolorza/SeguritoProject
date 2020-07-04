@@ -32,7 +32,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.execute(sql);
 			registrar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase UsuarioDao, m�todo crearUsuario");
 			e.printStackTrace();
@@ -68,7 +68,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase CapacitacionDao, m�todo leerCapacitacion ");
 			e.printStackTrace();
@@ -94,7 +94,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.execute(sql);
 			actualizar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase CapacitacionDao, m�todo actualizar");
 			e.printStackTrace();
@@ -120,7 +120,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.execute(sql);
 			eliminar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase CapacitacionDao, m�todo eliminarCapacitacion");
 			e.printStackTrace();
@@ -150,7 +150,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase CapacitacionDao, m�todo obtenerCapacitacion ");
 			e.printStackTrace();

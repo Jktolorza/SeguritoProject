@@ -32,9 +32,9 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 			stm.execute(sql);
 			registrar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ActividadesMejorasDao, método crearActividad");
+			System.out.println("Error: Clase ActividadesMejorasDao, mï¿½todo crearActividad");
 			e.printStackTrace();
 		}
 		
@@ -72,9 +72,9 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ActividadesMejoraDao, método leerActividad ");
+			System.out.println("Error: Clase ActividadesMejoraDao, mï¿½todo leerActividad ");
 			e.printStackTrace();
 		}
 		
@@ -98,9 +98,9 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 			stm.execute(sql);
 			actualizar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ActividadesMejoraDao, método actualizar");
+			System.out.println("Error: Clase ActividadesMejoraDao, mï¿½todo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -124,9 +124,9 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 			stm.execute(sql);
 			eliminar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase ActividadesMejorasDao, método eliminarActividad");
+			System.out.println("Error: Clase ActividadesMejorasDao, mï¿½todo eliminarActividad");
 			e.printStackTrace();
 		}
 		
@@ -158,9 +158,9 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase ActividadesMejorasDao, método obtenerActividad ");
+			System.out.println("Error: Clase ActividadesMejorasDao, mï¿½todo obtenerActividad ");
 			e.printStackTrace();
 		}
 		

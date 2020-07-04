@@ -29,7 +29,7 @@ public class ClienteDao implements iClienteDao{
                 stm.execute(sql);
                 registrar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo crearCliente");
                 e.printStackTrace();
@@ -63,7 +63,7 @@ public class ClienteDao implements iClienteDao{
                 }
                 stm.close();
                 rs.close();
-                //con.close();
+                con.close();
         } catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo leerCliente ");
                 e.printStackTrace();
@@ -88,7 +88,7 @@ public class ClienteDao implements iClienteDao{
                 stm.execute(sql);
                 actualizar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo actualizarUsuario");
                 e.printStackTrace();
@@ -114,7 +114,7 @@ public class ClienteDao implements iClienteDao{
                 stm.execute(sql);
                 eliminar = true;
                 stm.close();
-                //con.close();
+                con.close();
         }catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo eliminarCliente");
                 e.printStackTrace();
@@ -145,7 +145,7 @@ public class ClienteDao implements iClienteDao{
                 }
                 stm.close();
                 rs.close();
-                //con.close();
+                con.close();
         } catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo obtenerCliente ");
                 e.printStackTrace();

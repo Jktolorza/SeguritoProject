@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.NamingException;
+
 import conectar.ConexionSingleton;
 import idao.iAsesoriaDao;
 import modelo.Asesoria;
@@ -29,7 +31,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			stm.execute(sql);
 			registrar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase AsesoriaDao, metodo crearAsesoria");
 			e.printStackTrace();
@@ -68,7 +70,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase AsesoriaDao, metodo leerAsesoria ");
 			e.printStackTrace();
@@ -93,7 +95,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			stm.execute(sql);
 			actualizar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase AsesoriaDao, metodo actualizar");
 			e.printStackTrace();
@@ -119,7 +121,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			stm.execute(sql);
 			eliminar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase AsesoriaDao, metodo eliminar");
 			e.printStackTrace();
@@ -151,7 +153,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase AsesoriaDao, metodo obtener ");
 			e.printStackTrace();

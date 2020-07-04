@@ -9,16 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-<context-param>
-  	<param-name>jdbcURL</param-name>
-  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
-  </context-param>
-  <context-param>
-  	<param-name>jdbcUsername</param-name>
-  	<param-value>seguritoproject</param-value>
-  </context-param>
-  <context-param>
-  	<param-name>jdbcPassword</param-name>
-  	<param-value>seguritoproject</param-value>
-  </context-param>
+<env-entry>
+  	<env-entry-name>jdbcURL</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>jdbc:oracle:thin:@localhost:1521:xe</env-entry-value>
+  </env-entry>
+  <env-entry>
+  	<env-entry-name>jdbcUsername</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>seguritoproject</env-entry-value>
+  </env-entry>
+    <env-entry>
+  	<env-entry-name>jdbcPassword</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>seguritoproject</env-entry-value>
+  </env-entry>
+      <env-entry>
+  	<env-entry-name>jdbcDriver</env-entry-name>
+  	<env-entry-type>java.lang.String</env-entry-type>
+  	<env-entry-value>oracle.jdbc.driver.OracleDriver</env-entry-value>
+  </env-entry>
 </web-app>

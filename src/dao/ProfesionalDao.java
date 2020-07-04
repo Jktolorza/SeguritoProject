@@ -30,7 +30,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.execute(sql);
 			registrar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, m�todo crearProfesional");
 			e.printStackTrace();
@@ -68,7 +68,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, m�todo leerProfesional ");
 			e.printStackTrace();
@@ -94,7 +94,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.execute(sql);
 			actualizar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, m�todo actualizar");
 			e.printStackTrace();
@@ -120,7 +120,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			stm.execute(sql);
 			eliminar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, m�todo eliminarProfesional");
 			e.printStackTrace();
@@ -152,7 +152,7 @@ public class ProfesionalDao implements iProfesionalDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, m�todo obtenerProfesional ");
 			e.printStackTrace();

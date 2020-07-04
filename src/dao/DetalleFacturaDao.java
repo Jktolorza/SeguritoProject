@@ -32,9 +32,9 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			stm.execute(sql);
 			registrar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, método crearDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, mï¿½todo crearDetalleFactura");
 			e.printStackTrace();
 		}
 		
@@ -69,9 +69,9 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, método leerDetalleFactura ");
+			System.out.println("Error: Clase DetalleFacturaDao, mï¿½todo leerDetalleFactura ");
 			e.printStackTrace();
 		}
 		
@@ -95,9 +95,9 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			stm.execute(sql);
 			actualizar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, método actualizar");
+			System.out.println("Error: Clase DetalleFacturaDao, mï¿½todo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -121,9 +121,9 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			stm.execute(sql);
 			eliminar = true;
 			stm.close();
-			//con.close();
+			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, método eliminarDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, mï¿½todo eliminarDetalleFactura");
 			e.printStackTrace();
 		}
 		
@@ -152,9 +152,9 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			}
 			stm.close();
 			rs.close();
-			//con.close();
+			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, método obtenerDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, mï¿½todo obtenerDetalleFactura");
 			e.printStackTrace();
 		}
 		
