@@ -18,7 +18,7 @@
 			<form action="EditarAsesoria" method="post">
 				<div class="form-group">
 					<label>Fechayhora: </label>
-					<input type="text" name="txtfechayhora" class="form-control" value="${datosasesoria.getFecha()}">			
+					<input type="text" name="txtfechayhora" class="form-control" value="${datosasesoria.getFechayhora()}">			
 				</div>
 				<div class="form-group">
 					<label>Motivo: </label>
