@@ -24,7 +24,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO capacitaciones VALUES (null,'" + cap.getFecha() + "','"+ cap.getHora()+"','"+cap.getTema()+"','"+cap.getContenido()+"')";
+		String sql = "INSERT INTO capacitaciones VALUES (null,'" + cap.getFechayhora() + "','"+cap.getTema()+"','"+cap.getContenido()+"')";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -34,7 +34,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase UsuarioDao, método crearUsuario");
+			System.out.println("Error: Clase UsuarioDao, mï¿½todo crearUsuario");
 			e.printStackTrace();
 		}
 		
@@ -61,17 +61,16 @@ public class CapacitacionDao implements iCapacitacionDao {
 			while (rs.next()) {
 				Capacitacion c = new Capacitacion();
 				c.setId_capacitacion(rs.getInt(1));
-				c.setFecha(rs.getString(2));
-				c.setHora(rs.getString(3));
-				c.setTema(rs.getString(4));
-				c.setContenido(rs.getString(5));
+				c.setFechayhora(rs.getString(2));
+				c.setTema(rs.getString(3));
+				c.setContenido(rs.getString(4));
 				listaCapacitaciones.add(c);
 			}
 			stm.close();
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase CapacitacionDao, método leerCapacitacion ");
+			System.out.println("Error: Clase CapacitacionDao, mï¿½todo leerCapacitacion ");
 			e.printStackTrace();
 		}
 		
@@ -87,7 +86,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE capacitaciones SET fecha = '" + cap.getFecha() + "', hora = '" + cap.getHora() + "', tema = '" + cap.getTema() + "', contenido = '"+ cap.getContenido()+"' WHERE id = '" + cap.getId_capacitacion() + "'";
+		String sql = "UPDATE capacitaciones SET fecha = '" + cap.getFechayhora() + "', tema = '" + cap.getTema() + "', contenido = '"+ cap.getContenido()+"' WHERE id = '" + cap.getId_capacitacion() + "'";
 		
 		try {
 			con = ConexionSingleton.getConnection();
@@ -97,7 +96,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase CapacitacionDao, método actualizar");
+			System.out.println("Error: Clase CapacitacionDao, mï¿½todo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -123,7 +122,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 			stm.close();
 			//con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase CapacitacionDao, método eliminarCapacitacion");
+			System.out.println("Error: Clase CapacitacionDao, mï¿½todo eliminarCapacitacion");
 			e.printStackTrace();
 		}
 		
@@ -145,16 +144,15 @@ public class CapacitacionDao implements iCapacitacionDao {
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
 				u.setId_capacitacion(rs.getInt(1));
-				u.setFecha(rs.getString(2));
-				u.setHora(rs.getString(3));
-				u.setTema(rs.getString(4));
-				u.setContenido(rs.getString(5));
+				u.setFechayhora(rs.getString(2));
+				u.setTema(rs.getString(3));
+				u.setContenido(rs.getString(4));
 			}
 			stm.close();
 			rs.close();
 			//con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase CapacitacionDao, método obtenerCapacitacion ");
+			System.out.println("Error: Clase CapacitacionDao, mï¿½todo obtenerCapacitacion ");
 			e.printStackTrace();
 		}
 		

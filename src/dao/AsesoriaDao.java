@@ -21,8 +21,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO asesorias(fecha, hora, motivo, detalle, profesional_id_profesional, cliente_id_cliente) VALUES (TO_DATE('" + asesoria.getFecha() + "','dd/mm/yyyy'), TO_DATE('" + asesoria.getHora() + "','dd/mm/yyyy hh24:mi:ss'),'" + asesoria.getMotivo() + "','" + asesoria.getDetalle() + "','" + asesoria.getId_profesional() + "','" + asesoria.getId_cliente() + "')";
-//		System.out.println(sql);
+		String sql = "INSERT INTO asesorias(fechayhora, motivo, detalle, profesional_id_profesional, cliente_id_cliente) VALUES (TO_DATE('" + asesoria.getFechayhora() + "','dd/mm/yyyy hh24:mi'),'" + asesoria.getMotivo() + "','" + asesoria.getDetalle() + "','" + asesoria.getId_profesional() + "','" + asesoria.getId_cliente() + "')";
+		System.out.println(sql);
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -46,8 +46,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT id_asesoria, fecha, hora, motivo, detalle, profesional_id_profesional, cliente_id_cliente, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente";
-//		System.out.println(sql);
+		String sql = "SELECT id_asesoria, fechayhora, motivo, detalle, profesional_id_profesional, cliente_id_cliente, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente";
+		System.out.println(sql);
 		List<Asesoria> listaAsesorias = new ArrayList<Asesoria>();
 		
 		try {
@@ -57,8 +57,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			while (rs.next()) {
 				Asesoria c = new Asesoria();
 				c.setId_asesoria(rs.getInt("id_asesoria"));
-				c.setFecha(rs.getString("fecha"));
-				c.setHora(rs.getString("hora"));
+				c.setFechayhora(rs.getString("fechayhora"));
 				c.setMotivo(rs.getString("motivo"));
 				c.setDetalle(rs.getString("detalle"));
 				c.setId_profesional(rs.getInt("profesional_id_profesional"));
@@ -86,8 +85,8 @@ public class AsesoriaDao implements iAsesoriaDao {
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE asesorias SET fecha = TO_DATE('" + asesoria.getFecha() +"','dd/mm/yyyy'), hora = TO_DATE('" + asesoria.getHora() + "','dd/mm/yyyy hh24:mi:ss'), motivo = '" + asesoria.getMotivo() + "', detalle = '"+asesoria.getDetalle()+"', profesional_id_profesional = '"+ asesoria.getId_profesional()+"', cliente_id_cliente = '"+ asesoria.getId_cliente()+"' WHERE id_asesoria = '" + asesoria.getId_asesoria() + "'";
-		System.out.println(sql);
+		String sql = "UPDATE asesorias SET fechayhora = TO_DATE('" + asesoria.getFechayhora() +"','dd/mm/yyyy hh24:mi'), motivo = '" + asesoria.getMotivo() + "', detalle = '"+asesoria.getDetalle()+"', profesional_id_profesional = '"+ asesoria.getId_profesional()+"', cliente_id_cliente = '"+ asesoria.getId_cliente()+"' WHERE id_asesoria = '" + asesoria.getId_asesoria() + "'";
+//		System.out.println(sql);
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
@@ -144,8 +143,7 @@ public class AsesoriaDao implements iAsesoriaDao {
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
 				u.setId_asesoria(rs.getInt("id_asesoria"));
-				u.setFecha(rs.getString("fecha"));
-				u.setHora(rs.getString("hora"));
+				u.setFechayhora(rs.getString("fechayhora"));
 				u.setMotivo(rs.getString("motivo"));
 				u.setDetalle(rs.getString("detalle"));
 				u.setId_profesional(rs.getInt("profesional_id_profesional"));

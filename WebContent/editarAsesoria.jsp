@@ -17,12 +17,8 @@
 		<div class="card-body">
 			<form action="EditarAsesoria" method="post">
 				<div class="form-group">
-					<label>Fecha: </label>
-					<input type="text" name="txtfecha" class="form-control" value="${datosasesoria.getFecha()}">			
-				</div>
-				<div class="form-group">
-					<label>Hora: </label>
-					<input type="text" name="txthora" class="form-control" value="${datosasesoria.getHora()}">			
+					<label>Fechayhora: </label>
+					<input type="text" name="txtfechayhora" class="form-control" value="${datosasesoria.getFecha()}">			
 				</div>
 				<div class="form-group">
 					<label>Motivo: </label>

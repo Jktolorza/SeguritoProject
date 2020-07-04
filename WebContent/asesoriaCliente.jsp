@@ -22,8 +22,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Fecha</th>
-						<th>Hora</th>
+						<th>Fecha y Hora</th>
 						<th>Motivo</th>
 						<th>Detalle</th>
 						<th>Profesional</th>
@@ -33,8 +32,7 @@
 				</tbody>
 				<c:forEach items='${listadoasesorias}' var='asesoria'>
 					<tr>
-				<td>${asesoria.getFecha()}</td>
-				<td>${asesoria.getHora()}</td>
+				<td>${asesoria.getFechayhora()}</td>
 				<td>${asesoria.getMotivo()}</td>
 				<td>${asesoria.getDetalle()}</td>
 				<td>${asesoria.getProfesional()}</td>

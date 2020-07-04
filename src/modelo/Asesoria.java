@@ -5,10 +5,7 @@ package modelo;
 
 public class Asesoria {
 private int id_asesoria;
-//private Date fecha = new Date();
-//private Date hora = new Date();
-private String fecha;
-private String hora;
+private String fechayhora;
 private String motivo;
 private String detalle;
 private int id_profesional;
@@ -22,10 +19,9 @@ public Asesoria() {
 	
 }
 
-public Asesoria(String fecha, String hora, String motivo, String detalle, int id_profesional, int id_cliente) {
+public Asesoria(String fechayhora, String motivo, String detalle, int id_profesional, int id_cliente) {
 	super();
-	this.fecha = fecha;
-	this.hora = hora;
+	this.fechayhora = fechayhora;
 	this.motivo = motivo;
 	this.detalle = detalle;
 	this.id_profesional = id_profesional;
@@ -34,12 +30,11 @@ public Asesoria(String fecha, String hora, String motivo, String detalle, int id
 
 
 
-public Asesoria(int id_asesoria, String fecha, String hora, String motivo, String detalle, int id_profesional,
+public Asesoria(int id_asesoria, String fechayhora, String motivo, String detalle, int id_profesional,
 		int id_cliente) {
 	super();
 	this.id_asesoria = id_asesoria;
-	this.fecha = fecha;
-	this.hora = hora;
+	this.fechayhora = fechayhora;
 	this.motivo = motivo;
 	this.detalle = detalle;
 	this.id_profesional = id_profesional;
@@ -52,17 +47,11 @@ public int getId_asesoria() {
 public void setId_asesoria(int id_asesoria) {
 	this.id_asesoria = id_asesoria;
 }
-public String getFecha() {
-	return fecha;
+public String getFechayhora() {
+	return fechayhora;
 }
-public void setFecha(String fecha) {
-	this.fecha = fecha;
-}
-public String getHora() {
-	return hora;
-}
-public void setHora(String hora) {
-	this.hora = hora;
+public void setFechayhora(String fechayhora) {
+	this.fechayhora = fechayhora;
 }
 public String getMotivo() {
 	return motivo;

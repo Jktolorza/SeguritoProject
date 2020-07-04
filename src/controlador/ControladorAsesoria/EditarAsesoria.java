@@ -61,15 +61,10 @@ public class EditarAsesoria extends HttpServlet {
 		asesoria = asesoriadao.obtenerAsesoria(asesoriaid);
 		
 		//transformo las fechas pa q se vean en el mismo formato q acepta sql
-		String fecha1 = asesoria.getFecha();
-		LocalDateTime datetime = LocalDateTime.parse(fecha1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
-		String fecha = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		asesoria.setFecha(fecha);
-		String hora1 = asesoria.getHora();
-		LocalDateTime datetime1 = LocalDateTime.parse(hora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
-		String hora = datetime1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-		System.out.println(hora);
-		asesoria.setHora(hora);
+		String fechayhora1 = asesoria.getFechayhora();
+		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		asesoria.setFechayhora(fechayhora);
 		
 		
 		request.setAttribute("datosasesoria", asesoria);
@@ -83,15 +78,14 @@ public class EditarAsesoria extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		String fecha = request.getParameter("txtfecha");
-		String hora = request.getParameter("txthora");
+		String fechayhora = request.getParameter("txtfechayhora");
 		String motivo  = request.getParameter("txtmotivo");
 		String detalle = request.getParameter("txtdetalle");
 		int id_profesional = Integer.parseInt(request.getParameter("txt_idprofesional"));
 		int id_cliente = Integer.parseInt(request.getParameter("txt_idcliente"));
 		int id = Integer.parseInt(request.getParameter("hdnidasesoria"));
 
-		Asesoria asesoria = new Asesoria(id,fecha,hora,motivo,detalle, id_profesional, id_cliente);
+		Asesoria asesoria = new Asesoria(id,fechayhora,motivo,detalle, id_profesional, id_cliente);
 		
 		AsesoriaDao asesoriadao = new AsesoriaDao();
 		boolean editar = asesoriadao.actualizarAsesoria(asesoria);

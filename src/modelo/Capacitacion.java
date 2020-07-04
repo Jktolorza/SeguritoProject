@@ -4,8 +4,7 @@ public class Capacitacion {
 	
 	//Variables//
 	private int id_capacitacion;
-	private String fecha;
-	private String hora;
+	private String fechayhora;
 	private String tema;
 	private String contenido;
 	private int id_cliente;
@@ -18,10 +17,9 @@ public class Capacitacion {
 		super();
 	}
 
-	public Capacitacion(String fecha, String hora, String tema, String contenido, int id_cliente) {
+	public Capacitacion(String fechayhora, String tema, String contenido, int id_cliente) {
 		super();
-		this.fecha = fecha;
-		this.hora = hora;
+		this.fechayhora = fechayhora;
 		this.tema = tema;
 		this.contenido = contenido;
 		this.id_cliente = id_cliente;
@@ -43,20 +41,12 @@ public class Capacitacion {
 		this.id_capacitacion = id_capacitacion;
 	}
 
-	public String getFecha() {
-		return fecha;
+	public String getFechayhora() {
+		return fechayhora;
 	}
 
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getHora() {
-		return hora;
-	}
-
-	public void setHora(String hora) {
-		this.hora = hora;
+	public void setFechayhora(String fechayhora) {
+		this.fechayhora = fechayhora;
 	}
 
 	public String getTema() {
@@ -86,7 +76,7 @@ public class Capacitacion {
 
 	@Override
 	public String toString() {
-		return "Capacitacion [id_capacitacion=" + id_capacitacion + ", fecha=" + fecha + ", hora=" + hora + ", tema="
+		return "Capacitacion [id_capacitacion=" + id_capacitacion + ", fechayhora=" + fechayhora + ", tema="
 				+ tema + ", contenido=" + contenido + ", id_cliente=" + id_cliente + "]";
 	}
 	

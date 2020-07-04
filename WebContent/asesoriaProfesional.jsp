@@ -17,12 +17,8 @@
 		<div class="card-body">
 			<form action="CrearAsesoria" method="post">
 				<div class="form-group">
-					<label>Fecha: </label>
-					<input type="text" name="txtfecha" class="form-control" placeholder="DD/MM/YYYY">			
-				</div>
-				<div class="form-group">
-					<label>Hora: </label>
-					<input type="text" name="txthora" class="form-control" placeholder="DD/MM/YYYY HH:MM:SS">			
+					<label>Fecha y Hora: </label>
+					<input type="text" name="txtfechayhora" class="form-control" placeholder="DD/MM/YYYY HH:MM">			
 				</div>
 				<div class="form-group">
 					<label>Motivo: </label>
@@ -63,8 +59,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Fecha</th>
-						<th>Hora</th>
+						<th>Fecha y Hora</th>
 						<th>Motivo</th>
 						<th>Detalle</th>
 						<th>Profesional</th>
@@ -75,8 +70,7 @@
 				</tbody>
 				<c:forEach items='${listadoasesorias}' var='asesoria'>
 					<tr>
-				<td>${asesoria.getFecha()}</td>
-				<td>${asesoria.getHora()}</td>
+				<td>${asesoria.getFechayhora()}</td>
 				<td>${asesoria.getMotivo()}</td>
 				<td>${asesoria.getDetalle()}</td>
 				<td>${asesoria.getProfesional()}</td>
