@@ -53,7 +53,7 @@ public class CrearReporte extends HttpServlet {
 		request.setAttribute("listadoreporteaccidentes",lreporteaccidentes);
 		
 		
-		request.getRequestDispatcher("reportarAccidente.jsp").forward(request, response);
+		request.getRequestDispatcher("accidenteCliente.jsp").forward(request, response);
 		
 	}
 

@@ -61,7 +61,7 @@ public class EditarReporte extends HttpServlet {
 		
 		
 		request.setAttribute("datosreporteaccidente", reporteaccidente);
-		request.getRequestDispatcher("editarReporteAccidente.jsp").forward(request, response);
+		request.getRequestDispatcher("accidenteEditar.jsp").forward(request, response);
 		
 	}
 
