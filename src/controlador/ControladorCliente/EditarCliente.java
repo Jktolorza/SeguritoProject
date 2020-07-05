@@ -50,7 +50,7 @@ public class EditarCliente extends HttpServlet {
 		//transformo las fechas pa q se vean en el mismo formato q acepta sql
 		String fechayhora1 = cliente.getFechaRegistro();
 		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
-		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		cliente.setFechaRegistro(fechayhora);
 		
 		request.setAttribute("datoscliente", cliente);
