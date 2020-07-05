@@ -53,7 +53,7 @@ public class EliminarCliente extends HttpServlet {
 			mensaje = "Ocurrio un problema  al eliminar el cliente";
 		request.setAttribute("cumensaje", mensaje);
 		request.setAttribute("listadoclientes", listadoeliminar);
-		request.getRequestDispatcher("ListarClientes").forward(request, response);
+		request.getRequestDispatcher("ListarCliente").forward(request, response);
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

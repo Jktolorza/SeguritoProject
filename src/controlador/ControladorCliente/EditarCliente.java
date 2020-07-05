@@ -1,6 +1,8 @@
 package controlador.ControladorCliente;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +46,12 @@ public class EditarCliente extends HttpServlet {
 		Cliente cliente = new Cliente();
 		cliente = clientedao.obtenerCliente(clienteid);
 		
+		
+		//transformo las fechas pa q se vean en el mismo formato q acepta sql
+		String fechayhora1 = cliente.getFechaRegistro();
+		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		cliente.setFechaRegistro(fechayhora);
 		
 		request.setAttribute("datoscliente", cliente);
 		request.getRequestDispatcher("editarCliente.jsp").forward(request, response);

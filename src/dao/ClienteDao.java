@@ -106,7 +106,7 @@ public class ClienteDao implements iClienteDao{
         
         boolean eliminar = false;
         
-        String sql = "DELETE FROM cliente WHERE id = " + cl.getId_cliente();
+        String sql = "DELETE FROM cliente WHERE id_cliente = " + cl.getId_cliente();
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -130,7 +130,7 @@ public class ClienteDao implements iClienteDao{
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from cliente where ID = " + id_cliente;
+        String sql = "select * from cliente where id_cliente = " + id_cliente;
         
         Cliente u = new Cliente();
         try {
