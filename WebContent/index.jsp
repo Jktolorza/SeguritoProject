@@ -64,7 +64,7 @@
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarProfesional" target="myFrame">Control Profesional</a>
                                 <a class="dropdown-item" href="#" target="myFrame">Ingresar plan de mejora mejora</a>
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a>
-                                <a class="dropdown-item" href="#">Agendar Capacitacion</a>
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCapacitacion" target="myFrame">Agendar Capacitacion</a>
 
                             </div>
                         </li>

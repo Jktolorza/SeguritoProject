@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Editar Capacitacion</title>
 <!-- Css de boostrap -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -13,39 +14,42 @@
 </head>
 <body>
 	<div class="d-sm-flex">
-		<div class="card col-sm-4">
 			<div class="card-body">
-				<form>
+				<form action="EditarCapacitacion" method="post">	
 
 					<div class="form-group">
-						<label>Fecha: </label> <input type="text" name="txtFecha"
-							class="form-control">
+						<label>Fecha y Hora: </label> 
+						<input type="text" name="txtfechayhora" class="form-control" value="${datoscapacitacion.getFechayhora()}">
 					</div>
 					<div class="form-group">
-						<label>Hora: </label> <input type="text" name="txtHora"
-							class="form-control">
+						<label>Tema: </label> 
+						<input type="text" name="txttema" class="form-control" value="${datoscapacitacion.getTema()}">
 					</div>
 					<div class="form-group">
-						<label>Tema: </label> <input type="text" name="txtTema"
-							class="form-control">
+						<label>Contenido: </label> 
+						<input type="text" name="txtcontenido" class="form-control" value="${datoscapacitacion.getContenido()}">
 					</div>
 					<div class="form-group">
-						<label>Contenido: </label> <input type="text" name="txtContenido"
-							class="form-control">
+						<input type="hidden" name="hdnidcapacitacion" class="form-control" value="${datoscapacitacion.getId_capacitacion()}">			
 					</div>
 
 					<div class="form-group">
-						<label>Profesional a cargo </label> <select
-							class="form-control form-control">
-							<option>Selecione el Profesional</option>
-						</select>
+						<label>Profesional a cargo </label> 					
+						<select name="txt_idprofesional" class="form-control form-control">				
+	  					<c:forEach items="${listadoprofesionales}" var="profesional">
+							<option value="${profesional.getId_profesional()}" ${datoscapacitacion.getId_profesional() == profesional.getId_profesional() ? 'selected' : ''}>${profesional.getNombre()} ${profesional.getApellido()} </option>
+						</c:forEach>
+					</select>
 					</div>
 					<div class="form-group">
-						<label>Cliente</label> <select class="form-control form-control">
-							<option>Selecione el Cliente</option>
-						</select>
+						<label>Cliente</label> 
+					<select name="txt_idcliente" class="form-control form-control">				
+	  				<c:forEach items="${listadoclientes}" var="cliente">
+				<option value="${cliente.getId_cliente()}" ${datoscapacitacion.getId_cliente() == cliente.getId_cliente() ? 'selected' : ''}>${cliente.getNombreEmpresa()} </option>
+			</c:forEach>
+					</select>	
 					</div>
-					<input type="submit" name="accion" value="Agregar"
+					<input type="submit" name="accion" value="Editar"
 						class="btn btn-info"> <input type="reset" value="Cancelar"
 						class="btn btn-info">
 				</form>
