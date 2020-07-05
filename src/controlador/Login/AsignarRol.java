@@ -45,6 +45,7 @@ public class AsignarRol extends HttpServlet {
 //			request.getRequestDispatcher("ListadoUsuarios.jsp").forward(request, response);
 //			//response.sendRedirect("http://www.google.cl");	
 			request.setAttribute("rol", rol);
+			request.setAttribute("nickname", suser.getNickname());
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

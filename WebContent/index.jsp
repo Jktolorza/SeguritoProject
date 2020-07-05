@@ -105,8 +105,8 @@
 				    <a class="dropdown-item" href="#">
 				    	<img src="./prevencion.png" alt="60" width="60"/>
 				    </a>
-				    <a class="dropdown-item" href="#">Usuario</a>
-				    <a class="dropdown-item" href="#">Correo</a>
+				    <a class="dropdown-item" href="#">${rol}</a>
+				    <a class="dropdown-item" href="#">${nickname}</a>
 				    <div class="dropdown-divider"></div>
 				    <form action="CerrarSesion" method="Post">
 				    	<button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
