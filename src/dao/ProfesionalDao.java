@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import modelo.Profesional;
 import conectar.ConexionSingleton;
 
 public class ProfesionalDao implements iProfesionalDao {
-
+	public static boolean integridad =false;
 	@Override
 	public boolean crearProfesional(Profesional prf) {
 		// TODO Auto-generated method stub
@@ -134,7 +135,11 @@ public class ProfesionalDao implements iProfesionalDao {
 			eliminar = true;
 			stm.close();
 			con.close();
-		}catch(SQLException e) {
+		}catch(SQLIntegrityConstraintViolationException ex) {
+    		System.out.println("Error de integridad: Debe eliminar primero los datos asociados a este campo en el resto de las tablas");
+    		integridad = true;
+    		ex.printStackTrace();
+      }catch(SQLException e) {
 			System.out.println("Error: Clase ProfesionalDao, metodo eliminarProfesional");
 			e.printStackTrace();
 		}

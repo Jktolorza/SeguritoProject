@@ -4,6 +4,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +14,11 @@ import modelo.Cliente;
 import idao.iClienteDao;
 
 public class ClienteDao implements iClienteDao{
+	
+public static boolean integridad =false;
 
-    @Override
+
+	@Override
     public boolean crearCliente(Cliente cl) {
         // TODO Auto-generated method stub
     boolean registrar = false;
@@ -106,9 +110,8 @@ public class ClienteDao implements iClienteDao{
         Statement stm = null;
         
         boolean eliminar = false;
-        
+
         String sql = "DELETE FROM cliente WHERE id_cliente = " + cl.getId_cliente();
-        
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -116,7 +119,11 @@ public class ClienteDao implements iClienteDao{
                 eliminar = true;
                 stm.close();
                 con.close();
-        }catch(SQLException e) {
+        }catch(SQLIntegrityConstraintViolationException ex) {
+        		System.out.println("Error de integridad: Debe eliminar primero los datos asociados a este campo en el resto de las tablas");
+        		integridad = true;
+        		ex.printStackTrace();
+          }catch(SQLException e) {
                 System.out.println("Error: Clase ClienteDao, metodo eliminarCliente");
                 e.printStackTrace();
         }
