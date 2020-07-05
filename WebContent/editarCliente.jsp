@@ -15,7 +15,7 @@
 <div class="d-sm-flex">
 	<div class="card col-sm-4">
 		<div class="card-body">
-			<form action ="CrearCliente" method="post">
+			<form action ="EditarCliente" method="post">
 				<div class="form-group">
 					<label>Nombre de la empresa: </label>
 					<input type="text" name="txtNombreEmpresa" class="form-control" value="${datoscliente.getNombreEmpresa()}">			

@@ -22,7 +22,8 @@ public class ClienteDao implements iClienteDao{
         Statement stm = null;
         Connection con = null;
         
-        String sql = "INSERT INTO cliente VALUES (null,'" +cl.getNombreEmpresa()+ "','"+ cl.getRut()+"','"+cl.getFechaRegistro()+"')";       
+        String sql = "INSERT INTO cliente(nombreempresa, rutempresa, fecharegistro) VALUES ('" +cl.getNombreEmpresa()+ "','"+ cl.getRut()+"', TO_DATE('"+cl.getFechaRegistro()+"', 'dd/mm/yyyy'))";       
+        System.out.println(sql);
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -80,8 +81,8 @@ public class ClienteDao implements iClienteDao{
         
         boolean actualizar = false;
         
-        String sql = "UPDATE cliente SET nombre = '" + cl.getNombreEmpresa()+ "','"+ cl.getRut()+"','"+cl.getFechaRegistro()+"')";
-        
+        String sql = "UPDATE cliente SET nombreempresa = '" + cl.getNombreEmpresa()+ "', rutempresa = '"+ cl.getRut()+"', fecharegistro =TO_DATE( '"+cl.getFechaRegistro()+"','dd/mm/yyyy') WHERE ID_CLIENTE = "+ cl.getId_cliente();
+        System.out.println(sql);
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();

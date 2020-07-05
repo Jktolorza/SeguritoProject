@@ -81,11 +81,11 @@ public class EditarCliente extends HttpServlet {
 		else
 			mensaje = "Ocurrio un error al editar el cliente";
 
-		request.setAttribute("datosasesoria", cliente);
+		request.setAttribute("datoscliente", cliente);
 		request.setAttribute("cumensaje", mensaje);
-		request.getRequestDispatcher("ListarClientes").forward(request, response);
+		response.sendRedirect("CrearCliente");
 		
-		doGet(request, response);
+//		doGet(request, response);
 	}
 
 }

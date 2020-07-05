@@ -25,7 +25,7 @@
 				</div>
 				<div class="form-group">
 					<label>Fecha de registro de la empresa </label>
-					<input type="text" name="txtFechaRegistro" class="form-control">			
+					<input type="text" name="txtFechaRegistro" class="form-control" placeholder="DD/MM/YYYY">			
 				</div>
 			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
 			<input type="reset" value="Cancelar" class="btn btn-info">
