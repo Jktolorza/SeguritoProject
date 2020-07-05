@@ -8,7 +8,9 @@ public class Capacitacion {
 	private String tema;
 	private String contenido;
 	private int id_cliente;
-	
+	private int id_profesional;
+	private String profesional;
+	private String cliente;
 	
 	
 	//Constructores//
@@ -17,17 +19,23 @@ public class Capacitacion {
 		super();
 	}
 
-	public Capacitacion(String fechayhora, String tema, String contenido, int id_cliente) {
+	public Capacitacion(String fechayhora, String tema, String contenido, int id_cliente, int id_profesional) {
 		super();
 		this.fechayhora = fechayhora;
 		this.tema = tema;
 		this.contenido = contenido;
 		this.id_cliente = id_cliente;
+		this.id_profesional = id_profesional;
 	}
 
-	public Capacitacion(int id_capacitacion) {
+	public Capacitacion(int id_capacitacion, String fechayhora, String tema, String contenido, int id_cliente, int id_profesional) {
 		super();
 		this.id_capacitacion = id_capacitacion;
+		this.fechayhora = fechayhora;
+		this.tema = tema;
+		this.contenido = contenido;
+		this.id_cliente = id_cliente;
+		this.id_profesional = id_profesional;
 	}
 
 	
@@ -72,18 +80,35 @@ public class Capacitacion {
 	public void setId_cliente(int id_cliente) {
 		this.id_cliente = id_cliente;
 	}
-	//To String//
+	public int getId_profesional() {
+		return id_profesional;
+	}
+
+	public void setId_profesional(int id_profesional) {
+		this.id_profesional = id_profesional;
+	}
+
+	public String getProfesional() {
+		return profesional;
+	}
+
+	public void setProfesional(String profesional) {
+		this.profesional = profesional;
+	}
+
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
 
 	@Override
 	public String toString() {
-		return "Capacitacion [id_capacitacion=" + id_capacitacion + ", fechayhora=" + fechayhora + ", tema="
-				+ tema + ", contenido=" + contenido + ", id_cliente=" + id_cliente + "]";
-	}
-	
-	
-
-	
-	
-	
+		return "Capacitacion [id_capacitacion=" + id_capacitacion + ", fechayhora=" + fechayhora + ", tema=" + tema
+				+ ", contenido=" + contenido + ", id_cliente=" + id_cliente + ", id_profesional=" + id_profesional
+				+ ", profesional=" + profesional + ", cliente=" + cliente + "]";
+	}	
 	
 }

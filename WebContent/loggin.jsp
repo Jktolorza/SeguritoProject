@@ -26,7 +26,7 @@
 				      <img class="rounded mx-auto d-block"  src="./prevencion.png" alt="Responsive image" width="150" height="150">
 				      <h1 class="text-center">PSegurito</h1>
 				      <label for="inputEmail" class="sr-only">Nombre de usuario</label>
-				      <input type="email" name="txtnickname" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
+				      <input type="text" name="txtnickname" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
 				      <label for="inputPassword" class="sr-only">Contraseña</label>
 				      <input type="password" name="txtpassword" id="inputPassword" class="form-control" placeholder="Contraseña" required>
 				      <div class="checkbox mb-3">

@@ -1,23 +1,29 @@
-package controlador.Login;
+package controlador.ControladorCapacitacion;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CapacitacionDao;
+import modelo.Capacitacion;
+
 /**
- * Servlet implementation class LoginUsuario
+ * Servlet implementation class ListarCapacitacion
  */
-@WebServlet("/LoginUsuario")
-public class LoginUsuario extends HttpServlet {
+@WebServlet("/ListarCapacitacion")
+public class ListarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginUsuario() {
+    public ListarCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,16 +32,19 @@ public class LoginUsuario extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("loggin.jsp").forward(request,response);
+		CapacitacionDao capacitaciondao = new CapacitacionDao();
+		List<Capacitacion> lcapacitaciones = new ArrayList<Capacitacion>();
+		
+		lcapacitaciones = capacitaciondao.leerCapacitacion();
+			
+		request.setAttribute("listadocapacitaciones",lcapacitaciones);
+		request.getRequestDispatcher("capacitacionListado.jsp").forward(request,response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

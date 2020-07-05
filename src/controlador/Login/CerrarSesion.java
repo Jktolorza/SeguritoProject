@@ -31,7 +31,7 @@ public class CerrarSesion extends HttpServlet {
 		misession.invalidate();
 		String mensaje = "La sesion ha sido cerrada";
 		request.setAttribute("lmensaje", mensaje);
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		request.getRequestDispatcher("loggin.jsp").forward(request, response);
 	}
 
 	/**

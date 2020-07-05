@@ -87,7 +87,7 @@ public class ValidarUsuario extends HttpServlet {
 		
 		if (mensaje.trim().length() > 0 || mensaje.trim() != "") {
 			request.setAttribute("lmensaje", mensaje);
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("loggin.jsp").forward(request, response);
 		} else {
 			// creacion de sesion
 			HttpSession misession = (HttpSession) request.getSession();

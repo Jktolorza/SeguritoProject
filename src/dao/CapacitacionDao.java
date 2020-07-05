@@ -50,7 +50,7 @@ public class CapacitacionDao implements iCapacitacionDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from capacitaciones ORDER BY ID";
+		String sql = "select * from capacitaciones ORDER BY ID_capacitacion";
 		
 		List<Capacitacion> listaCapacitaciones = new ArrayList<Capacitacion>();
 		
@@ -64,13 +64,17 @@ public class CapacitacionDao implements iCapacitacionDao {
 				c.setFechayhora(rs.getString(2));
 				c.setTema(rs.getString(3));
 				c.setContenido(rs.getString(4));
+				c.setId_profesional(rs.getInt("profesional_id_profesional"));
+				c.setId_cliente(rs.getInt("cliente_id_cliente"));
+//				c.setProfesional(rs.getString("profesional"));
+//				c.setCliente(rs.getString("cliente"));
 				listaCapacitaciones.add(c);
 			}
 			stm.close();
 			rs.close();
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase CapacitacionDao, m�todo leerCapacitacion ");
+			System.out.println("Error: Clase CapacitacionDao, metodo leerCapacitacion ");
 			e.printStackTrace();
 		}
 		

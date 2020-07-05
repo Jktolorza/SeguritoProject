@@ -33,7 +33,7 @@ public class AsignarRol extends HttpServlet {
 		Usuario suser= (Usuario) misession.getAttribute("sesionuser");
 		String rol= suser.getRol();
 		if (suser == null || suser.getNickname().trim() == "" ) {
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			request.getRequestDispatcher("loggin.jsp").forward(request, response);
 		}
 		else {
 //			UsuarioDao userdao = new UsuarioDao();
