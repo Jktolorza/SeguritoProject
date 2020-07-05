@@ -7,8 +7,8 @@ public class Capacitacion {
 	private String fechayhora;
 	private String tema;
 	private String contenido;
-	private int id_cliente;
 	private int id_profesional;
+	private int id_cliente;
 	private String profesional;
 	private String cliente;
 	
@@ -19,23 +19,23 @@ public class Capacitacion {
 		super();
 	}
 
-	public Capacitacion(String fechayhora, String tema, String contenido, int id_cliente, int id_profesional) {
+	public Capacitacion(String fechayhora, String tema, String contenido,int id_profesional, int id_cliente) {
 		super();
 		this.fechayhora = fechayhora;
 		this.tema = tema;
 		this.contenido = contenido;
-		this.id_cliente = id_cliente;
 		this.id_profesional = id_profesional;
+		this.id_cliente = id_cliente;
 	}
 
-	public Capacitacion(int id_capacitacion, String fechayhora, String tema, String contenido, int id_cliente, int id_profesional) {
+	public Capacitacion(int id_capacitacion, String fechayhora, String tema, String contenido, int id_profesional, int id_cliente) {
 		super();
 		this.id_capacitacion = id_capacitacion;
 		this.fechayhora = fechayhora;
 		this.tema = tema;
 		this.contenido = contenido;
-		this.id_cliente = id_cliente;
 		this.id_profesional = id_profesional;
+		this.id_cliente = id_cliente;
 	}
 
 	

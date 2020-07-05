@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -14,35 +15,35 @@
 <div class="d-sm-flex">
 	<div class="card col-sm-4">
 		<div class="card-body">
-			<form>
+			<form action="CrearCapacitacion" method="post">
 				<div class="form-group">
-					<label>Fecha: </label>
-					<input type="text" name="txtFecha" class="form-control">			
-				</div>
-				<div class="form-group">
-					<label>Hora: </label>
-					<input type="text" name="txtHora" class="form-control">			
+					<label>Fecha y Hora: </label>
+					<input type="text" name="txtfechayhora" class="form-control" placeholder="DD/MM/YYYY HH:MM">			
 				</div>
 				<div class="form-group">
 					<label>Tema: </label>
-					<input type="text" name="txtTema" class="form-control">			
+					<input type="text" name="txttema" class="form-control">			
 				</div>
 				<div class="form-group">
 					<label>Contenido: </label>
-					<input type="text" name="txtContenido" class="form-control">			
+					<input type="text" name="txtcontenido" class="form-control">			
 				</div>
 
 				<div class="form-group">
 					<label>Profesional a cargo </label>
-					<select class="form-control form-control">				
-	  					<option>Selecione el Profesional</option>
+					<select name="txtid_profesional" class="form-control form-control">				
+	  					<c:forEach items="${listadoprofesionales}" var="profesional">
+							<option value="${profesional.getId_profesional()}">${profesional.getNombre()} ${profesional.getApellido()} </option>
+						</c:forEach>
 					</select>		
 				</div>
 				<div class="form-group">
 					<label>Cliente</label>
-					<select class="form-control form-control">				
-	  					<option>Selecione el Cliente</option>
-					</select>			
+					<select name="txtid_cliente" class="form-control form-control">				
+	  					<c:forEach items="${listadoclientes}" var="cliente">
+							<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
+						</c:forEach>
+					</select>				
 				</div>
 			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
 			<input type="reset" value="Cancelar" class="btn btn-info">
@@ -50,11 +51,15 @@
 		</div>
 	</div>
 		<div class="col-sm-8">
+		
+			<c:if test="${cumensaje != null}">
+				<c:out value="${cumensaje}" />
+			</c:if>
+		
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Fecha</th>
-						<th>Hora</th>
+						<th>Fecha y Hora</th>
 						<th>Tema</th>
 						<th>Contenido</th>
 						<th>Profesional</th>
@@ -62,18 +67,20 @@
 					</tr>
 				</thead>
 				</tbody>
+				<c:forEach items='${listadocapacitaciones}' var='capacitacion'>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+				<td>${capacitacion.getFechayhora()}</td>
+				<td>${capacitacion.getTema()}</td>
+				<td>${capacitacion.getContenido()}</td>
+				<td>${capacitacion.getProfesional()}</td>
+				<td>${capacitacion.getCliente()}</td>
 						<td>
-							<a class="btn btn-warning">Editar</a>
-							<a class="btn btn-danger">Eliminar</a>
+							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarCapacitacion?id=${capacitacion.getId_capacitacion()}">Editar</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarCapacitacion?id=${capacitacion.getId_capacitacion()}">Eliminar</a>
 						</td>
 					</tr>
-				</tbody>				
+					</c:forEach>
+				</tbody>					
 			</table>
 		</div>
 	</div>

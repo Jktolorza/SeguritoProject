@@ -41,7 +41,6 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearProfesional" target="myFrame">Control Profesional</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCliente" target="myFrame">Control Cliente</a>
-
                         </div>
                     </li>
 
@@ -67,7 +66,6 @@
 							<a class="dropdown-item" href="#" target="myFrame">Agendar Capacitacion</a>
 							<a class="dropdown-item" href="#" target="myFrame">Revisar Accidentes</a>
 							<a class="dropdown-item" href="#" target="myFrame">Revisar Facturacion de clientes</a>
-
                         </div>
                     </li>
                     <!-- Detalle Cliente -->

@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Listado de capaciotaciones </title>
+<title>Listado de capacitaciones </title>
 <!-- Css de boostrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -16,8 +17,7 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Fecha</th>
-						<th>Hora</th>
+						<th>Fecha y Hora</th>
 						<th>Tema</th>
 						<th>Contenido</th>
 						<th>Profesional</th>
@@ -25,18 +25,16 @@
 					</tr>
 				</thead>
 				</tbody>
+				<c:forEach items='${listadocapacitaciones}' var='capacitacion'>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<a class="btn btn-warning">Editar</a>
-							<a class="btn btn-danger">Eliminar</a>
-						</td>
+				<td>${capacitacion.getFechayhora()}</td>
+				<td>${capacitacion.getTema()}</td>
+				<td>${capacitacion.getContenido()}</td>
+				<td>${capacitacion.getProfesional()}</td>
+				<td>${capacitacion.getCliente()}</td>
 					</tr>
-				</tbody>				
+					</c:forEach>
+				</tbody>			
 			</table>
 		</div>
 	

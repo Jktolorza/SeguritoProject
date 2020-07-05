@@ -14,16 +14,16 @@ import dao.CapacitacionDao;
 import modelo.Capacitacion;
 
 /**
- * Servlet implementation class ListarCapacitacion
+ * Servlet implementation class EliminarCapacitacion
  */
-@WebServlet("/ListarCapacitacion")
-public class ListarCapacitacion extends HttpServlet {
+@WebServlet("/EliminarCapacitacion")
+public class EliminarCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListarCapacitacion() {
+    public EliminarCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,19 +32,34 @@ public class ListarCapacitacion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CapacitacionDao capacitaciondao = new CapacitacionDao();
-		List<Capacitacion> lcapacitaciones = new ArrayList<Capacitacion>();
+		int capacitacionid= Integer.parseInt(request.getParameter("id"));
+		Capacitacion capacitacion = new Capacitacion();
+		capacitacion.setId_capacitacion(capacitacionid);
 		
-		lcapacitaciones = capacitaciondao.leerCapacitacion();
-			
-		request.setAttribute("listadocapacitaciones",lcapacitaciones);
-		request.getRequestDispatcher("capacitacionCliente.jsp").forward(request,response);
+		CapacitacionDao capacitaciondao = new CapacitacionDao();
+		boolean elimino = capacitaciondao.eliminarCapacitacion(capacitacion);
+		
+		List<Capacitacion> listadoeliminar = new ArrayList<Capacitacion>();
+		listadoeliminar = capacitaciondao.leerCapacitacion();
+		
+		
+		String mensaje = "";
+		
+		if (elimino)
+			mensaje = "La capacitacion ha sido eliminado exitosamente";
+		else
+			mensaje = "Ocurrio un problema  al eliminar la capacitacion";
+		request.setAttribute("cumensaje", mensaje);
+		request.setAttribute("listadocapacitaciones", listadoeliminar);
+		request.getRequestDispatcher("CrearCapacitacion").forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
