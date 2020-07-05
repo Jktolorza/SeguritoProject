@@ -96,6 +96,24 @@
       </li>
  -->
     </ul>
+	  <!--Boton cerrar sesion  -->
+	         <div class="dropdown">
+			  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Cerrar Sesion
+			  </button>
+			  <div class="dropdown-menu text-center" >
+				    <a class="dropdown-item" href="#">
+				    	<img src="./prevencion.png" alt="60" width="60"/>
+				    </a>
+				    <a class="dropdown-item" href="#">Usuario</a>
+				    <a class="dropdown-item" href="#">Correo</a>
+				    <div class="dropdown-divider"></div>
+				    <form action="" method="Post">
+				    	<button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
+				    </form>
+			    
+			  </div>
+		</div>	 
   </div>
 </nav>
 <div class="m-4" style="height:500px">
