@@ -108,7 +108,7 @@
 				    <a class="dropdown-item" href="#">Usuario</a>
 				    <a class="dropdown-item" href="#">Correo</a>
 				    <div class="dropdown-divider"></div>
-				    <form action="" method="Post">
+				    <form action="CerrarSesion" method="Post">
 				    	<button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>
 				    </form>
 			    
