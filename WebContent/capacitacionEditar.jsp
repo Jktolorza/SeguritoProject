@@ -2,41 +2,39 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<!-- Css de boostrap -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<!-- Css de boostrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
-	<div class="d-sm-flex">
-		<div class="card col-sm-4">
-			<div class="card-body">
+
+	<div class="container">
+		<div class="row">
+			<div class="col align-self-start"></div>
+			<div class="col align-self-center">
+				<h1 class="display-4">Editar Capacitacion</h1>
 				<form>
 
 					<div class="form-group">
-						<label>Fecha: </label> <input type="text" name="txtFecha"
-							class="form-control">
+						<label>Fecha: </label> <input type="text" name="txtFecha" class="form-control">
 					</div>
 					<div class="form-group">
-						<label>Hora: </label> <input type="text" name="txtHora"
-							class="form-control">
+						<label>Hora: </label> <input type="text" name="txtHora" class="form-control">
 					</div>
 					<div class="form-group">
-						<label>Tema: </label> <input type="text" name="txtTema"
-							class="form-control">
+						<label>Tema: </label> <input type="text" name="txtTema" class="form-control">
 					</div>
 					<div class="form-group">
-						<label>Contenido: </label> <input type="text" name="txtContenido"
-							class="form-control">
+						<label>Contenido: </label> <input type="text" name="txtContenido" class="form-control">
 					</div>
 
 					<div class="form-group">
-						<label>Profesional a cargo </label> <select
-							class="form-control form-control">
+						<label>Profesional a cargo </label> <select class="form-control form-control">
 							<option>Selecione el Profesional</option>
 						</select>
 					</div>
@@ -45,11 +43,11 @@
 							<option>Selecione el Cliente</option>
 						</select>
 					</div>
-					<input type="submit" name="accion" value="Agregar"
-						class="btn btn-info"> <input type="reset" value="Cancelar"
-						class="btn btn-info">
+					<input type="submit" name="accion" value="Agregar" class="btn btn-info"> <input type="reset"
+						value="Cancelar" class="btn btn-info">
 				</form>
 			</div>
+			<div class="col align-self-end"></div>
 		</div>
 	</div>
 
@@ -57,13 +55,12 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 		crossorigin="anonymous"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 </body>
+
 </html>
