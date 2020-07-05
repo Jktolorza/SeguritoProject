@@ -13,8 +13,22 @@ public class ReporteAccidente {
     public ReporteAccidente() {
         super();
     }
+    
        
-    public ReporteAccidente(String fecha, String direccion, String labor, String descripcion, int id_cliente) {
+    public ReporteAccidente(int idReporteAccidente, String fecha, String direccion, String labor, String descripcion,
+			int id_cliente) {
+		super();
+		this.idReporteAccidente = idReporteAccidente;
+		this.fecha = fecha;
+		this.direccion = direccion;
+		this.labor = labor;
+		this.descripcion = descripcion;
+		this.id_cliente = id_cliente;
+	}
+
+
+
+	public ReporteAccidente(String fecha, String direccion, String labor, String descripcion, int id_cliente) {
         this.fecha = fecha;
         this.direccion = direccion;
         this.labor = labor;

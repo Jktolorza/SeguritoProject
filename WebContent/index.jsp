@@ -86,7 +86,7 @@
 	          <a class="dropdown-item" href="#">Actividades de mejora</a>   
 	          <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarAsesorias" target="myFrame">Revisar Asesorias</a>  
 	          <a class="dropdown-item" href="#">Agendar Capacitaciones</a>   
-	          <a class="dropdown-item" href="#">Reportar Accidente</a>  
+	          <a class="dropdown-item" href="reportarAccidente">Reportar Accidente</a>  
 	          <a class="dropdown-item" href="#">Facturacion</a>   
 	        
 	        </div>
