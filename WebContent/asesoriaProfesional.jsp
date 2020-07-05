@@ -66,6 +66,7 @@
 						<th>Cliente</th>
 					</tr>
 				</thead>
+				
 				</tbody>
 				</tbody>
 				<c:forEach items='${listadoasesorias}' var='asesoria'>

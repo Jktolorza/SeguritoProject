@@ -9,7 +9,8 @@ public class Cliente {
     
     
     
-    public Cliente(String nombreEmpresa, String rut, String fechaRegistro) {
+    public Cliente(int id_cliente, String nombreEmpresa, String rut, String fechaRegistro) {
+    	this.id_cliente = id_cliente;
         this.nombreEmpresa = nombreEmpresa;
         this.rut = rut;
         this.fechaRegistro = fechaRegistro;
@@ -17,7 +18,16 @@ public class Cliente {
 
 
 
-    public Cliente() {
+    public Cliente(String nombreEmpresa, String rut, String fechaRegistro) {
+		super();
+		this.nombreEmpresa = nombreEmpresa;
+		this.rut = rut;
+		this.fechaRegistro = fechaRegistro;
+	}
+
+
+
+	public Cliente() {
         super();
     }
 

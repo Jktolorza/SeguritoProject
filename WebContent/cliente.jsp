@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -13,7 +14,7 @@
 <div class="d-sm-flex">
 	<div class="card col-sm-4">
 		<div class="card-body">
-			<form>
+			<form action ="CrearCliente" method="post">
 				<div class="form-group">
 					<label>Nombre de la empresa: </label>
 					<input type="text" name="txtNombreEmpresa" class="form-control">			
@@ -32,6 +33,10 @@
 		</div>
 	</div>
 		<div class="col-sm-8">
+		
+		<c:if test="${cumensaje != null}">
+				<c:out value="${cumensaje}" />
+			</c:if>
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -40,16 +45,20 @@
 						<th>Fecha de registro</th>
 					</tr>
 				</thead>
+				
 				</tbody>
+				</tbody>
+				<c:forEach items='${listadoclientes}' var='cliente'>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
+				<td>${cliente.getEmpresa()}</td>
+				<td>${cliente.getRut()}</td>
+				<td>${cliente.getFechaRegistro()}</td>
 						<td>
-							<a class="btn btn-warning">Editar</a>
-							<a class="btn btn-danger">Eliminar</a>
+							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarCliente?id=${cliente.getId_cliente()}">Editar</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarCliente?id=${cliente.getId_cliente()}">Eliminar</a>
 						</td>
 					</tr>
+					</c:forEach>
 				</tbody>				
 			</table>
 		</div>
