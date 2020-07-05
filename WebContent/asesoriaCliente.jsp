@@ -37,10 +37,6 @@
 				<td>${asesoria.getDetalle()}</td>
 				<td>${asesoria.getProfesional()}</td>
 				<td>${asesoria.getCliente()}</td>
-						<td>
-							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarAsesoria?id=${asesoria.getId_asesoria()}">Editar</a>
-							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarAsesoria?id=${asesoria.getId_asesoria()}">Eliminar</a>
-						</td>
 					</tr>
 					</c:forEach>
 				</tbody>				

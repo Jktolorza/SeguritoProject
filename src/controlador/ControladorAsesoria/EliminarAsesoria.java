@@ -54,7 +54,8 @@ public class EliminarAsesoria extends HttpServlet {
 			mensaje = "Ocurrio un problema  al eliminar la asesoria";
 		request.setAttribute("cumensaje", mensaje);
 		request.setAttribute("listadoasesorias", listadoeliminar);
-		request.getRequestDispatcher("ListarAsesorias").forward(request, response);
+//		request.getRequestDispatcher("ListarAsesorias").forward(request, response);
+		request.getRequestDispatcher("CrearAsesoria").forward(request, response);
 		
 	}
 

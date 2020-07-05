@@ -37,7 +37,7 @@
       </c:choose>
             
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="profesional.jsp"  target="myFrame">Control Profesional</a>
+	          <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearProfesional"  target="myFrame">Control Profesional</a>
    			  <a class="dropdown-item" href="cliente.jsp"  target="myFrame">Control Cliente</a>
 	        
 	        </div>
@@ -59,8 +59,8 @@
       </c:choose>
     
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="profesional.jsp"  target="myFrame">Control Profesional</a>
-	          <a class="dropdown-item" href="${pageContext.request.contextPath}/LoginUsuario">Ingresar plan de mejora mejora</a>
+	          <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarProfesional" target="myFrame">Control Profesional</a>
+	          <a class="dropdown-item" href="#" target="myFrame">Ingresar plan de mejora mejora</a>
 	          <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a> 
 	          <a class="dropdown-item" href="#">Agendar Capacitacion</a>        
 	        

@@ -12,38 +12,10 @@
 </head>
 <body>
    <body>
-<div class="d-sm-flex">
-	<div class="card col-sm-4">
-		<div class="card-body">
-			<form action="CrearProfesional" method="post">
-				<div class="form-group">
-					<label>Nombre: </label>
-					<input type="text" name="txtNombreProfesional" class="form-control">			
-				</div>
-				<div class="form-group">
-					<label>Apellido: </label>
-					<input type="text" name="txtApellido" class="form-control">			
-				</div>
-				<div class="form-group">
-					<label>Correo: </label>
-					<input type="text" name="txtCorreo" class="form-control">			
-				</div>
-				<div class="form-group">
-					<label>Telefono: </label>
-					<input type="text" name="txtTelefono" class="form-control">			
-				</div>
-				<div class="form-group">
-					<label>Cargo: </label>
-					<input type="text" name="txtCargo" class="form-control">			
-				</div>
-			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
-			<input type="reset" value="Cancelar" class="btn btn-info">
-			</form>
-		</div>
-	</div>
-		<div class="col-sm-8">
+   
+   	<div class="col-sm-12">
 		
-			<c:if test="${cumensaje != null}">
+	<c:if test="${cumensaje != null}">
 				<c:out value="${cumensaje}" />
 			</c:if>
 		
@@ -65,16 +37,12 @@
 				<td>${profesional.getCorreo()}</td>
 				<td>${profesional.getTelefono()}</td>
 				<td>${profesional.getCargo()}</td>
-						<td>
-							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarProfesional?id=${profesional.getId_profesional()}">Editar</a>
-							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarProfesional?id=${profesional.getId_profesional()}">Eliminar</a>
-						</td>
 					</tr>
 					</c:forEach>
 				</tbody>				
 			</table>
 		</div>
-	</div>
+	
 
 
 <!-- Jss boostrap -->
@@ -83,3 +51,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+   
+   
+   
+   
+   
+   
+   
+   

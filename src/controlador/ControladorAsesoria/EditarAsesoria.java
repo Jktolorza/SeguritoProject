@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.AsesoriaDao;
 import dao.ClienteDao;
@@ -18,6 +19,7 @@ import dao.ProfesionalDao;
 import modelo.Asesoria;
 import modelo.Cliente;
 import modelo.Profesional;
+import modelo.Usuario;
 
 
 /**
@@ -99,7 +101,18 @@ public class EditarAsesoria extends HttpServlet {
 
 		request.setAttribute("datosasesoria", asesoria);
 		request.setAttribute("cumensaje", mensaje);
-		request.getRequestDispatcher("ListarAsesorias").forward(request, response);
+		
+//		//obtiene rol
+//		HttpSession misession= (HttpSession) request.getSession(); 
+//		Usuario suser= (Usuario) misession.getAttribute("sesionuser");
+//		String rol= suser.getRol();
+////		System.out.println(rol);
+//		if  (rol == "cliente") {
+//			request.getRequestDispatcher("ListarAsesorias").forward(request, response);	
+//		} else {
+			response.sendRedirect("CrearAsesoria");
+//		}
+		
 		
 	}
 

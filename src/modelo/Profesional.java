@@ -18,6 +18,17 @@ public class Profesional {
 		super();
 	}
 
+	public Profesional(int id_profesional, String nombre, String apellido, String correo, String telefono, String cargo) {
+		super();
+		this.id_profesional = id_profesional;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.telefono = telefono;
+		this.cargo = cargo;
+
+	}
+	
 	public Profesional(String nombre, String apellido, String correo, String telefono, String cargo) {
 		super();
 		this.nombre = nombre;
