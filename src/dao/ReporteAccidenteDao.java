@@ -83,7 +83,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         
         boolean actualizar = false;
         
-        String sql = "UPDATE reporteaccidente SET fecha = TO_DATE('"+reporte.getFecha()+"', 'dd/mm/yyyy'), direccion = '"+ reporte.getDireccion()+"', labor = '"+reporte.getLabor()+"', descripcion = '"+reporte.getDescripcion()+"' WHERE cliente_id_cliente = '"+reporte.getId_cliente()+"'";
+        String sql = "UPDATE reporteaccidente SET fecha = TO_DATE('"+reporte.getFecha()+"', 'dd/mm/yyyy'), direccion = '"+ reporte.getDireccion()+"', labor = '"+reporte.getLabor()+"', descripcion = '"+reporte.getDescripcion()+"', cliente_id_cliente = '"+reporte.getId_cliente()+"' WHERE id_reporte = '"+reporte.getIdReporteAccidente()+"'";
         System.out.println(sql);
         try {
                 con = ConexionSingleton.getConnection();
