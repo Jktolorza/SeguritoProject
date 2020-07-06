@@ -43,14 +43,14 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 	}
 
 	@Override
-	public List<DetalleFactura> leerDetalleFactura() {
+	public List<DetalleFactura> leerDetalleFactura(int id_factura) {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from detallefactura ORDER BY ID";
+		String sql = "select * from detallefactura where factura_id_factura =" + id_factura;
 		
 		List<DetalleFactura> listaDetalleFactura = new ArrayList<DetalleFactura>();
 		
@@ -60,18 +60,18 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
 				DetalleFactura c = new DetalleFactura();
-				c.setId_detallefactura(rs.getInt(1));
-				c.setNombre(rs.getString(2));
-				c.setPrecio(rs.getInt(3));
-				c.setCantidad(rs.getInt(4));
-				c.setId_factura(rs.getInt(5));
+				c.setId_detallefactura(rs.getInt("id_detallefactura"));
+				c.setNombre(rs.getString("nombre"));
+				c.setPrecio(rs.getInt("precio"));
+				c.setCantidad(rs.getInt("cantidad"));
+				c.setId_factura(rs.getInt("factura_id_factura"));
 				listaDetalleFactura.add(c);
 			}
 			stm.close();
 			rs.close();
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, m�todo leerDetalleFactura ");
+			System.out.println("Error: Clase DetalleFacturaDao, metodo leerDetalleFactura ");
 			e.printStackTrace();
 		}
 		

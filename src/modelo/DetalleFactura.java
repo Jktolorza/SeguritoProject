@@ -21,6 +21,16 @@ public class DetalleFactura {
 		this.cantidad = cantidad;
 		this.id_factura = id_factura;
 	}
+	
+	public DetalleFactura(int id_detallefactura, String nombre, int precio, int cantidad, int id_factura) {
+		super();
+		this.id_detallefactura = id_detallefactura;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		this.id_factura = id_factura;
+	}
+
 
 	public DetalleFactura(int id_detallefactura) {
 		super();
@@ -78,6 +88,8 @@ public class DetalleFactura {
 				+ ", cantidad=" + cantidad + ", id_factura=" + id_factura + "]";
 	}
 	
-	
-	
+	public double calcularTotal() { 
+    	return precio * cantidad;
+    	}
 }
+	

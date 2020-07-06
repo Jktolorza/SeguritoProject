@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import idao.iFacturaDao;
+import modelo.DetalleFactura;
 import modelo.Factura;
 
 import conectar.ConexionSingleton;
@@ -186,6 +186,34 @@ public class FacturaDao implements iFacturaDao {
 		return u;
 	}
 
-	
+	public List<DetalleFactura> calcularFactura(int id_factura) {
+		Connection con = null;
+		Statement stm = null;
+		ResultSet rs = null;
+		
+		String sql = "select * from detallefactura where factura_id_factura = " + id_factura;
+		List <DetalleFactura> listaFactura = new ArrayList<DetalleFactura>();
+		
+		try {
+			con = ConexionSingleton.getConnection();
+			stm = con.createStatement();
+			rs = stm.executeQuery(sql);
+			while (rs.next()) {
+				DetalleFactura c = new DetalleFactura();
+				c.setId_detallefactura(rs.getInt("id_detallefactura"));
+				c.setNombre(rs.getString("nombre"));
+				c.setPrecio(rs.getInt("precio"));
+				c.setCantidad(rs.getInt("cantidad"));
+				listaFactura.add(c);
+			}
+			stm.close();
+			rs.close();
+			con.close(); 
+		} catch(SQLException e) {
+			System.out.println("Error: Clase FacturaDao, metodo calcularFactura ");
+			e.printStackTrace();
+		}
+		return listaFactura;
+	}
 	
 }

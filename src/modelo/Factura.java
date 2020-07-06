@@ -1,5 +1,8 @@
 package modelo;
 
+import java.util.List;
+
+
 public class Factura {
 
 	private int id_factura;
@@ -11,7 +14,9 @@ public class Factura {
 	private int total;
 	private int id_cliente; //FK
 	private String cliente;
-		
+	protected List <DetalleFactura> items;	
+	private double iva = 0.19;
+	
 	//Constructores//
 	public Factura() {
 		super();
@@ -122,6 +127,22 @@ public class Factura {
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
+	
+	public List<DetalleFactura> getItems() {
+		return items;
+	}
+
+	public void setItems(List<DetalleFactura> items) {
+		this.items = items;
+	}
+
+	public double getIva() {
+		return iva;
+	}
+
+	public void setIva(double iva) {
+		this.iva = iva;
+	}
 
 	@Override
 	public String toString() {
@@ -131,4 +152,20 @@ public class Factura {
 	}
 	
 	
+    public double calcularSubtotal() {
+        double subtotal=0;
+        for(DetalleFactura item : items ) {
+            subtotal+=item.calcularTotal();
+        }
+        return subtotal;
+    }
+    
+    public double calcularIVA()   { 
+    	return (calcularSubtotal()+ this.extras) * iva;
+    	}
+    
+    public double calcularTotal() { 
+    	return calcularSubtotal() + calcularIVA(); 
+    	}
+    
 }
