@@ -36,17 +36,17 @@
 					<div class="form-group">
 						<label>Impuestos: </label>
 						<input type="number" name="txtimpuestos" class="form-control"
-							value="${datosfactura.getImpuestos()}">
+							value="${datosfactura.getImpuestos()}" readonly>
 					</div>
 					<div class="form-group">
 						<label>Subtotal: </label>
 						<input type="number" name="txtsubtotal" class="form-control"
-							value="${datosfactura.getSubtotal()}">
+							value="${datosfactura.getSubtotal()}" readonly>
 					</div>
 					<div class="form-group">
 						<label>Total: </label>
 						<input type="number" name="txttotal" class="form-control"
-							value="${datosfactura.getTotal()}">
+							value="${datosfactura.getTotal()}" readonly>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidfactura" class="form-control"
@@ -69,6 +69,9 @@
 			<div class="col align-self-end"></div>
 		</div>
 	</div>
+	
+	<p> Para actualizar el total dirigirse al detalle de la factura <p>
+	<a class="btn btn-danger" href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${datosfactura.getId_factura()}">Detalle</a>
 	<!-- Jss boostrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

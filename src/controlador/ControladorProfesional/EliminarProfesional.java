@@ -47,13 +47,13 @@ public class EliminarProfesional extends HttpServlet {
 		String mensaje = "";
 		
 		if (elimino) {
-			mensaje = "El cliente ha sido eliminado exitosamente";
+			mensaje = "El profesional ha sido eliminado exitosamente";
 		} else {
 			if (ProfesionalDao.integridad) {
 				mensaje = "Error de integridad, esta tratando de eliminar un registro con campos secundarios asociados";
 				ProfesionalDao.integridad = false;
 			} else {
-				mensaje = "Ocurrio un problema  al eliminar el cliente";
+				mensaje = "Ocurrio un problema  al eliminar el profesional";
 			}
 		}
 		request.setAttribute("cumensaje", mensaje);

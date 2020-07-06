@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.FacturaDao;
+import dao.ProfesionalDao;
 import modelo.Factura;
 
 /**
@@ -48,10 +49,17 @@ public class EliminarFactura extends HttpServlet {
             
             String mensaje = "";
             
-            if (elimino)
-                    mensaje = "La factura ha sido eliminado exitosamente";
-            else
-                    mensaje = "Ocurrio un problema  al eliminar la factura";
+    		if (elimino) {
+    			mensaje = "La factura ha sido eliminada exitosamente";
+    		} else {
+    			if (ProfesionalDao.integridad) {
+    				mensaje = "Error de integridad, esta tratando de eliminar un registro con campos secundarios asociados";
+    				ProfesionalDao.integridad = false;
+    			} else {
+    				mensaje = "Ocurrio un problema  al eliminar la factura";
+    			}
+    		}
+            
             request.setAttribute("cumensaje", mensaje);
             request.setAttribute("listadofacturas", listadoeliminar);
             request.getRequestDispatcher("CrearFactura").forward(request, response);
