@@ -66,8 +66,8 @@
 				<td>${detallefactura.getCantidad()}</td>
 				<td>${detallefactura.getId_factura()}</td>
 						<td>
-							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarDetalleFactura?id=${detallefactura.getId_factura()}">Editar</a>
-							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarDetalleFactura?id=${detallefactura.getId_factura()}">Eliminar</a>
+							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarDetalleFactura?id=${detallefactura.getId_detallefactura()}&idfactura=${detallefactura.getId_factura()}">Editar</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarDetalleFactura?id=${detallefactura.getId_detallefactura()}&idfactura=${detallefactura.getId_factura()}">Eliminar</a>
 						</td>
 					</tr>
 					</c:forEach>

@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,20 +22,24 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 
 		boolean registrar = false;
 		
-		Statement stm = null;
+		PreparedStatement stm = null;
 		Connection con = null;
-		
-		String sql = "INSERT INTO detallefactura VALUES (null,'" + detallefac.getNombre() + "','"+ detallefac.getPrecio()+"','"+ detallefac.getCantidad()+"','"+ detallefac.getId_factura()+"')";
+
+		String sql = "INSERT INTO detallefactura(nombre, precio, cantidad, factura_id_factura) VALUES (?, ?, ?, ?)";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setString(1,detallefac.getNombre());
+			stm.setInt(2, detallefac.getPrecio());
+			stm.setInt(3, detallefac.getCantidad());
+			stm.setInt(4, detallefac.getId_factura());
+			stm.execute();
 			registrar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, m�todo crearDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, metodo crearDetalleFactura");
 			e.printStackTrace();
 		}
 		
@@ -83,21 +88,25 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE detallefactura SET id_detallefactura = '" + detallefac.getId_detallefactura() + "', nombre = '" + detallefac.getNombre() + "', Precio = '" + detallefac.getPrecio() + "', Cantidad = '"+ detallefac.getCantidad()+"', factura_id_factura = '"+ detallefac.getId_factura() +"' WHERE id = '" + detallefac.getId_detallefactura() + "'";
+		String sql = "UPDATE detallefactura SET nombre = ?, precio = ?, cantidad = ? WHERE id_detallefactura = ?";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setString(1, detallefac.getNombre());
+			stm.setInt(2, detallefac.getPrecio());
+			stm.setInt(3, detallefac.getCantidad());
+			stm.setInt(4, detallefac.getId_detallefactura());
+			stm.executeUpdate();
 			actualizar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, m�todo actualizar");
+			System.out.println("Error: Clase DetalleFacturaDao, metodo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -109,21 +118,22 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 	public boolean eliminarDetalleFactura(DetalleFactura detallefac) {
 		// TODO Auto-generated method stub
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		
 		boolean eliminar = false;
 		
-		String sql = "DELETE FROM detallefactura WHERE id = " + detallefac.getId_detallefactura();
+		String sql = "DELETE FROM detallefactura WHERE id_detallefactura = ?";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setInt(1, detallefac.getId_detallefactura());
+			stm.execute();
 			eliminar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, m�todo eliminarDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, metodo eliminarDetalleFactura");
 			e.printStackTrace();
 		}
 		
@@ -133,28 +143,29 @@ public class DetalleFacturaDao implements iDetalleFacturaDao {
 	@Override
 	public DetalleFactura obtenerDetalleFactura(int id_detallefactura) {
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from detallefactura where ID = " + id_detallefactura;
+		String sql = "select * from detallefactura where id_detallefactura = ?";
 		
 		DetalleFactura u = new DetalleFactura();
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			rs = stm.executeQuery(sql);
+			stm = con.prepareStatement(sql);
+			stm.setInt(1, id_detallefactura);
+			rs = stm.executeQuery();
 			while (rs.next()) {
-				u.setId_detallefactura(rs.getInt(1));
-				u.setNombre(rs.getString(2));
-				u.setPrecio(rs.getInt(3));
-				u.setCantidad(rs.getInt(4));
-				u.setId_factura(rs.getInt(5));
+				u.setId_detallefactura(rs.getInt("id_detallefactura"));
+				u.setNombre(rs.getString("nombre"));
+				u.setPrecio(rs.getInt("precio"));
+				u.setCantidad(rs.getInt("cantidad"));
+				u.setId_factura(rs.getInt("factura_id_factura"));
 			}
 			stm.close();
 			rs.close();
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase DetalleFacturaDao, m�todo obtenerDetalleFactura");
+			System.out.println("Error: Clase DetalleFacturaDao, metodo obtenerDetalleFactura");
 			e.printStackTrace();
 		}
 		
