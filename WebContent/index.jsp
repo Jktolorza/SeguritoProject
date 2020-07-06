@@ -63,7 +63,7 @@
                             <!-- <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarProfesional" target="myFrame">Control Profesional</a> -->
                             <a class="dropdown-item" href="#" target="myFrame">Ingresar plan de mejora</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a>
-							<a class="dropdown-item" href="#" target="myFrame">Agendar Capacitacion</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCapacitacion" target="myFrame">Agendar Capacitacion</a>
 							<a class="dropdown-item" href="#" target="myFrame">Revisar Accidentes</a>
 							<a class="dropdown-item" href="#" target="myFrame">Revisar Facturacion de clientes</a>
                         </div>
@@ -87,7 +87,7 @@
                             <!-- <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarCliente" target="myFrame">Control Cliente</a> -->
                             <a class="dropdown-item" href="#" target="myFrame">Actividades de mejorar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarAsesorias" target="myFrame">Revisar Asesorias</a>
-                            <a class="dropdown-item" href="#" target="myFrame">Revisar Capacitaciones</a>
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarCapacitacion" target="myFrame">Revisar Capacitaciones</a>
                             <a class="dropdown-item" href="#" target="myFrame">Reportar Accidente</a>
                             <a class="dropdown-item" href="#" target="myFrame">Facturacion</a>
 

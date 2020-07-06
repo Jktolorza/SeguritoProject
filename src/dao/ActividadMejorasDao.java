@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import idao.iActividadesMejorasDao;
-import modelo.ActividadesMejoras;
+import modelo.ActividadesMejora;
 import conectar.ConexionSingleton;
 
 public class ActividadMejorasDao implements iActividadesMejorasDao {
@@ -16,7 +16,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 
 	
 	@Override
-	public boolean crearActividad(ActividadesMejoras act) {
+	public boolean crearActividad(ActividadesMejora act) {
 		// TODO Auto-generated method stub
 
 		boolean registrar = false;
@@ -43,7 +43,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 	}
 
 	@Override
-	public List<ActividadesMejoras> leerActividad() {
+	public List<ActividadesMejora> leerActividad() {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
@@ -52,14 +52,14 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 		
 		String sql = "select * from actividadesmejora ORDER BY ID";
 		
-		List<ActividadesMejoras> listaActividades = new ArrayList<ActividadesMejoras>();
+		List<ActividadesMejora> listaActividades = new ArrayList<ActividadesMejora>();
 		
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
-				ActividadesMejoras c = new ActividadesMejoras();
+				ActividadesMejora c = new ActividadesMejora();
 				c.setIdActMejora(rs.getInt(1));
 				c.setNombre(rs.getString(2));
 				c.setFechaInicio(rs.getString(3));
@@ -82,7 +82,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 	}
 
 	@Override
-	public boolean actualizarActividad(ActividadesMejoras act) {
+	public boolean actualizarActividad(ActividadesMejora act) {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
@@ -109,7 +109,7 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 	}
 
 	@Override
-	public boolean eliminarActividad(ActividadesMejoras act) {
+	public boolean eliminarActividad(ActividadesMejora act) {
 		// TODO Auto-generated method stub
 		Connection con = null;
 		Statement stm = null;
@@ -134,14 +134,14 @@ public class ActividadMejorasDao implements iActividadesMejorasDao {
 	}
 
 	@Override
-	public ActividadesMejoras obtenerActividad(int idActMejora) {
+	public ActividadesMejora obtenerActividad(int idActMejora) {
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
 		String sql = "select * from actividadesmejora where ID = " + idActMejora;
 		
-		ActividadesMejoras u = new ActividadesMejoras();
+		ActividadesMejora u = new ActividadesMejora();
 		try {
 			con = ConexionSingleton.getConnection();
 			stm = con.createStatement();

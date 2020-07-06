@@ -2,15 +2,15 @@ package idao;
 
 import java.util.List;
 
-import modelo.ActividadesMejoras;
+import modelo.ActividadesMejora;
 
 
 public interface iActividadesMejorasDao {
 	
-	public boolean crearActividad(ActividadesMejoras act);
-	public List<ActividadesMejoras> leerActividad();
-	public boolean actualizarActividad(ActividadesMejoras act);
-	public boolean eliminarActividad(ActividadesMejoras act);
-	ActividadesMejoras obtenerActividad(int idActMejora);
+	public boolean crearActividad(ActividadesMejora act);
+	public List<ActividadesMejora> leerActividad();
+	public boolean actualizarActividad(ActividadesMejora act);
+	public boolean eliminarActividad(ActividadesMejora act);
+	ActividadesMejora obtenerActividad(int idActMejora);
 
 }

@@ -1,38 +1,45 @@
 package modelo;
 
-public class ActividadesMejoras {
+public class ActividadesMejora {
 
 	//Variables//
 	
 	private int idActMejora;
-	private String Nombre;
+	private String nombre;
 	private String fechaInicio;
 	private String fechaTermino;
 	private String estado;
 	private String detalle;
-	private int id_cliente;
 	private int id_profesional;
+	private int id_cliente;
 	
 	//Constructores//
 	
-	public ActividadesMejoras() {
+	public ActividadesMejora() {
 		super();
 	}
 
-	public ActividadesMejoras(String nombre, String fechaInicio, String fechaTermino, String estado, String detalle, int id_cliente, int id_profesional) {
+	public ActividadesMejora(String nombre, String fechaInicio, String fechaTermino, String estado, String detalle, int id_profesional, int id_cliente) {
 		super();
-		Nombre = nombre;
+		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
 		this.fechaTermino = fechaTermino;
 		this.estado = estado;
 		this.detalle = detalle;
-		this.id_cliente = id_cliente;
 		this.id_profesional = id_profesional;
+		this.id_cliente = id_cliente;
 	}
 	
-	public ActividadesMejoras(int idActMejora) {
+	public ActividadesMejora(int idActMejora, String nombre, String fechaInicio, String fechaTermino, String estado, String detalle, int id_profesional, int id_cliente) {
 		super();
 		this.idActMejora = idActMejora;
+		this.nombre = nombre;
+		this.fechaInicio = fechaInicio;
+		this.fechaTermino = fechaTermino;
+		this.estado = estado;
+		this.detalle = detalle;
+		this.id_profesional = id_profesional;
+		this.id_cliente = id_cliente;
 	}
 	
 	//Getters & Setters
@@ -64,11 +71,11 @@ public class ActividadesMejoras {
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getFechaInicio() {
@@ -104,14 +111,6 @@ public class ActividadesMejoras {
 	}
 
 
-	//To String//
-	
-	@Override
-	public String toString() {
-		return "ActividadesMejoras [idActMejora=" + idActMejora + ", Nombre=" + Nombre + ", fechaInicio=" + fechaInicio
-				+ ", fechaTermino=" + fechaTermino + ", estado=" + estado + ", detalle=" + detalle + ", id_cliente="
-				+ id_cliente + ", id_profesional=" + id_profesional + "]";
-	}
-	
+
 	
 }
