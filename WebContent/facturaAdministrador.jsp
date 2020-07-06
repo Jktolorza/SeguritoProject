@@ -26,19 +26,19 @@
 				</div>
 				<div class="form-group">
 					<label>Extras: </label>
-					<input type="text" name="txtextras" class="form-control">			
+					<input type="number" name="txtextras" class="form-control">			
 				</div>
 				<div class="form-group">
 					<label>Impuestos: </label>
-					<input type="text" name="txtimpuestos" class="form-control">			
+					<input type="number" name="txtimpuestos" class="form-control">			
 				</div>
 				<div class="form-group">
 					<label>Subtotal: </label>
-					<input type="text" name="txtsubtotal" class="form-control">			
+					<input type="number" name="txtsubtotal" class="form-control">			
 				</div>
 				<div class="form-group">
 					<label>Total: </label>
-					<input type="text" name="txttotal" class="form-control">			
+					<input type="number" name="txttotal" class="form-control">			
 				</div>
 
 				<div class="form-group">
@@ -90,7 +90,7 @@
 						<td>
 							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarFactura?id=${factura.getId_factura()}">Editar</a>
 							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarFactura?id=${factura.getId_factura()}">Eliminar</a>
-							<a class="btn btn-danger" href="${pageContext.request.contextPath}/ListarDetalleFactura?id=${factura.getId_factura()}">Mas Detalles</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${factura.getId_factura()}">Mas Detalles</a>
 						</td>
 					</tr>
 					</c:forEach>
