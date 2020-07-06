@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Registrar Asesoria</title>
+<title>Registrar Actividades a Mejorar</title>
 <!-- Css de boostrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -15,14 +15,22 @@
 <div class="d-sm-flex">
 	<div class="card col-sm-4">
 		<div class="card-body">
-			<form action="CrearAsesoria" method="post">
+			<form action="CrearActividadesMejora" method="post">
 				<div class="form-group">
-					<label>Fecha y Hora: </label>
-					<input type="text" name="txtfechayhora" class="form-control" placeholder="DD/MM/YYYY HH:MM">			
+					<label>Nombre: </label>
+					<input type="text" name="txtnombre" class="form-control">			
 				</div>
 				<div class="form-group">
-					<label>Motivo: </label>
-					<input type="text" name="txtmotivo" class="form-control">			
+					<label>Fecha Inicio: </label>
+					<input type="text" name="txtfechainicio" class="form-control" placeholder="DD/MM/YYYY">			
+				</div>
+				<div class="form-group">
+					<label>Fecha Termino: </label>
+					<input type="text" name="txtfechatermino" class="form-control" placeholder="DD/MM/YYYY">			
+				</div>
+				<div class="form-group">
+					<label>Estado: </label>
+					<input type="text" name="txtestado" class="form-control">			
 				</div>
 				<div class="form-group">
 					<label>Detalle: </label>
@@ -40,10 +48,10 @@
 				<div class="form-group">
 					<label>Cliente</label>
 					<select name="txtid_cliente" class="form-control form-control">				
-	  				<c:forEach items="${listadoclientes}" var="cliente">
-				<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
-			</c:forEach>
-					</select>			
+	  					<c:forEach items="${listadoclientes}" var="cliente">
+							<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
+						</c:forEach>
+					</select>				
 				</div>
 			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
 			<input type="reset" value="Cancelar" class="btn btn-info">
@@ -62,30 +70,32 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Fecha y Hora</th>
-						<th>Motivo</th>
+						<th>Nombre</th>
+						<th>Fecha Inicio</th>
+						<th>Fecha Termino</th>
+						<th>Estado</th>
 						<th>Detalle</th>
 						<th>Profesional</th>
 						<th>Cliente</th>
 					</tr>
 				</thead>
-				
 				</tbody>
-				</tbody>
-				<c:forEach items='${listadoasesorias}' var='asesoria'>
+				<c:forEach items='${listadoactmejora}' var='actmejora'>
 					<tr>
-				<td>${asesoria.getFechayhora()}</td>
-				<td>${asesoria.getMotivo()}</td>
-				<td>${asesoria.getDetalle()}</td>
-				<td>${asesoria.getProfesional()}</td>
-				<td>${asesoria.getCliente()}</td>
+				<td>${actmejora.getNombre()}</td>
+				<td>${actmejora.getFechaInicio()}</td>
+				<td>${actmejora.getFechaTermino()}</td>
+				<td>${actmejora.getEstado()}</td>
+				<td>${actmejora.getDetalle()}</td>
+				<td>${actmejora.getProfesional()}</td>
+				<td>${actmejora.getCliente()}</td>
 						<td>
-							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarAsesoria?id=${asesoria.getId_asesoria()}">Editar</a>
-							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarAsesoria?id=${asesoria.getId_asesoria()}">Eliminar</a>
+							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarActividadesMejora?id=${actmejora.getIdActMejora()}">Editar</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarActividadesMejora?id=${actmejora.getIdActMejora()}">Eliminar</a>
 						</td>
 					</tr>
 					</c:forEach>
-				</tbody>				
+				</tbody>					
 			</table>
 		</div>
 	</div>

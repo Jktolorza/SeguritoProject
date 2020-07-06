@@ -12,6 +12,8 @@ public class ActividadesMejora {
 	private String detalle;
 	private int id_profesional;
 	private int id_cliente;
+	private String profesional;
+	private String cliente;
 	
 	//Constructores//
 	
@@ -108,6 +110,22 @@ public class ActividadesMejora {
 
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
+	}
+
+	public String getProfesional() {
+		return profesional;
+	}
+
+	public void setProfesional(String profesional) {
+		this.profesional = profesional;
+	}
+
+	public String getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
 	}
 
 

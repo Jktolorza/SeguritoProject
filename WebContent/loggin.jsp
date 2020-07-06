@@ -32,7 +32,7 @@
 						required autofocus>
 					<label for="inputPassword" class="sr-only">Password</label>
 					<input type="password" name="txtpassword" id="inputPassword" class="form-control"
-						placeholder="Contraseï¿½a" required>
+						placeholder="Contraseña" required>
 					<div class="checkbox mb-3">
 						<label>
 							<input type="checkbox" value="remember-me"> Recordar Cuenta

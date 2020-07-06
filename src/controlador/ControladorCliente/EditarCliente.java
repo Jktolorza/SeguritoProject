@@ -82,8 +82,8 @@ public class EditarCliente extends HttpServlet {
 			mensaje = "Ocurrio un error al editar el cliente";
 
 		request.setAttribute("datoscliente", cliente);
-		request.setAttribute("cumensaje", mensaje);
-		response.sendRedirect("CrearCliente");
+//		request.setAttribute("cumensaje", mensaje);
+		response.sendRedirect("CrearCliente?emensaje="+ mensaje);
 		
 //		doGet(request, response);
 	}

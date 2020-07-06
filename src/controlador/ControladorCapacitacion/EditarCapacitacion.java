@@ -97,7 +97,7 @@ public class EditarCapacitacion extends HttpServlet {
 		request.setAttribute("datoscapacitacion", capacitacion);
 		request.setAttribute("cumensaje", mensaje);
 		
-			response.sendRedirect("CrearCapacitacion");	
+			response.sendRedirect("CrearCapacitacion?emensaje="+ mensaje);	
 	}
 
 }

@@ -55,6 +55,9 @@
 			<c:if test="${cumensaje != null}">
 				<c:out value="${cumensaje}" />
 			</c:if>
+			<c:if test="${param.emensaje != null}">
+				<c:out value="${param.emensaje}" />
+			</c:if>
 
 			<table class="table table-hover">
 				<thead>

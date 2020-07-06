@@ -82,7 +82,7 @@ public class EditarProfesional extends HttpServlet {
 //		if  (rol == "cliente") {
 //			request.getRequestDispatcher("ListarAsesorias").forward(request, response);	
 //		} else {
-			response.sendRedirect("CrearProfesional");
+			response.sendRedirect("CrearProfesional?emensaje="+ mensaje);
 //		}
 		
 		
