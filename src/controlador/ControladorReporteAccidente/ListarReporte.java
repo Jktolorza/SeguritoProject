@@ -41,7 +41,7 @@ public class ListarReporte extends HttpServlet {
 		lreporteaccidentes = reporteaccidentedao.leerReporteAccidente();
 			
 		request.setAttribute("listadoreporteaccidentes",lreporteaccidentes);
-		request.getRequestDispatcher("accidenteCliente.jsp").forward(request,response);
+		request.getRequestDispatcher("accidenteProfesional.jsp").forward(request,response);
 		
 	}
 

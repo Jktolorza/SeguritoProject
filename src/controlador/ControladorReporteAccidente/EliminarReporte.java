@@ -55,7 +55,6 @@ public class EliminarReporte extends HttpServlet {
 			mensaje = "Ocurrio un problema  al eliminar el reporte";
 		request.setAttribute("cumensaje", mensaje);
 		request.setAttribute("listadoreporteaccidentes", listadoeliminar);
-//		request.getRequestDispatcher("ListarAsesorias").forward(request, response);
 		request.getRequestDispatcher("CrearReporte").forward(request, response);
 		
 	}

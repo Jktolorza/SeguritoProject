@@ -21,7 +21,7 @@
 			<div class="col align-self-start"></div>
 			<div class="col align-self-center">
 				<h1 class="display-4">Editar Accidente</h1>
-				<form action="EditarReporteAccidente" method="post">
+				<form action="EditarReporte" method="post">
 					<div class="form-group">
 						<label>Fecha: </label>
 						<input type="text" name="txtfecha" class="form-control"
@@ -39,7 +39,7 @@
 					</div>
 					<div class="form-group">
 						<label>Descripcion</label>
-						<input type="hidden" name="txtdescripcion" class="form-control"
+						<input type="text" name="txtdescripcion" class="form-control"
 							value="${datosreporteaccidente.getDescripcion()}">
 					</div>
 					<div class="form-group">
@@ -48,7 +48,7 @@
 					</div>
 					<div class="form-group">
 						<label>Cliente</label>
-						<select name="txt_idcliente" class="form-control form-control">
+						<select name="txtid_cliente" class="form-control form-control">
 							<c:forEach items="${listadoclientes}" var="cliente">
 								<option value="${cliente.getId_cliente()}"
 									${datosreporteaccidente.getId_cliente()==cliente.getId_cliente() ? 'selected' : ''

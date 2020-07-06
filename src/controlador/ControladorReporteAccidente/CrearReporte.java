@@ -62,7 +62,36 @@ public class CrearReporte extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String fecha = request.getParameter("txtfecha");
+		String direccion = request.getParameter("txtdireccion");
+		String labor = request.getParameter("txtlabor");
+		String descripcion = request.getParameter("txtdescripcion");
+		int id_cliente = Integer.parseInt(request.getParameter("txtid_cliente"));
+
+		ReporteAccidente reporteaccidente = new ReporteAccidente(fecha, direccion, labor, descripcion, id_cliente);
+		
+		ReporteAccidenteDao reporteaccidentedao = new ReporteAccidenteDao();
+		boolean agregar = reporteaccidentedao.crearReporteAccidente(reporteaccidente);
+		
+		String mensaje = "";
+		
+		if (agregar)
+			mensaje = "El reporte se ha creado exitosamente";
+		else
+			mensaje = "Ocurrio un error al crear el reporte";
+			
+		request.setAttribute("cumensaje", mensaje);
+		
+		//mostrarlista
+		List<ReporteAccidente> lreporteaccidentes = new ArrayList<ReporteAccidente>();
+		
+		lreporteaccidentes = reporteaccidentedao.leerReporteAccidente();
+			
+		request.setAttribute("listadoreporteaccidentes",lreporteaccidentes);
+		
+		doGet(request,response);
+		
 	}
 
 }

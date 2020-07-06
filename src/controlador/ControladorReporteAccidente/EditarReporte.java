@@ -54,8 +54,8 @@ public class EditarReporte extends HttpServlet {
 		reporteaccidente = reporteaccidentedao.obtenerReporteAccidente(reporteaccidenteid);
 		
 		//transformo las fechas pa q se vean en el mismo formato q acepta sql
-		String fechayhora1 = reporteaccidente.getFecha();
-		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+		String fecha1 = reporteaccidente.getFecha();
+		LocalDateTime datetime = LocalDateTime.parse(fecha1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
 		String fecha = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		reporteaccidente.setFecha(fecha);
 		
@@ -75,7 +75,7 @@ public class EditarReporte extends HttpServlet {
 		String direccion  = request.getParameter("txtdireccion");
 		String labor = request.getParameter("txtlabor");
 		String descripcion = request.getParameter("txtdescripcion");
-		int id_cliente = Integer.parseInt(request.getParameter("txt_idcliente"));
+		int id_cliente = Integer.parseInt(request.getParameter("txtid_cliente"));
 		int id = Integer.parseInt(request.getParameter("hdnidreporteaccidente"));
 
 		ReporteAccidente reporteaccidente = new ReporteAccidente(id,fecha,direccion,labor, descripcion, id_cliente);
@@ -93,9 +93,8 @@ public class EditarReporte extends HttpServlet {
 		request.setAttribute("datosreporteaccidente", reporteaccidente);
 		request.setAttribute("cumensaje", mensaje);
 		
-		response.sendRedirect("CrearReporte");
+		response.sendRedirect("CrearReporte?emensaje="+ mensaje);
 		
-		doGet(request, response);
 	}
 
 }

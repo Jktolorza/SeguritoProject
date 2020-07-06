@@ -8,7 +8,7 @@ public class ReporteAccidente {
     private String labor;
     private String descripcion;
     private int id_cliente;
-    
+    private String cliente;
     
     public ReporteAccidente() {
         super();
@@ -43,6 +43,17 @@ public class ReporteAccidente {
 	}
     
     
+    
+
+	public String getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
 
 	public int getIdReporteAccidente() {
         return idReporteAccidente;

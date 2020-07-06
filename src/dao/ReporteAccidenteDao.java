@@ -21,7 +21,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         Statement stm = null;
         Connection con = null;
         
-        String sql = "INSERT INTO reporteaccidente VALUES (null,'" +reporte.getFecha()+ "','"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"', '"+reporte.getId_cliente()+"')";       
+        String sql = "INSERT INTO reporteaccidente (fecha,direccion,labor,descripcion,cliente_id_cliente) VALUES (TO_DATE('"+reporte.getFecha()+"', 'dd/mm/yyyy'),'"+ reporte.getDireccion()+"','"+reporte.getLabor()+"','"+reporte.getDescripcion()+"', '"+reporte.getId_cliente()+"')";       
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -44,7 +44,8 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from reporteaccidente ORDER BY ID";
+        String sql = "SELECT id_reporte, fecha, direccion, labor, descripcion, cliente_id_cliente, nombreempresa as cliente FROM reporteaccidente INNER JOIN cliente ON cliente_id_cliente=id_cliente";
+
         
         List<ReporteAccidente> listaReporteAccidentes = new ArrayList<ReporteAccidente>();
         
@@ -60,6 +61,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
                         c.setLabor(rs.getString(4));
                         c.setDescripcion(rs.getString(5));
                         c.setId_cliente(rs.getInt(6));
+                        c.setCliente(rs.getString(7));
                         listaReporteAccidentes.add(c);
                 }
                 stm.close();
@@ -81,8 +83,8 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         
         boolean actualizar = false;
         
-        String sql = "UPDATE reporteaccidente SET fecha = '" + reporte.getFecha()+ "', direccion = '"+ reporte.getDireccion()+"', labor = '"+reporte.getLabor()+"', descripcion = '"+reporte.getDescripcion()+"', cliente_id_cliente = '"+reporte.getId_cliente()+"')";
-        
+        String sql = "UPDATE reporteaccidente SET fecha = TO_DATE('"+reporte.getFecha()+"', 'dd/mm/yyyy'), direccion = '"+ reporte.getDireccion()+"', labor = '"+reporte.getLabor()+"', descripcion = '"+reporte.getDescripcion()+"' WHERE cliente_id_cliente = '"+reporte.getId_cliente()+"'";
+        System.out.println(sql);
         try {
                 con = ConexionSingleton.getConnection();
                 stm = con.createStatement();
@@ -107,7 +109,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         
         boolean eliminar = false;
         
-        String sql = "DELETE FROM reporteaccidente WHERE id = " + reporte.getIdReporteAccidente();
+        String sql = "DELETE FROM reporteaccidente WHERE id_reporte = " + reporte.getIdReporteAccidente();
         
         try {
                 con = ConexionSingleton.getConnection();
@@ -131,7 +133,7 @@ public class ReporteAccidenteDao implements iReporteAccidenteDao {
         Statement stm = null;
         ResultSet rs = null;
         
-        String sql = "select * from cliente where ID = " + id_ReporteAccidente;
+        String sql = "select * from reporteaccidente where id_reporte = " + id_ReporteAccidente;
         
         ReporteAccidente u = new ReporteAccidente();
         try {

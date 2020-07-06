@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -24,18 +25,17 @@
 					</tr>
 				</thead>
 				</tbody>
+					</tbody>
+				<c:forEach items='${listadoreporteaccidentes}' var='reporteaccidente'>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>
-							<a class="btn btn-warning">Editar</a>
-							<a class="btn btn-danger">Eliminar</a>
-						</td>
+				<td>${reporteaccidente.getFecha()}</td>
+				<td>${reporteaccidente.getDireccion()}</td>
+				<td>${reporteaccidente.getLabor()}</td>
+				<td>${reporteaccidente.getDescripcion()}</td>
 					</tr>
-				</tbody>				
+					</c:forEach>
+				</tbody>		
+							
 			</table>
 		</div>
 	

@@ -31,9 +31,18 @@
 					<label>Descripcion: </label>
 					<input type="text" name="txtdescripcion" class="form-control">			
 				</div>
+				<div class="form-group">
+					<label>Cliente</label>
+					<select name="txtid_cliente" class="form-control form-control">				
+	  				<c:forEach items="${listadoclientes}" var="cliente">
+				<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
+			</c:forEach>
+					</select>			
+				</div>
 				
 			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
 			<input type="reset" value="Cancelar" class="btn btn-info">
+			
 			</form>
 		</div>
 	</div>
@@ -42,6 +51,9 @@
 		<c:if test="${cumensaje != null}">
 				<c:out value="${cumensaje}" />
 			</c:if>
+			<c:if test="${param.emensaje != null}">
+				<c:out value="${param.emensaje}" />
+			</c:if>
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -49,17 +61,19 @@
 						<th>Direccion</th>
 						<th>Labor</th>
 						<th>Descripcion</th>
+						<th>Cliente</th>
 					</tr>
 				</thead>
 				
 				</tbody>
 				</tbody>
-				<c:forEach items='${listadoreporteaccidentes}' var='cliente'>
+				<c:forEach items='${listadoreporteaccidentes}' var='reporteaccidente'>
 					<tr>
 				<td>${reporteaccidente.getFecha()}</td>
 				<td>${reporteaccidente.getDireccion()}</td>
-				<td>${reporteaccidente.getFechaLabor()}</td>
-				<td>${reporteaccidente.getFechaDescripcion()}</td>
+				<td>${reporteaccidente.getLabor()}</td>
+				<td>${reporteaccidente.getDescripcion()}</td>
+				<td>${reporteaccidente.getCliente()}</td>
 						<td>
 							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarReporte?id=${reporteaccidente.getIdReporteAccidente()}">Editar</a>
 							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarReporte?id=${reporteaccidente.getIdReporteAccidente()}">Eliminar</a>
