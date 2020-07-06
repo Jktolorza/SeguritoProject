@@ -26,7 +26,7 @@
 				</div>
 				<div class="form-group">
 					<label>Cantidad: </label>
-					<input type="number" name="txtcantidad" class="form-control">			
+					<input type="number" name="txtcantidad" class="form-control" max="9">			
 				</div>
 				<div class="form-group">
 					<label>Factura: </label>

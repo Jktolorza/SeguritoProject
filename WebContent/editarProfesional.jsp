@@ -37,7 +37,7 @@
 					</div>
 					<div class="form-group">
 						<label>Correo: </label>
-						<input type="text" name="txtcorreo" class="form-control"
+						<input type="email" name="txtcorreo" class="form-control"
 							value="${datosprofesional.getCorreo()}">
 					</div>
 					<div class="form-group">
@@ -55,7 +55,7 @@
 					</div>
 
 					<input type="submit" name="accion" value="Editar" class="btn btn-info">
-					<input type="reset" value="Cancelar" class="btn btn-info">
+					<input type="submit" href="${pageContext.request.contextPath}/CrearProfesional" value="Cancelar" class="btn btn-info">
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

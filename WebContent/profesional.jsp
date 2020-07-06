@@ -33,7 +33,7 @@
 					<div class="form-group">
 						<label>Correo:
 						</label>
-						<input type="text" name="txtCorreo" class="form-control">
+						<input type="email" name="txtCorreo" class="form-control">
 					</div>
 					<div class="form-group">
 						<label>Telefono:

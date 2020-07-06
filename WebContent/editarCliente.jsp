@@ -39,7 +39,7 @@
 							value="${datoscliente.getId_cliente()}">
 					</div>
 					<input type="submit" name="accion" value="Editar" class="btn btn-info">
-					<input type="reset" value="Cancelar" class="btn btn-info">
+					<input type="submit" href="${pageContext.request.contextPath}/CrearCliente" value="Cancelar" class="btn btn-info">
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

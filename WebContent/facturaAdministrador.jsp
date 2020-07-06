@@ -26,7 +26,7 @@
 				</div>
 				<div class="form-group">
 					<label>Extras: </label>
-					<input type="number" name="txtextras" class="form-control">			
+					<input type="number" name="txtextras" class="form-control" max="9"placeholder="Ingresar solo numeros">			
 				</div>
 				<div class="form-group">
 					<label>Impuestos: </label>
