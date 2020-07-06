@@ -60,9 +60,9 @@ public class CrearFactura extends HttpServlet {
             String fechadecobro = request.getParameter("txtfechadecobro");
             String fechaVencimiento = request.getParameter("txtfechaVencimiento");
             int extras = Integer.parseInt(request.getParameter("txtextras"));
-            int impuestos = Integer.parseInt(request.getParameter("txtimpuestos"));
-            int subtotal = Integer.parseInt(request.getParameter("txtsubtotal"));
-            int total = Integer.parseInt(request.getParameter("txttotal"));
+            int impuestos =0; //Integer.parseInt(request.getParameter("txtimpuestos"));
+            int subtotal =0; //Integer.parseInt(request.getParameter("txtsubtotal"));
+            int total =0; //Integer.parseInt(request.getParameter("txttotal"));
             int id_cliente = Integer.parseInt(request.getParameter("txtid_cliente"));
             
             Factura factura = new Factura(fechadecobro, fechaVencimiento, extras, impuestos, subtotal,total,id_cliente);

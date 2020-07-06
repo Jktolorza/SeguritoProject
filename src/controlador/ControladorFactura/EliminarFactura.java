@@ -52,9 +52,9 @@ public class EliminarFactura extends HttpServlet {
     		if (elimino) {
     			mensaje = "La factura ha sido eliminada exitosamente";
     		} else {
-    			if (ProfesionalDao.integridad) {
+    			if (FacturaDao.integridad) {
     				mensaje = "Error de integridad, esta tratando de eliminar un registro con campos secundarios asociados";
-    				ProfesionalDao.integridad = false;
+    				FacturaDao.integridad = false;
     			} else {
     				mensaje = "Ocurrio un problema  al eliminar la factura";
     			}
