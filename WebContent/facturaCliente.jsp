@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 
 <html>
@@ -26,17 +27,20 @@
 					</tr>
 				</thead>
 				</tbody>
+				<c:forEach items='${listadofacturas}' var='factura'>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+				<td>${factura.getFechadecobro()}</td>
+				<td>${factura.getFechaVencimiento()}</td>
+				<td>${factura.getExtras()}</td>
+				<td>${factura.getImpuestos()}</td>
+				<td>${factura.getSubtotal()}</td>
+				<td>${factura.getTotal()}</td>
+				<td>${factura.getCliente()}</td>
 						<td>
-							<a class="btn btn-warning">Mas detalles</a>
-							
+							<a class="btn btn-warning" href="${pageContext.request.contextPath}/ListarDetalle?id=${factura.getId_factura()}">Mas Detalles</a>		
 						</td>
 					</tr>
+					</c:forEach>
 				</tbody>				
 			</table>
 		</div>

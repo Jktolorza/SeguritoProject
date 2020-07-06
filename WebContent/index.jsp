@@ -41,6 +41,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearProfesional" target="myFrame">Control Profesional</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCliente" target="myFrame">Control Cliente</a>
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearFactura" target="myFrame">Facturacion Clientes</a>
                         </div>
                     </li>
 
@@ -65,7 +66,7 @@
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCapacitacion" target="myFrame">Agendar Capacitacion</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/ListarReporte" target="myFrame">Revisar Accidentes</a>
-							<a class="dropdown-item" href="#" target="myFrame">Revisar Facturacion de clientes</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/ListarFactura" target="myFrame">Revisar Facturacion de clientes</a>
                         </div>
                     </li>
                     <!-- Detalle Cliente -->
@@ -89,7 +90,7 @@
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarAsesorias" target="myFrame">Revisar Asesorias</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarCapacitacion" target="myFrame">Revisar Capacitaciones</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearReporte" target="myFrame">Reportar Accidente</a>
-                            <a class="dropdown-item" href="#" target="myFrame">Facturacion</a>
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarFactura" target="myFrame">Facturacion</a>
 
                         </div>
                     </li>

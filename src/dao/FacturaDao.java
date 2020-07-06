@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,20 +22,27 @@ public class FacturaDao implements iFacturaDao {
 
 		boolean registrar = false;
 		
-		Statement stm = null;
+		PreparedStatement stm = null;
 		Connection con = null;
 		
-		String sql = "INSERT INTO factura VALUES (null,'" + fac.getFechadecobro() + "','"+ fac.getFechaVencimiento()+"','"+fac.getExtras()+"','"+fac.getImpuestos()+"','"+fac.getSubtotal()+"','"+fac.getTotal()+"','"+fac.getId_cliente()+"')";
+		String sql = "INSERT INTO factura(fechacobro, fechavencimiento, extras, impuestos, subtotal, total, cliente_id_cliente) VALUES (TO_DATE(?,'dd/mm/yyyy'), TO_DATE(?,'dd/mm/yyyy'), ?, ?, ?, ?, ?)";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setString(1,fac.getFechadecobro());
+			stm.setString(2, fac.getFechaVencimiento());
+			stm.setInt(3, fac.getExtras());
+			stm.setInt(4, fac.getImpuestos());
+			stm.setInt(5, fac.getSubtotal());
+			stm.setInt(6, fac.getTotal());
+			stm.setInt(7, fac.getId_cliente());
+			stm.execute();
 			registrar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, m�todo crearFactura");
+			System.out.println("Error: Clase FacturaDao, metodo crearFactura");
 			e.printStackTrace();
 		}
 		
@@ -50,7 +58,7 @@ public class FacturaDao implements iFacturaDao {
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from factura ORDER BY ID";
+		String sql = "SELECT id_factura, fechacobro, fechavencimiento, extras, impuestos, subtotal, total, cliente_id_cliente, nombreempresa as cliente FROM factura INNER JOIN cliente ON cliente_id_cliente=id_cliente";
 		
 		List<Factura> listaFactura = new ArrayList<Factura>();
 		
@@ -60,21 +68,22 @@ public class FacturaDao implements iFacturaDao {
 			rs = stm.executeQuery(sql);
 			while (rs.next()) {
 				Factura c = new Factura();
-				c.setId_factura(rs.getInt(1));
-				c.setFechadecobro(rs.getString(2));
-				c.setFechaVencimiento(rs.getString(3));
-				c.setExtras(rs.getInt(4));
-				c.setImpuestos(rs.getInt(5));
-				c.setSubtotal(rs.getInt(6));
-				c.setTotal(rs.getInt(7));
-				c.setId_cliente(rs.getInt(8));
+				c.setId_factura(rs.getInt("id_factura"));
+				c.setFechadecobro(rs.getString("fechacobro"));
+				c.setFechaVencimiento(rs.getString("fechavencimiento"));
+				c.setExtras(rs.getInt("extras"));
+				c.setImpuestos(rs.getInt("impuestos"));
+				c.setSubtotal(rs.getInt("subtotal"));
+				c.setTotal(rs.getInt("total"));
+				c.setId_cliente(rs.getInt("cliente_id_cliente"));
+				c.setCliente(rs.getString("cliente"));
 				listaFactura.add(c);
 			}
 			stm.close();
 			rs.close();
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, m�todo leerFactura ");
+			System.out.println("Error: Clase FacturaDao, metodo leerFactura ");
 			e.printStackTrace();
 		}
 		
@@ -86,21 +95,29 @@ public class FacturaDao implements iFacturaDao {
 		// TODO Auto-generated method stub
 
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		
 		boolean actualizar = false;
 		
-		String sql = "UPDATE factura SET id_factura = '" + fac.getId_factura() + "', fechacobro = '" + fac.getFechadecobro() + "', fechavencimiento = '" + fac.getFechaVencimiento() + "', extras = '"+ fac.getExtras()+"', impuestos = '"+ fac.getImpuestos() +"', subtotal = '"+ fac.getSubtotal()+"', total = '"+ fac.getTotal()+"', cliente_id_cliente'"+ fac.getId_cliente()+"' WHERE id = '" + fac.getId_factura() + "'";
+		String sql = "UPDATE factura SET fechacobro = TO_DATE(?,'dd/mm/yyyy'), fechavencimiento = TO_DATE(?,'dd/mm/yyyy'), extras = ?, impuestos = ?, subtotal = ?, total = ?, cliente_id_cliente = ? WHERE id_factura = ?";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setString(1, fac.getFechadecobro());
+			stm.setString(2, fac.getFechaVencimiento());
+			stm.setInt(3, fac.getExtras());
+			stm.setInt(4, fac.getImpuestos());
+			stm.setInt(5, fac.getSubtotal());
+			stm.setInt(6, fac.getTotal());
+			stm.setInt(7, fac.getId_cliente());
+			stm.setInt(8, fac.getId_factura());
+			stm.executeUpdate();
 			actualizar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, m�todo actualizar");
+			System.out.println("Error: Clase FacturaDao, metodo actualizar");
 			e.printStackTrace();
 		}
 		
@@ -112,21 +129,22 @@ public class FacturaDao implements iFacturaDao {
 	public boolean eliminarFactura(Factura fac) {
 		// TODO Auto-generated method stub
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		
 		boolean eliminar = false;
 		
-		String sql = "DELETE FROM factura WHERE id = " + fac.getId_factura();
+		String sql = "DELETE FROM factura WHERE id_factura = ?";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			stm.execute(sql);
+			stm = con.prepareStatement(sql);
+			stm.setInt(1, fac.getId_factura());
+			stm.execute();
 			eliminar = true;
 			stm.close();
 			con.close();
 		}catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, m�todo eliminarFactura");
+			System.out.println("Error: Clase FacturaDao, metodo eliminarFactura");
 			e.printStackTrace();
 		}
 		
@@ -136,31 +154,32 @@ public class FacturaDao implements iFacturaDao {
 	@Override
 	public Factura obtenerFactura(int id_factura) {
 		Connection con = null;
-		Statement stm = null;
+		PreparedStatement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from factura where ID = " + id_factura;
+		String sql = "select * from factura where id_factura = ?";
 		
 		Factura u = new Factura();
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			rs = stm.executeQuery(sql);
+			stm = con.prepareStatement(sql);
+			stm.setInt(1, id_factura);
+			rs = stm.executeQuery();
 			while (rs.next()) {
-				u.setId_factura(rs.getInt(1));
-				u.setFechadecobro(rs.getString(2));
-				u.setFechaVencimiento(rs.getString(3));
-				u.setExtras(rs.getInt(4));
-				u.setImpuestos(rs.getInt(5));
-				u.setSubtotal(rs.getInt(6));
-				u.setTotal(rs.getInt(7));
-				u.setId_cliente(rs.getInt(8));
+				u.setId_factura(rs.getInt("id_factura"));
+				u.setFechadecobro(rs.getString("fechacobro"));
+				u.setFechaVencimiento(rs.getString("fechavencimiento"));
+				u.setExtras(rs.getInt("extras"));
+				u.setImpuestos(rs.getInt("impuestos"));
+				u.setSubtotal(rs.getInt("subtotal"));
+				u.setTotal(rs.getInt("total"));
+				u.setId_cliente(rs.getInt("cliente_id_cliente"));
 			}
 			stm.close();
 			rs.close();
 			con.close();
 		} catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, m�todo obtenerFactura");
+			System.out.println("Error: Clase FacturaDao, metodo obtenerFactura");
 			e.printStackTrace();
 		}
 		

@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CapacitacionDao;
+import dao.ClienteDao;
 import dao.FacturaDao;
+import modelo.Capacitacion;
+import modelo.Cliente;
 import modelo.Factura;
 
 /**
@@ -32,16 +36,27 @@ public class CrearFactura extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ClienteDao clientedao = new ClienteDao();
+		List<Cliente> lclientes = new ArrayList<Cliente>();
+		
+		lclientes = clientedao.leerCliente();
+		
+		request.setAttribute("listadoclientes",lclientes);
+		
+		//mostrarlista
+		List<Factura> lfacturas = new ArrayList<Factura>();
+		FacturaDao facturadao = new FacturaDao();
+		lfacturas = facturadao.leerFactura();
+			
+		request.setAttribute("listadofacturas",lfacturas);
+		
+		request.getRequestDispatcher("facturaAdministrador.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	        
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      
             String fechadecobro = request.getParameter("txtfechadecobro");
             String fechaVencimiento = request.getParameter("txtfechaVencimiento");
             int extras = Integer.parseInt(request.getParameter("txtextras"));

@@ -9,7 +9,8 @@ public class Factura {
 	private int impuestos;
 	private int subtotal;
 	private int total;
-		private int id_cliente; //FK
+	private int id_cliente; //FK
+	private String cliente;
 		
 	//Constructores//
 	public Factura() {
@@ -19,6 +20,19 @@ public class Factura {
 	public Factura(String fechadecobro, String fechaVencimiento, int extras, int impuestos, int subtotal, int total,
 			int id_cliente) {
 		super();
+		this.fechadecobro = fechadecobro;
+		this.fechaVencimiento = fechaVencimiento;
+		this.extras = extras;
+		this.impuestos = impuestos;
+		this.subtotal = subtotal;
+		this.total = total;
+		this.id_cliente = id_cliente;
+	}
+	
+	public Factura(int id_factura, String fechadecobro, String fechaVencimiento, int extras, int impuestos, int subtotal, int total,
+			int id_cliente) {
+		super();
+		this.id_factura = id_factura;
 		this.fechadecobro = fechadecobro;
 		this.fechaVencimiento = fechaVencimiento;
 		this.extras = extras;
@@ -100,9 +114,15 @@ public class Factura {
 	public void setTotal(int total) {
 		this.total = total;
 	}
+	
+	public String getCliente() {
+		return cliente;
+	}
 
-	
-	
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+
 	@Override
 	public String toString() {
 		return "Factura [id_factura=" + id_factura + ", fechadecobro=" + fechadecobro + ", fechaVencimiento="
