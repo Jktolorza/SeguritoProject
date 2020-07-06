@@ -90,6 +90,7 @@
 						<td>
 							<a class="btn btn-warning" href="${pageContext.request.contextPath}/EditarFactura?id=${factura.getId_factura()}">Editar</a>
 							<a class="btn btn-danger" href="${pageContext.request.contextPath}/EliminarFactura?id=${factura.getId_factura()}">Eliminar</a>
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/ListarDetalle?id=${factura.getId_factura()}">Mas Detalles</a>
 						</td>
 					</tr>
 					</c:forEach>
