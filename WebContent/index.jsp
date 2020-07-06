@@ -64,7 +64,7 @@
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearActividadesMejora" target="myFrame">Ingresar Actividad a mejorar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearAsesoria" target="myFrame">Agendar Asesoria</a>
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/CrearCapacitacion" target="myFrame">Agendar Capacitacion</a>
-							<a class="dropdown-item" href="#" target="myFrame">Revisar Accidentes</a>
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/ListarReporte" target="myFrame">Revisar Accidentes</a>
 							<a class="dropdown-item" href="#" target="myFrame">Revisar Facturacion de clientes</a>
                         </div>
                     </li>
@@ -88,7 +88,7 @@
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarActividadesMejora" target="myFrame">Actividades a mejorar</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarAsesorias" target="myFrame">Revisar Asesorias</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/ListarCapacitacion" target="myFrame">Revisar Capacitaciones</a>
-                            <a class="dropdown-item" href="#" target="myFrame">Reportar Accidente</a>
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/CrearReporte" target="myFrame">Reportar Accidente</a>
                             <a class="dropdown-item" href="#" target="myFrame">Facturacion</a>
 
                         </div>
