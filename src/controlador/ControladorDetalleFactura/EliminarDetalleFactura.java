@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DetalleFacturaDao;
+import dao.FacturaDao;
 import modelo.DetalleFactura;
+import modelo.Factura;
 
 /**
  * Servlet implementation class EliminarDetalleFactura
@@ -49,6 +51,19 @@ public class EliminarDetalleFactura extends HttpServlet {
                 mensaje = "El detalle de factura ha sido eliminado exitosamente";
         else
                 mensaje = "Ocurrio un problema  al eliminar el detalle factura";
+        
+        //actualizar valores en factura
+        Factura factura = new Factura();
+        FacturaDao facturadao = new FacturaDao();
+        factura = facturadao.obtenerFactura(facturaid);
+        factura.setItems(listadoeliminar);
+        factura.setSubtotal((int)factura.calcularSubtotal());
+        factura.setImpuestos((int)factura.calcularIVA());
+        factura.setTotal((int)factura.calcularTotal());
+        
+        facturadao.actualizarValores(factura);
+        
+        
         request.setAttribute("cumensaje", mensaje);
         request.setAttribute("listadodetallefacturas", listadoeliminar);
         request.getRequestDispatcher("CrearDetalleFactura?id="+ facturaid).forward(request, response);

@@ -79,7 +79,18 @@ public class CrearDetalleFactura extends HttpServlet {
             List<DetalleFactura> ldetallefactura = new ArrayList<DetalleFactura>();
             
             ldetallefactura = detallefacturadao.leerDetalleFactura(id_factura);
-                    
+
+          //actualizar valores en factura
+            Factura factura = new Factura();
+            FacturaDao facturadao = new FacturaDao();
+            factura = facturadao.obtenerFactura(id_factura);
+            factura.setItems(ldetallefactura);
+            factura.setSubtotal((int)factura.calcularSubtotal());
+            factura.setImpuestos((int)factura.calcularIVA());
+            factura.setTotal((int)factura.calcularTotal());
+            
+            facturadao.actualizarValores(factura);
+            
             request.setAttribute("listadodetallefacturas",ldetallefactura);
 
             response.sendRedirect("CrearDetalleFactura?id="+ id_factura);

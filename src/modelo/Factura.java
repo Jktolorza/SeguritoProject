@@ -165,7 +165,7 @@ public class Factura {
     	}
     
     public double calcularTotal() { 
-    	return calcularSubtotal() + calcularIVA(); 
+    	return calcularSubtotal() + calcularIVA()+this.extras; 
     	}
     
 }

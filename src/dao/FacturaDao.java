@@ -186,34 +186,66 @@ public class FacturaDao implements iFacturaDao {
 		return u;
 	}
 
-	public List<DetalleFactura> calcularFactura(int id_factura) {
+//	public List<DetalleFactura> calcularFactura(int id_factura) {
+//		Connection con = null;
+//		Statement stm = null;
+//		ResultSet rs = null;
+//		
+//		String sql = "select * from detallefactura where factura_id_factura = " + id_factura;
+//		List <DetalleFactura> listaFactura = new ArrayList<DetalleFactura>();
+//		
+//		try {
+//			con = ConexionSingleton.getConnection();
+//			stm = con.createStatement();
+//			rs = stm.executeQuery(sql);
+//			while (rs.next()) {
+//				DetalleFactura c = new DetalleFactura();
+//				c.setId_detallefactura(rs.getInt("id_detallefactura"));
+//				c.setNombre(rs.getString("nombre"));
+//				c.setPrecio(rs.getInt("precio"));
+//				c.setCantidad(rs.getInt("cantidad"));
+//				listaFactura.add(c);
+//			}
+//			stm.close();
+//			rs.close();
+//			con.close(); 
+//		} catch(SQLException e) {
+//			System.out.println("Error: Clase FacturaDao, metodo calcularFactura ");
+//			e.printStackTrace();
+//		}
+//		return listaFactura;
+//	}
+	
+	public boolean actualizarValores(Factura fact) {
+		// TODO Auto-generated method stub
+
 		Connection con = null;
-		Statement stm = null;
-		ResultSet rs = null;
+		PreparedStatement stm = null;
 		
-		String sql = "select * from detallefactura where factura_id_factura = " + id_factura;
-		List <DetalleFactura> listaFactura = new ArrayList<DetalleFactura>();
+		boolean actualizar = false;
+		
+		String sql = "UPDATE factura SET extras = ?, impuestos = ?, subtotal = ?, total = ? WHERE id_factura = ?";
 		
 		try {
 			con = ConexionSingleton.getConnection();
-			stm = con.createStatement();
-			rs = stm.executeQuery(sql);
-			while (rs.next()) {
-				DetalleFactura c = new DetalleFactura();
-				c.setId_detallefactura(rs.getInt("id_detallefactura"));
-				c.setNombre(rs.getString("nombre"));
-				c.setPrecio(rs.getInt("precio"));
-				c.setCantidad(rs.getInt("cantidad"));
-				listaFactura.add(c);
-			}
+			stm = con.prepareStatement(sql);
+			stm.setInt(1, fact.getExtras());
+			stm.setInt(2, fact.getImpuestos());
+			stm.setInt(3, fact.getSubtotal());
+			stm.setInt(4, fact.getTotal());
+			stm.setInt(5, fact.getId_factura());
+			stm.executeUpdate();
+			actualizar = true;
 			stm.close();
-			rs.close();
-			con.close(); 
-		} catch(SQLException e) {
-			System.out.println("Error: Clase FacturaDao, metodo calcularFactura ");
+			con.close();
+		}catch(SQLException e) {
+			System.out.println("Error: Clase FacturaDao, metodo actualizar valores");
 			e.printStackTrace();
 		}
-		return listaFactura;
+		
+		return actualizar;
+
 	}
+	
 	
 }

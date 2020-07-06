@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.DetalleFacturaDao;
+import dao.FacturaDao;
 import modelo.DetalleFactura;
+import modelo.Factura;
 
 
 /**
@@ -76,6 +78,18 @@ public class EditarDetalleFactura extends HttpServlet {
                 mensaje = "El detalle de Factura se ha editado exitosamente";
             else
                 mensaje = "Ocurrio un error al editar el detalle de factura";
+            
+            //actualizar valores en factura
+            Factura factura = new Factura();
+            FacturaDao facturadao = new FacturaDao();
+            factura = facturadao.obtenerFactura(id_factura);
+            factura.setItems(detallefacturadao.leerDetalleFactura(id_factura));
+            factura.setSubtotal((int)factura.calcularSubtotal());
+            factura.setImpuestos((int)factura.calcularIVA());
+            factura.setTotal((int)factura.calcularTotal());
+            
+            facturadao.actualizarValores(factura);
+            
 
         request.setAttribute("datosdetallefactura", detallefactura);
         request.setAttribute("cumensaje", mensaje);
