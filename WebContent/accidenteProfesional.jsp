@@ -32,6 +32,7 @@
 				<td>${reporteaccidente.getDireccion()}</td>
 				<td>${reporteaccidente.getLabor()}</td>
 				<td>${reporteaccidente.getDescripcion()}</td>
+				<td>${reporteaccidente.getCliente()}</td>
 					</tr>
 					</c:forEach>
 				</tbody>		
