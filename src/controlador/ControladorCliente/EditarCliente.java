@@ -54,7 +54,7 @@ public class EditarCliente extends HttpServlet {
 		cliente.setFechaRegistro(fechayhora);
 		
 		request.setAttribute("datoscliente", cliente);
-		request.getRequestDispatcher("editarCliente.jsp").forward(request, response);
+		request.getRequestDispatcher("clienteEditar.jsp").forward(request, response);
 		
 		
 	}

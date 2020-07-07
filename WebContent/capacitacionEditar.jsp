@@ -60,8 +60,8 @@
 							</c:forEach>
 						</select>
 					</div>
-					<input type="submit" name="accion" value="Editar" class="btn btn-info"> <input type="submit"
-						value="Cancelar" href="${pageContext.request.contextPath}/CrearCapacitacion" class="btn btn-info">
+					<input type="submit" name="accion" value="Editar" class="btn btn-info"> 
+					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearCapacitacion">Cancelar</a> 
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

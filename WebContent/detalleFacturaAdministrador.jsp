@@ -22,11 +22,11 @@
 				</div>
 				<div class="form-group">
 					<label>Precio: </label>
-					<input type="number" name="txtprecio" class="form-control">			
+					<input type="number" name="txtprecio" class="form-control" max="999999999">			
 				</div>
 				<div class="form-group">
 					<label>Cantidad: </label>
-					<input type="number" name="txtcantidad" class="form-control" max="9">			
+					<input type="number" name="txtcantidad" class="form-control" max="999999999">			
 				</div>
 				<div class="form-group">
 					<label>Factura: </label>
@@ -75,7 +75,8 @@
 			</table>
 		</div>
 	</div>
-
+<p> Para volver a las facturas <p>
+	<a class="btn btn-danger" href="${pageContext.request.contextPath}/CrearFactura"> Facturas</a>
 
 <!-- Jss boostrap -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

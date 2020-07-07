@@ -26,12 +26,12 @@
 					</div>
 					<div class="form-group">
 						<label>Precio: </label>
-						<input type="number" name="txtprecio" class="form-control" 
+						<input type="number" name="txtprecio" class="form-control" max="999999999"
 							value="${datosdetallefactura.getPrecio()}">
 					</div>
 					<div class="form-group">
 						<label>Cantidad: </label>
-						<input type="number" name="txtcantidad" class="form-control"
+						<input type="number" name="txtcantidad" class="form-control" max="999999999"
 							value="${datosdetallefactura.getCantidad()}">
 					</div>
 					<div class="form-group">
@@ -42,8 +42,8 @@
 					<label>Factura: </label>
 					<input type="number" name="txtid_factura" class="form-control" value="${facturaid}" checked readonly >			
 				</div>
-					<input type="submit" name="accion" value="Editar" class="btn btn-info"> <input type="reset"
-						value="Cancelar" class="btn btn-info">
+					<input type="submit" name="accion" value="Editar" class="btn btn-info"> 
+					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${facturaid}">Cancelar</a> 
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

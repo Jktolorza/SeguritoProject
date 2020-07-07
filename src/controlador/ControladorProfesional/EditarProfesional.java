@@ -42,7 +42,7 @@ public class EditarProfesional extends HttpServlet {
 		profesional = profesionaldao.obtenerProfesional(profesionalid);
 		
 		request.setAttribute("datosprofesional", profesional);
-		request.getRequestDispatcher("editarProfesional.jsp").forward(request, response);
+		request.getRequestDispatcher("profesionalEditar.jsp").forward(request, response);
 	}
 
 	/**

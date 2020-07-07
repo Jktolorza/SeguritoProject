@@ -55,7 +55,7 @@
 					</div>
 
 					<input type="submit" name="accion" value="Editar" class="btn btn-info">
-					<input type="submit" href="${pageContext.request.contextPath}/CrearProfesional" value="Cancelar" class="btn btn-info">
+					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearProfesional">Cancelar</a> 
 				</form>
 			</div>
 			<div class="col align-self-end"></div>
