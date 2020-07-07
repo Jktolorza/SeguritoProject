@@ -32,13 +32,43 @@
 						required autofocus>
 					<label for="inputPassword" class="sr-only">Password</label>
 					<input type="password" name="txtpassword" id="inputPassword" class="form-control"
-						placeholder="Contraseña" required>
+						placeholder="Contraseï¿½a" required>
 					<div class="checkbox mb-3">
 						<label>
 							<input type="checkbox" value="remember-me"> Recordar Cuenta
 						</label>
 					</div>
 					<input class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar"></input>
+					<!-- Alerta de claves -->
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Ayuda
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									Registro de claves<br>
+									Usuario:cliente -- pass:cliente<br>
+									Usuario:profesional -- pass:profesional<br>
+									Usuario:administrador -- pass:administrador<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>									
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<p class="mt-5 mb-3 text-muted">&copy; 2020-PSegurito</p>
 				</form>
 			</div>
