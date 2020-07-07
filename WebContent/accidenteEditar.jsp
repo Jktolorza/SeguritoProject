@@ -27,22 +27,22 @@
 					<div class="form-group">
 						<label>Fecha: </label>
 						<input type="text" name="txtfecha" class="form-control" id="datetimepicker"
-							value="${datosreporteaccidente.getFecha()}">
+							value="${datosreporteaccidente.getFecha()}" required>
 					</div>
 					<div class="form-group">
 						<label>Direccion: </label>
 						<input type="text" name="txtdireccion" class="form-control"
-							value="${datosreporteaccidente.getDireccion()}">
+							value="${datosreporteaccidente.getDireccion()}" required>
 					</div>
 					<div class="form-group">
 						<label>Labor: </label>
 						<input type="text" name="txtlabor" class="form-control"
-							value="${datosreporteaccidente.getLabor()}">
+							value="${datosreporteaccidente.getLabor()}" required>
 					</div>
 					<div class="form-group">
 						<label>Descripcion</label>
 						<input type="text" name="txtdescripcion" class="form-control"
-							value="${datosreporteaccidente.getDescripcion()}">
+							value="${datosreporteaccidente.getDescripcion()}"required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidreporteaccidente" class="form-control"

@@ -59,7 +59,7 @@ public class CrearFactura extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      
             String fechadecobro = request.getParameter("txtfechadecobro");
             String fechaVencimiento = request.getParameter("txtfechaVencimiento");
-            int extras = Integer.parseInt(request.getParameter("txtextras"));
+            int extras = ((request.getParameter("txtextras").equals("")) ? 0 : Integer.parseInt(request.getParameter("txtextras"))) ;
             int impuestos =0; //Integer.parseInt(request.getParameter("txtimpuestos"));
             int subtotal =0; //Integer.parseInt(request.getParameter("txtsubtotal"));
             int total =0; //Integer.parseInt(request.getParameter("txttotal"));

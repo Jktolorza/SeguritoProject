@@ -20,23 +20,23 @@
 			<form action="CrearActividadesMejora" method="post">
 				<div class="form-group">
 					<label>Nombre: </label>
-					<input type="text" name="txtnombre" class="form-control">			
+					<input type="text" name="txtnombre" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Fecha Inicio: </label>
-					<input type="text" name="txtfechainicio" id="datetimepicker" class="form-control">			
+					<input type="text" name="txtfechainicio" id="datetimepicker" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Fecha Termino: </label>
-					<input type="text" name="txtfechatermino" id="datetimepicker2" class="form-control">			
+					<input type="text" name="txtfechatermino" id="datetimepicker2" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Estado: </label>
-					<input type="text" name="txtestado" class="form-control">			
+					<input type="text" name="txtestado" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Detalle: </label>
-					<input type="text" name="txtdetalle" class="form-control">			
+					<input type="text" name="txtdetalle" class="form-control" required>			
 				</div>
 
 				<div class="form-group">

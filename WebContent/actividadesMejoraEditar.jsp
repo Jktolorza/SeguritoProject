@@ -24,27 +24,27 @@
 					<div class="form-group">
 						<label>Nombre: </label>
 						<input type="text" name="txtnombre" class="form-control"
-							value="${datosactmejora.getNombre()}">
+							value="${datosactmejora.getNombre()}" required>
 					</div>
 					<div class="form-group">
 						<label>Fecha Inicio: </label>
 						<input type="text" name="txtfechainicio" id="datetimepicker" class="form-control" 
-							value="${datosactmejora.getFechaInicio()}">
+							value="${datosactmejora.getFechaInicio()}" required>
 					</div>
 					<div class="form-group">
 						<label>Fecha Termino: </label>
 						<input type="text" name="txtfechatermino" id="datetimepicker2" class="form-control"
-							value="${datosactmejora.getFechaTermino()}">
+							value="${datosactmejora.getFechaTermino()}" required>
 					</div>
 					<div class="form-group">
 						<label>Estado: </label>
 						<input type="text" name="txtestado" class="form-control"
-							value="${datosactmejora.getEstado()}">
+							value="${datosactmejora.getEstado()}" required>
 					</div>
 					<div class="form-group">
 						<label>Detalle: </label>
 						<input type="text" name="txtdetalle" class="form-control"
-							value="${datosactmejora.getDetalle()}">
+							value="${datosactmejora.getDetalle()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidactmejora" class="form-control"

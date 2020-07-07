@@ -23,17 +23,17 @@
 				<h1 class="display-4">Editar Asesoria</h1>
 				<form action="EditarAsesoria" method="post">
 					<div class="form-group">
-						<label>Fechayhora: </label>
+						<label>Fecha y hora: </label>
 						<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control"
-							value="${datosasesoria.getFechayhora()}">
+							value="${datosasesoria.getFechayhora()}" required>
 					</div>
 					<div class="form-group">
 						<label>Motivo: </label>
-						<input type="text" name="txtmotivo" class="form-control" value="${datosasesoria.getMotivo()}">
+						<input type="text" name="txtmotivo" class="form-control" value="${datosasesoria.getMotivo()}" required>
 					</div>
 					<div class="form-group">
 						<label>Detalle: </label>
-						<input type="text" name="txtdetalle" class="form-control" value="${datosasesoria.getDetalle()}">
+						<input type="text" name="txtdetalle" class="form-control" value="${datosasesoria.getDetalle()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidasesoria" class="form-control"

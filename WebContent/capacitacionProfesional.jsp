@@ -21,15 +21,15 @@
 			<form action="CrearCapacitacion" method="post">
 				<div class="form-group">
 					<label>Fecha y Hora: </label>
-					<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control">			
+					<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Tema: </label>
-					<input type="text" name="txttema" class="form-control">			
+					<input type="text" name="txttema" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Contenido: </label>
-					<input type="text" name="txtcontenido" class="form-control">			
+					<input type="text" name="txtcontenido" class="form-control" required>			
 				</div>
 
 				<div class="form-group">

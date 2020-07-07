@@ -25,16 +25,16 @@
 					<div class="form-group">
 						<label>Nombre de la empresa: </label>
 						<input type="text" name="txtNombreEmpresa" class="form-control"
-							value="${datoscliente.getNombreEmpresa()}">
+							value="${datoscliente.getNombreEmpresa()}" required>
 					</div>
 					<div class="form-group">
 						<label>Rut de la empresa: </label>
-						<input type="text" name="txtRutEmpresa" class="form-control" value="${datoscliente.getRut()}">
+						<input type="text" name="txtRutEmpresa" class="form-control" value="${datoscliente.getRut()}" required>
 					</div>
 					<div class="form-group">
 						<label>Fecha de registro de la empresa </label>
 						<input type="text" name="txtFechaRegistro" id="datetimepicker" class="form-control"
-							value="${datoscliente.getFechaRegistro()}">
+							value="${datoscliente.getFechaRegistro()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidcliente" class="form-control"

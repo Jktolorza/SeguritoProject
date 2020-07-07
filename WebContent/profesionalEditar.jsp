@@ -28,26 +28,26 @@
 					
 						<label>Nombre: </label>
 						<input type="text" name="txtnombre" class="form-control"
-							value="${datosprofesional.getNombre()}">
+							value="${datosprofesional.getNombre()}" required>
 					</div>
 					<div class="form-group">
 						<label>Apellido: </label>
 						<input type="text" name="txtapellido" class="form-control"
-							value="${datosprofesional.getApellido()}">
+							value="${datosprofesional.getApellido()}" required>
 					</div>
 					<div class="form-group">
 						<label>Correo: </label>
 						<input type="email" name="txtcorreo" class="form-control"
-							value="${datosprofesional.getCorreo()}">
+							value="${datosprofesional.getCorreo()}" required>
 					</div>
 					<div class="form-group">
 						<label>Telefono: </label>
 						<input type="text" name="txttelefono" class="form-control"
-							value="${datosprofesional.getTelefono()}">
+							value="${datosprofesional.getTelefono()}" required>
 					</div>
 					<div class="form-group">
 						<label>Cargo: </label>
-						<input type="text" name="txtcargo" class="form-control" value="${datosprofesional.getCargo()}">
+						<input type="text" name="txtcargo" class="form-control" value="${datosprofesional.getCargo()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidprofesional" class="form-control"

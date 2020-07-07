@@ -22,17 +22,17 @@
 					<div class="form-group">
 						<label>Nombre: </label>
 						<input type="text" name="txtnombre" class="form-control"
-							value="${datosdetallefactura.getNombre()}">
+							value="${datosdetallefactura.getNombre()}" required>
 					</div>
 					<div class="form-group">
 						<label>Precio: </label>
 						<input type="number" name="txtprecio" class="form-control" max="999999999"
-							value="${datosdetallefactura.getPrecio()}">
+							value="${datosdetallefactura.getPrecio()}" required>
 					</div>
 					<div class="form-group">
 						<label>Cantidad: </label>
 						<input type="number" name="txtcantidad" class="form-control" max="999999999"
-							value="${datosdetallefactura.getCantidad()}">
+							value="${datosdetallefactura.getCantidad()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdniddetallefactura" class="form-control"

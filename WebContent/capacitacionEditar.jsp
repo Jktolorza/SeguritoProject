@@ -24,16 +24,16 @@
 					<div class="form-group">
 						<label>Fecha y Hora: </label>
 						<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control"
-							value="${datoscapacitacion.getFechayhora()}">
+							value="${datoscapacitacion.getFechayhora()}" required>
 					</div>
 					<div class="form-group">
 						<label>Tema: </label>
-						<input type="text" name="txttema" class="form-control" value="${datoscapacitacion.getTema()}">
+						<input type="text" name="txttema" class="form-control" value="${datoscapacitacion.getTema()}" required>
 					</div>
 					<div class="form-group">
 						<label>Contenido: </label>
 						<input type="text" name="txtcontenido" class="form-control"
-							value="${datoscapacitacion.getContenido()}">
+							value="${datoscapacitacion.getContenido()}" required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidcapacitacion" class="form-control"

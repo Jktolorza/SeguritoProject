@@ -23,27 +23,27 @@
 					<div class="form-group">
 						<label>Nombre:
 						</label>
-						<input type="text" name="txtNombreProfesional" class="form-control">
+						<input type="text" name="txtNombreProfesional" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Apellido:
 						</label>
-						<input type="text" name="txtApellido" class="form-control">
+						<input type="text" name="txtApellido" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Correo:
 						</label>
-						<input type="email" name="txtCorreo" class="form-control">
+						<input type="email" name="txtCorreo" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Telefono:
 						</label>
-						<input type="text" name="txtTelefono" class="form-control">
+						<input type="text" name="txtTelefono" class="form-control" required>
 					</div>
 					<div class="form-group">
 						<label>Cargo:
 						</label>
-						<input type="text" name="txtCargo" class="form-control">
+						<input type="text" name="txtCargo" class="form-control" required>
 					</div>
 					<input type="submit" name="accion" value="Agregar" class="btn btn-info">
 					<input type="reset" value="Cancelar" class="btn btn-info">

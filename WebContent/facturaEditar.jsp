@@ -24,16 +24,16 @@
 					<div class="form-group">
 						<label>Fecha Cobro: </label>
 						<input type="text" name="txtfechadecobro" id="datetimepicker" class="form-control"
-							value="${datosfactura.getFechadecobro()}">
+							value="${datosfactura.getFechadecobro()}" required>
 					</div>
 					<div class="form-group">
 						<label>Fecha Vencimiento: </label>
-						<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control" value="${datosfactura.getFechaVencimiento()}">
+						<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control" value="${datosfactura.getFechaVencimiento()}" required>
 					</div>
 					<div class="form-group">
 						<label>Extras: </label>
 						<input type="number" name="txtextras" class="form-control" max="999999999"
-							value="${datosfactura.getExtras()}">
+							value="${datosfactura.getExtras()}" required>
 					</div>
 					<div class="form-group">
 						<label>Impuestos: </label>

@@ -18,15 +18,15 @@
 			<form action="CrearDetalleFactura" method="post">
 				<div class="form-group">
 					<label>Nombre: </label>
-					<input type="text" name="txtnombre" class="form-control">			
+					<input type="text" name="txtnombre" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Precio: </label>
-					<input type="number" name="txtprecio" class="form-control" max="999999999">			
+					<input type="number" name="txtprecio" class="form-control" max="999999999" required>			
 				</div>
 				<div class="form-group">
 					<label>Cantidad: </label>
-					<input type="number" name="txtcantidad" class="form-control" max="999999999">			
+					<input type="number" name="txtcantidad" class="form-control" max="999999999" required>			
 				</div>
 				<div class="form-group">
 					<label>Factura: </label>

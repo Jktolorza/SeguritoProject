@@ -19,23 +19,23 @@
 			<form action ="CrearReporte" method="post">
 				<div class="form-group">
 					<label>Fecha: </label>
-					<input type="text" name="txtfecha" class="form-control" id="datetimepicker">			
+					<input type="text" name="txtfecha" class="form-control" id="datetimepicker" required>			
 				</div>
 				<div class="form-group">
 					<label>Direccion: </label>
-					<input type="text" name="txtdireccion" class="form-control">			
+					<input type="text" name="txtdireccion" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Labor: </label>
-					<input type="text" name="txtlabor" class="form-control">			
+					<input type="text" name="txtlabor" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Descripcion: </label>
-					<input type="text" name="txtdescripcion" class="form-control">			
+					<input type="text" name="txtdescripcion" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Cliente</label>
-					<select name="txtid_cliente" class="form-control form-control">				
+					<select name="txtid_cliente" class="form-control form-control" required>				
 	  				<c:forEach items="${listadoclientes}" var="cliente">
 				<option value="${cliente.getId_cliente()}">${cliente.getNombreEmpresa()} </option>
 			</c:forEach>

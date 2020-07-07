@@ -19,15 +19,15 @@
 			<form action ="CrearCliente" method="post">
 				<div class="form-group">
 					<label>Nombre de la empresa: </label>
-					<input type="text" name="txtNombreEmpresa" class="form-control">			
+					<input type="text" name="txtNombreEmpresa" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Rut de la empresa: </label>
-					<input type="text" name="txtRutEmpresa" class="form-control">			
+					<input type="text" name="txtRutEmpresa" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Fecha de registro de la empresa </label>
-					<input type="text" name="txtFechaRegistro" id="datetimepicker" class="form-control">			
+					<input type="text" name="txtFechaRegistro" id="datetimepicker" class="form-control" required>			
 				</div>
 			<input type="submit" name ="accion" value="Agregar" class="btn btn-info">
 			<input type="reset" value="Cancelar" class="btn btn-info">

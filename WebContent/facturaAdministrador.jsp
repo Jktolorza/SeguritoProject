@@ -20,15 +20,15 @@
 			<form action="CrearFactura" method="post">
 				<div class="form-group">
 					<label>Fecha Cobro: </label>
-					<input type="text" name="txtfechadecobro" id="datetimepicker" class="form-control">			
+					<input type="text" name="txtfechadecobro" id="datetimepicker" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Fecha Vencimiento: </label>
-					<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control">			
+					<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Extras: </label>
-					<input type="number" name="txtextras" class="form-control" max=999999999>			
+					<input type="number" name="txtextras" class="form-control" max=999999999 required>			
 				</div>
 				<div class="form-group">
 					<label>Impuestos: </label>

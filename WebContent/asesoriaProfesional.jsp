@@ -20,15 +20,15 @@
 			<form action="CrearAsesoria" method="post">
 				<div class="form-group">
 					<label>Fecha y Hora: </label>
-					<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control">			
+					<input type="text" name="txtfechayhora" id="datetimepicker" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Motivo: </label>
-					<input type="text" name="txtmotivo" class="form-control">			
+					<input type="text" name="txtmotivo" class="form-control" required>			
 				</div>
 				<div class="form-group">
 					<label>Detalle: </label>
-					<input type="text" name="txtdetalle" class="form-control">			
+					<input type="text" name="txtdetalle" class="form-control" required>			
 				</div>
 
 				<div class="form-group">
