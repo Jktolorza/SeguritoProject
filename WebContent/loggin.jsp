@@ -35,13 +35,15 @@
 						placeholder="password" required>
 					<div class="checkbox mb-3">
 						<label>
-							<input type="checkbox" value="remember-me"> Recordar Cuenta
+							<input type="checkbox" value="remember-me">
+							Recordar Cuenta
 						</label>
 					</div>
 					<input class="btn btn-lg btn-primary btn-block" type="submit" value="ingresar"></input>
 					<!-- Alerta de claves -->
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					<button type="button" class="btn" style="border: none;" data-toggle="modal"
+						data-target="#exampleModal">
 						Ayuda
 					</button>
 
@@ -63,7 +65,8 @@
 									Usuario:administrador -- pass:administrador<br>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn " style="border: none;" data-dismiss="modal">Cerrar</button>									
+									<button type="button" class="btn btn-primary " style="border: none;"
+										data-dismiss="modal">Cerrar</button>
 								</div>
 							</div>
 						</div>
@@ -74,19 +77,19 @@
 			</div>
 			<div class="col align-self-end"></div>
 		</div>
-	</div>
+</body>
 
-
-	<!-- Jss boostrap -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+</html>
+</div><!-- Jss boostrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
 </body>
 
 </html>
