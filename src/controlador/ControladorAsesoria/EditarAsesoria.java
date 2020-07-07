@@ -70,7 +70,7 @@ public class EditarAsesoria extends HttpServlet {
 		
 		
 		request.setAttribute("datosasesoria", asesoria);
-		request.getRequestDispatcher("editarAsesoria.jsp").forward(request, response);
+		request.getRequestDispatcher("asesoriaEditar.jsp").forward(request, response);
 	}
 
 	/**
