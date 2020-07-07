@@ -18,11 +18,18 @@ _Herramientas utilizadas para el desarrollo del proyecto_
 
 ### Diagrama
 
+![D Modelo R](https://github.com/Jktolorza/SeguritoProject/blob/master/ModeloRelacionalBBDD.png)
+
 ### Pre-requisitos 📋
+* Para poder ejecutar el DWP en entorno de desarrollo y ejecucion debemos tener instalado lo siguiente:_
+* Apache Tomcat en su version 9.0.36_  
+* La base de datos (https://github.com/Jktolorza/SeguritoProject/blob/master/ddlproyectosegurito.ddl)_
 
 ### Instalación 🔧
-
-
+* Correr el DDL para poder ejecutar la base de datos, Instale la base de datos en su propio espacio de trabajo  realizado en Oracle 11g XE_
+* Modificar el WEB.xml con los datos de conexion que usted a determinado para el proyecto_
+* Montar el archivo WAR en Apache tomcat_ 
+* Disfrute de este hermoso proyecto_
 
 ## Wiki 📖
 
@@ -32,9 +39,9 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestro repositor
 
 _Miembros desarrolladores_
 
-* **Claudia Llocon** - *Desarrollo* - [clloncon](https://github.com/clloncon)
+* **Claudia Lloncon** - *Desarrollo* - [clloncon](https://github.com/clloncon)
 * **Manuel Lillo** - *Desarrollo* - [mlilloblanco](https://github.com/mlilloblanco)
-* **Juan.C Toloza** - *Desarrollo* - [jktoloza](https://github.com/Jktolorza)
+* **Juan.C Tolorza** - *Desarrollo* - [jktolorza](https://github.com/Jktolorza)
 * **Matias Flores** - *Desarrollo* - [matiasfloresfarias](https://github.com/MatiasFloresFarias)
 
 
