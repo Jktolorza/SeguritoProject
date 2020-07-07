@@ -32,7 +32,7 @@
 						required autofocus>
 					<label for="inputPassword" class="sr-only">Password</label>
 					<input type="password" name="txtpassword" id="inputPassword" class="form-control"
-						placeholder="Contrase�a" required>
+						placeholder="Contraseña" required>
 					<div class="checkbox mb-3">
 						<label>
 							<input type="checkbox" value="remember-me"> Recordar Cuenta
@@ -63,7 +63,7 @@
 									Usuario:administrador -- pass:administrador<br>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>									
+									<button type="button" class="btn " style="border: none;" data-dismiss="modal">Cerrar</button>									
 								</div>
 							</div>
 						</div>
