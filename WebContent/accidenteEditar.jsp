@@ -11,6 +11,8 @@
 	<!-- Css de boostrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+    <link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">
 </head>
 
 <body>
@@ -24,7 +26,7 @@
 				<form action="EditarReporte" method="post">
 					<div class="form-group">
 						<label>Fecha: </label>
-						<input type="text" name="txtfecha" class="form-control"
+						<input type="text" name="txtfecha" class="form-control" id="datetimepicker"
 							value="${datosreporteaccidente.getFecha()}">
 					</div>
 					<div class="form-group">
@@ -73,6 +75,17 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
+<script>
+	$(function() {
+    	$('#datetimepicker').datepicker({
+        	dateFormat: 'dd/mm/yy',
+        });
+    });
+</script>
+		
 </body>
 
 </html>
