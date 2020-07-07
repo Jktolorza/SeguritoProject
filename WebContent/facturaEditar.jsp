@@ -10,8 +10,8 @@
 	<!-- Css de boostrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-<link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">
 </head>
 
 <body>
@@ -28,7 +28,8 @@
 					</div>
 					<div class="form-group">
 						<label>Fecha Vencimiento: </label>
-						<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control" value="${datosfactura.getFechaVencimiento()}" required>
+						<input type="text" name="txtfechaVencimiento" id="datetimepicker2" class="form-control"
+							value="${datosfactura.getFechaVencimiento()}" required>
 					</div>
 					<div class="form-group">
 						<label>Extras: </label>
@@ -47,8 +48,8 @@
 					</div>
 					<div class="form-group">
 						<label>Total: </label>
-						<input type="number" name="txttotal" class="form-control"
-							value="${datosfactura.getTotal()}" readonly>
+						<input type="number" name="txttotal" class="form-control" value="${datosfactura.getTotal()}"
+							readonly>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidfactura" class="form-control"
@@ -64,42 +65,44 @@
 							</c:forEach>
 						</select>
 					</div>
-					<input type="submit" name="accion" value="Editar" class="btn btn-info"> 
-					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearFactura">Cancelar</a> 
+					<input type="submit" name="accion" value="Editar" class="btn btn-info">
+					<a class="btn btn-info" href="${pageContext.request.contextPath}/CrearFactura">Cancelar</a>
 				</form>
 			</div>
 			<div class="col align-self-end"></div>
 		</div>
 	</div>
-	
-	<p> Para actualizar el total dirigirse al detalle de la factura <p>
-	<a class="btn btn-danger" href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${datosfactura.getId_factura()}">Detalle</a>
-	<!-- Jss boostrap -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+
+	<p> Para actualizar el total dirigirse al detalle de la factura
+	<p>
+		<a class="btn btn-success"
+			href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${datosfactura.getId_factura()}">Detalle</a>
+		<!-- Jss boostrap -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
-<script>
-	$(function() {
-    	$('#datetimepicker').datepicker({
-        	dateFormat: 'dd/mm/yy',
-        });
-    });
-	$(function() {
-    	$('#datetimepicker2').datepicker({
-        	dateFormat: 'dd/mm/yy',
-        });
-    });
-	
-</script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
+		<script>
+			$(function () {
+				$('#datetimepicker').datepicker({
+					dateFormat: 'dd/mm/yy',
+				});
+			});
+			$(function () {
+				$('#datetimepicker2').datepicker({
+					dateFormat: 'dd/mm/yy',
+				});
+			});
+
+		</script>
 </body>
 
 </html>

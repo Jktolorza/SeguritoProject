@@ -25,10 +25,10 @@
 
 				<form action="EditarProfesional" method="post">
 					<div class="form-group">
-					
+
 						<label>Nombre: </label>
-						<input type="text" name="txtnombre" class="form-control"
-							value="${datosprofesional.getNombre()}" required>
+						<input type="text" name="txtnombre" class="form-control" value="${datosprofesional.getNombre()}"
+							required>
 					</div>
 					<div class="form-group">
 						<label>Apellido: </label>
@@ -47,7 +47,8 @@
 					</div>
 					<div class="form-group">
 						<label>Cargo: </label>
-						<input type="text" name="txtcargo" class="form-control" value="${datosprofesional.getCargo()}" required>
+						<input type="text" name="txtcargo" class="form-control" value="${datosprofesional.getCargo()}"
+							required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidprofesional" class="form-control"
@@ -55,7 +56,7 @@
 					</div>
 
 					<input type="submit" name="accion" value="Editar" class="btn btn-info">
-					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearProfesional">Cancelar</a> 
+					<a class="btn btn-info" href="${pageContext.request.contextPath}/CrearProfesional">Cancelar</a>
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

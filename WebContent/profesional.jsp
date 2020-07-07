@@ -59,7 +59,7 @@
 				<c:out value="${param.emensaje}" />
 			</c:if>
 
-			<table class="table table-hover">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Nombre</th>
@@ -92,7 +92,7 @@
 </html>
 </div>
 </div>
-		<!-- Jss boostrap -->
+<!-- Jss boostrap -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>

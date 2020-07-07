@@ -10,8 +10,8 @@
 	<!-- Css de boostrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
-    <link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.css">
 </head>
 
 <body>
@@ -23,12 +23,12 @@
 				<form action="EditarActividadesMejora" method="post">
 					<div class="form-group">
 						<label>Nombre: </label>
-						<input type="text" name="txtnombre" class="form-control"
-							value="${datosactmejora.getNombre()}" required>
+						<input type="text" name="txtnombre" class="form-control" value="${datosactmejora.getNombre()}"
+							required>
 					</div>
 					<div class="form-group">
 						<label>Fecha Inicio: </label>
-						<input type="text" name="txtfechainicio" id="datetimepicker" class="form-control" 
+						<input type="text" name="txtfechainicio" id="datetimepicker" class="form-control"
 							value="${datosactmejora.getFechaInicio()}" required>
 					</div>
 					<div class="form-group">
@@ -38,13 +38,13 @@
 					</div>
 					<div class="form-group">
 						<label>Estado: </label>
-						<input type="text" name="txtestado" class="form-control"
-							value="${datosactmejora.getEstado()}" required>
+						<input type="text" name="txtestado" class="form-control" value="${datosactmejora.getEstado()}"
+							required>
 					</div>
 					<div class="form-group">
 						<label>Detalle: </label>
-						<input type="text" name="txtdetalle" class="form-control"
-							value="${datosactmejora.getDetalle()}" required>
+						<input type="text" name="txtdetalle" class="form-control" value="${datosactmejora.getDetalle()}"
+							required>
 					</div>
 					<div class="form-group">
 						<input type="hidden" name="hdnidactmejora" class="form-control"
@@ -55,8 +55,8 @@
 						<select name="txt_idprofesional" class="form-control form-control">
 							<c:forEach items="${listadoprofesionales}" var="profesional">
 								<option value="${profesional.getId_profesional()}"
-									${datosactmejora.getId_profesional()==profesional.getId_profesional()
-									? 'selected' : '' }>${profesional.getNombre()} ${profesional.getApellido()}
+									${datosactmejora.getId_profesional()==profesional.getId_profesional() ? 'selected'
+									: '' }>${profesional.getNombre()} ${profesional.getApellido()}
 								</option>
 							</c:forEach>
 						</select>
@@ -71,8 +71,9 @@
 							</c:forEach>
 						</select>
 					</div>
-					<input type="submit" name="accion" value="Editar" class="btn btn-info"> 
-					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearActividadesMejora">Cancelar</a> 
+					<input type="submit" name="accion" value="Editar" class="btn btn-info">
+					<a class="btn btn-info"
+						href="${pageContext.request.contextPath}/CrearActividadesMejora">Cancelar</a>
 				</form>
 			</div>
 			<div class="col align-self-end"></div>
@@ -88,23 +89,23 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
-<script>
-	$(function() {
-    	$('#datetimepicker').datepicker({
-        	dateFormat: 'dd/mm/yy',
-        
-        });
-    });
-	$(function() {
-    	$('#datetimepicker2').datepicker({
-        	dateFormat: 'dd/mm/yy',
-         
-        });
-    });
-</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
+	<script>
+		$(function () {
+			$('#datetimepicker').datepicker({
+				dateFormat: 'dd/mm/yy',
+
+			});
+		});
+		$(function () {
+			$('#datetimepicker2').datepicker({
+				dateFormat: 'dd/mm/yy',
+
+			});
+		});
+	</script>
 </body>
 
 </html>

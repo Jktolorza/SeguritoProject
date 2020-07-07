@@ -14,7 +14,7 @@
    <body>
 
 		<div class="col-sm-12">
-			<table class="table table-hover">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Nombre</th>

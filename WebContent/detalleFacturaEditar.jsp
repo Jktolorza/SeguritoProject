@@ -38,12 +38,14 @@
 						<input type="hidden" name="hdniddetallefactura" class="form-control"
 							value="${datosdetallefactura.getId_detallefactura()}">
 					</div>
-				<div class="form-group">
-					<label>Factura: </label>
-					<input type="number" name="txtid_factura" class="form-control" value="${facturaid}" checked readonly >			
-				</div>
-					<input type="submit" name="accion" value="Editar" class="btn btn-info"> 
-					<a  class="btn btn-info" href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${facturaid}">Cancelar</a> 
+					<div class="form-group">
+						<label>Factura: </label>
+						<input type="number" name="txtid_factura" class="form-control" value="${facturaid}" checked
+							readonly>
+					</div>
+					<input type="submit" name="accion" value="Editar" class="btn btn-info">
+					<a class="btn btn-info"
+						href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${facturaid}">Cancelar</a>
 				</form>
 			</div>
 			<div class="col align-self-end"></div>

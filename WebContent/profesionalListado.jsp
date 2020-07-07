@@ -23,7 +23,7 @@
 				<c:out value="${cumensaje}" />
 			</c:if>
 
-			<table class="table table-hover">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Nombre</th>
