@@ -261,17 +261,26 @@ values (TO_DATE('02/05/2020 11:00','dd/mm/yyyy HH24:mi'),'Seguridad en faena','B
 
 --FACTURA
 INSERT INTO factura(fechacobro,fechavencimiento,extras, impuestos, subtotal, total, cliente_id_cliente)
-values (TO_DATE('04/04/2020','dd/mm/yyyy'), TO_DATE('24/04/2020','dd/mm/yyyy'),300000,148000,1500320,1648320, '1');
+values (TO_DATE('04/04/2020','dd/mm/yyyy'), TO_DATE('24/04/2020','dd/mm/yyyy'),300000,475000,2200000,2975000, '1');
 
 INSERT INTO factura(fechacobro,fechavencimiento,extras, impuestos,subtotal, total, cliente_id_cliente)
-values (TO_DATE('03/03/2020','dd/mm/yyyy'), TO_DATE('23/03/2020','dd/mm/yyyy'),400000,138000,1400670,1548670, '2');
+values (TO_DATE('03/03/2020','dd/mm/yyyy'), TO_DATE('23/03/2020','dd/mm/yyyy'),400000,399000,1700000,2499000, '2');
 
 --DETALLE FACTURA
 INSERT INTO detallefactura(nombre,precio, cantidad, factura_id_factura)
 values ('capacitacion', 400000,2,'1');
 
 INSERT INTO detallefactura(nombre,precio, cantidad, factura_id_factura)
+values ('asesoria', 300000,4,'1');
+
+INSERT INTO detallefactura(nombre,precio, cantidad, factura_id_factura)
+values ('callcenter', 200000,1,'1');
+
+INSERT INTO detallefactura(nombre,precio, cantidad, factura_id_factura)
 values ('asesoria', 300000,3,'2');
+
+INSERT INTO detallefactura(nombre,precio, cantidad, factura_id_factura)
+values ('capacitacion', 400000,2,'2');
 
 --USUARIO
 INSERT INTO usuario(password,nickname, rol)
@@ -281,7 +290,7 @@ values ('91F5167C34C400758115C2A6826EC2E3', 'administrador','administrador');
 INSERT INTO usuario(password,nickname, rol)
 values ('4983A0AB83ED86E0E7213C8783940193', 'cliente','cliente');
 INSERT INTO usuario(password,nickname, rol)
-values ('E0C826B1C1532015b386ADDB63147C5E', 'mlillo','profesional');
+values ('E0C826B1C1532015B386ADDB63147C5E', 'mlillo','profesional');
 INSERT INTO usuario(password,nickname, rol)
 values ('143D42165DFAA0E4870B787D8D0CB125', 'mflores','profesional');
 INSERT INTO usuario(password,nickname, rol)
